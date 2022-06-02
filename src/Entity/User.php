@@ -27,6 +27,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'string')]
     private $password;
 
+    #[ORM\Column(type: 'string', length: 150)]
+    private $nom;
+
+    #[ORM\Column(type: 'datetime_immutable')]
+    private $created_at;
+
+    #[ORM\Column(type: 'datetime_immutable')]
+    private $modified_at;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -95,5 +104,41 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    public function getNom(): ?string
+    {
+        return $this->nom;
+    }
+
+    public function setNom(string $nom): self
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->created_at;
+    }
+
+    public function setCreatedAt(\DateTimeImmutable $created_at): self
+    {
+        $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    public function getModifiedAt(): ?\DateTimeImmutable
+    {
+        return $this->modified_at;
+    }
+
+    public function setModifiedAt(\DateTimeImmutable $modified_at): self
+    {
+        $this->modified_at = $modified_at;
+
+        return $this;
     }
 }
