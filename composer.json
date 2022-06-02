@@ -12,13 +12,9 @@
     "symfony/flex": "^2",
     "symfony/framework-bundle": "6.1.*",
     "symfony/runtime": "6.1.*",
-<<<<<<< HEAD
-    
-    "symfony/webpack-encore-bundle": "^1.14",
-=======
     "symfony/security-bundle": "6.1.*",
     "symfony/twig-bundle": "6.1.*",
->>>>>>> greg-create-user
+    "symfony/webpack-encore-bundle": "^1.14",
     "symfony/yaml": "6.1.*"
   },
   "require-dev": {

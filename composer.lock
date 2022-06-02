@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "6ac8278dae5e0b96f2969fdef5db5ffd",
-=======
-    "content-hash": "2166003e94088bc1cc012e3b75ec9c24",
->>>>>>> greg-create-user
+    "content-hash": "da03036bfc3d79f764d31ae9b48a9c95",
     "packages": [
         {
             "name": "psr/cache",
