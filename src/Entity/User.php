@@ -39,6 +39,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToOne(mappedBy: 'user', targetEntity: Boutique::class, cascade: ['persist', 'remove'])]
     private $boutique;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $type_user;
+
     public function __construct()
     {
         $this->setCreatedAt(new \DateTimeImmutable());
@@ -164,6 +167,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         }
 
         $this->boutique = $boutique;
+
+        return $this;
+    }
+
+    public function getTypeUser(): ?string
+    {
+        return $this->type_user;
+    }
+
+    public function setTypeUser(string $type_user): self
+    {
+        $this->type_user = $type_user;
 
         return $this;
     }
