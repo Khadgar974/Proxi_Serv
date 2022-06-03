@@ -1,20 +1,6 @@
 {% extends 'layouts/base.html.twig' %}    
 
 
-{% block body %}
-    <header>
-            <h2>{% if app.user %}
-                <div class="mb-3">
-                Vous êtes connecté en tant que {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
-                </div>
-                {% endif %}
-            </h2>
-            <nav>
-                <ul>
-                    <li><a href="{{path('app_register')}}">Inscription</a></li>
-                    <li><a href="{{path('app_login')}}">Connexion</a></li>
-                </ul>
-            </nav>
-    </header/
+{% block body %}    
 <h1>Première page</h1>
 {% endblock %}
