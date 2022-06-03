@@ -30,7 +30,7 @@ class UserFixtures extends Fixture
         $commercant->setRoles(['ROLE_USER', 'ROLE_COMMERCANT']);
         $hashpassword = $this->hasher->hashPassword($commercant, 'Thiebaut');
         $commercant->setPassword($hashpassword);
-        $commercant->setNom('Thiebaut');        
+        $commercant->setNom('Thiebaut');
         $manager->persist($commercant);
 
 
@@ -38,9 +38,8 @@ class UserFixtures extends Fixture
         $user->setEmail('gregmarini@gmail.com');
         $user->setRoles(['ROLE_USER']);
         $hashpassword = $this->hasher->hashPassword($user, 'Gregory');
-        $user->setPassword($hashpassword);        
+        $user->setPassword($hashpassword);
         $user->setNom('Marini');
-        
         $manager->persist($user);
 
 
