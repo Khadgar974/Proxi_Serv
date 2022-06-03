@@ -36,6 +36,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'datetime_immutable')]
     private $modified_at;
 
+    #[ORM\OneToOne(mappedBy: 'user', targetEntity: Boutique::class, cascade: ['persist', 'remove'])]
+    private $boutique;
+
     public function __construct()
     {
         $this->setCreatedAt(new \DateTimeImmutable());
@@ -144,6 +147,23 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setModifiedAt(\DateTimeImmutable $modified_at): self
     {
         $this->modified_at = $modified_at;
+
+        return $this;
+    }
+
+    public function getBoutique(): ?Boutique
+    {
+        return $this->boutique;
+    }
+
+    public function setBoutique(Boutique $boutique): self
+    {
+        // set the owning side of the relation if necessary
+        if ($boutique->getUser() !== $this) {
+            $boutique->setUser($this);
+        }
+
+        $this->boutique = $boutique;
 
         return $this;
     }
