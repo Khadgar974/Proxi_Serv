@@ -39,10 +39,11 @@ trait Timestampable
     #[ORM\PreUpdate]
     public function updateTimestamps() 
     {
-        if ($this->getCreatedAt() === null){
-            $this->setCreatedAt(new DateTimeImmutable());
-        } else {
+        if (!$this->getCreatedAt() === null){
             $this->setModifiedAt(new DateTimeImmutable());
+        } else {
+            $this->setCreatedAt(new DateTimeImmutable());
         }
     }
+    
 }

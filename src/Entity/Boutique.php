@@ -2,12 +2,14 @@
 
 namespace App\Entity;
 
+use App\Entity\Traits\Timestampable;
 use App\Repository\BoutiqueRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: BoutiqueRepository::class)]
 class Boutique
-{
+{   
+
     use Timestampable;
 
     #[ORM\Id]
@@ -50,7 +52,7 @@ class Boutique
 
     #[ORM\OneToOne(inversedBy: 'boutique', targetEntity: User::class, cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
-    private $user;
+    private $user;    
 
     public function getId(): ?int
     {
@@ -199,5 +201,7 @@ class Boutique
         $this->user = $user;
 
         return $this;
-    }
+    }   
+
+    
 }
