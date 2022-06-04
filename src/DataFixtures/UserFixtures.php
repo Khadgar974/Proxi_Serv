@@ -25,6 +25,15 @@ class UserFixtures extends Fixture
         $admin->setNom('Samuel Cottereau');
         $admin->setTypeUser(1);
         $manager->persist($admin);
+        
+        $admin2 = new User();
+        $admin2->setEmail('greg.marini@hotmail.fr');
+        $admin2->setRoles(['ROLE_USER', 'ROLE_COMMERCANT', 'ROLE_ADMIN']);
+        $hashpassword = $this->hasher->hashPassword($admin2, 'password');
+        $admin2->setPassword($hashpassword);        
+        $admin2->setNom('Grégory Marini');
+        $admin2->setTypeUser(1);
+        $manager->persist($admin2);
 
         $commercant = new User();
         $commercant->setEmail('titiviking27@gmail.com');
@@ -44,8 +53,6 @@ class UserFixtures extends Fixture
         $user->setNom('Grégory Marini');
         $user->setTypeUser(0);
         $manager->persist($user);
-
-
 
         $manager->flush();
 

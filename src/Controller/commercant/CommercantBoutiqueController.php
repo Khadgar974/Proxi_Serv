@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\commercant;
+namespace App\Controller\Commercant;
 
 use App\Entity\Boutique;
 use App\Repository\BoutiqueRepository;

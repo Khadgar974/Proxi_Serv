@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\commercant;
+namespace App\Controller\Commercant;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;

@@ -1,17 +1,18 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class CategorieController extends AbstractController
+#[Route('/admin/categories')]
+class AdminCategorieController extends AbstractController
 {
-    #[Route('/categorie', name: 'app_categorie')]
+    #[Route('/', name: 'app_admin_categories_index')]
     public function index(): Response
     {
-        return $this->render('categorie/index.html.twig', [
+        return $this->render('admin/admin_categorie/categories_index.html.twig', [
             'controller_name' => 'CategorieController',
         ]);
     }
