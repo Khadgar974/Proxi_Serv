@@ -1,18 +1,34 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title 'Proxi\'ADMIN'%}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title 'Proxi\'ADMIN'%}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('build/admin-template/images/icon/favicon.ico')}}">
+    <link rel="stylesheet" href="{{ asset('build/admin-template/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('build/admin-template/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('build/admin-template/css/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{ asset('build/admin-template/css/metisMenu.css')}}">
+    <link rel="stylesheet" href="{{ asset('build/admin-template/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('build/admin-template/css/slicknav.min.css')}}">
+    <!-- amchart css -->
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <!-- others css -->
+    <link rel="stylesheet" href="{{ asset('build/admin-template/css/typography.css')}}">
+    <link rel="stylesheet" href="{{ asset('build/admin-template/css/default-css.css')}}">
+    <link rel="stylesheet" href="{{ asset('build/admin-template/css/styles.css')}}">
+    <link rel="stylesheet" href="{{ asset('build/admin-template/css/responsive.css')}}">
+    <!-- modernizr css -->
+    <script src="{{ asset('build/admin-template/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {% block stylesheets %}
+    {# link template #}
+    <link rel="stylesheet" href="css/summernote.css">
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}        
+</head>
+    
     <body>
     <header>
             <nav>
@@ -20,11 +36,48 @@
                     <li><a href="#">Statistiques</a></li> 
                     <li><a href="#">Gestion des boutiques</a></li> 
                     <li><a href="#">Gestion des utilisateurs inscrits</a></li>                    
-                    <li><a href="{{path('app_home')}}">retour home</a></li>                    
+                    <li><a href="#">retour home</a></li>                    
                 </ul>
             </nav>
     </header>
-    <h1 class="my-3 mx-5">Admin layout</h1>
+    
+
         {% block body %}{% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+            <!-- offset area end -->
+            <!-- jquery latest version -->
+            <script src="{{ asset('build/admin-template/js/vendor/jquery-2.2.4.min.js')}}"></script>
+            <!-- bootstrap 4 js -->
+            <script src="{{ asset('build/admin-template/js/popper.min.js')}}"></script>
+            <script src="{{ asset('build/admin-template/js/bootstrap.min.js')}}"></script>
+            <script src="{{ asset('build/admin-template/js/owl.carousel.min.js')}}"></script>
+            <script src="{{ asset('build/admin-template/js/metisMenu.min.js')}}"></script>
+            <script src="{{ asset('build/admin-template/js/jquery.slimscroll.min.js')}}"></script>
+            <script src="{{ asset('build/admin-template/js/jquery.slicknav.min.js')}}"></script>
+
+            <!-- start chart js -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+            <!-- start highcharts js -->
+            <script src="https://code.highcharts.com/highcharts.js"></script>
+            <!-- start zingchart js -->
+            <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+            <script>
+                zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+                ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"];
+            </script>
+            <!-- all line chart activation -->
+            <script src="{{ asset('build/admin-template/js/line-chart.js')}}"></script>
+            <!-- all pie chart -->
+            <script src="{{ asset('build/admin-template/js/pie-chart.js')}}"></script>
+            <!-- others plugins -->
+            <script src="{{ asset('build/admin-template/js/plugins.js')}}"></script>
+            <script src="{{ asset('build/admin-template/js/scripts.js')}}"></script>
+        {% endblock %}
     </body>
 </html>
+
+
+
+
