@@ -14,6 +14,16 @@
         {% endblock %}
     </head>
     <body>
+    <header>
+            <nav>
+                <ul> 
+                    <li><a href="#">Statistiques</a></li> 
+                    <li><a href="#">Gestion des boutiques</a></li> 
+                    <li><a href="#">Gestion des utilisateurs inscrits</a></li>                    
+                    <li><a href="{{path('app_home')}}">retour home</a></li>                    
+                </ul>
+            </nav>
+    </header>
     <h1 class="my-3 mx-5">Admin layout</h1>
         {% block body %}{% endblock %}
     </body>

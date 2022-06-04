@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Boutique;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -12,15 +13,15 @@ class BoutiqueFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('title')
+            ->add('title', TextType::class)
             ->add('description') 
             ->add('SIRET')
             ->add('adresse')
             ->add('code_postal')
             ->add('ville')
             ->add('tel')
-            ->add('image') // Faire l'upload d'image
-            ->add('logo') // faire l'upload d'image
+            ->add('image') // Faire l'upload d'image - jpg / png
+            ->add('logo') // faire l'upload d'image - jpg / png / svg
             ->add('is_siret_verified')
             ->add('is_active')            
             // ->add('user') user setter dans le controller
