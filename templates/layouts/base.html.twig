@@ -16,6 +16,7 @@
                     {% if app.user %}
                         <li><a href="{{path('app_commercant_default')}}">Gestion commercant</a></li> 
                         <li><a href="{{path('app_admin_default')}}">Gestion admin</a></li> 
+                        <li><a href="{{path('app_logout')}}">Se déconnecter</a></li> 
                     {% else %}
                     
                         <li><a href="{{path('app_register')}}">Inscription</a></li>
