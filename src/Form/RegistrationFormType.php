@@ -39,8 +39,8 @@ class RegistrationFormType extends AbstractType
             ->add('type_user', ChoiceType::class, [
                 'label' => 'Etes-vous ?',
                 'choices' => [
-                    'Commerçant' => true,
-                    'Utilisateur' => true
+                    'Commerçant' => 'Commerçant',
+                    'Utilisateur' => 'Utilisateur'
                 ],
                 'expanded' => true,
                 'multiple' => false                
