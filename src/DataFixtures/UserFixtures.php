@@ -22,7 +22,8 @@ class UserFixtures extends Fixture
         $admin->setRoles(['ROLE_USER', 'ROLE_COMMERCANT', 'ROLE_ADMIN']);
         $hashpassword = $this->hasher->hashPassword($admin, 'Samuel');
         $admin->setPassword($hashpassword);        
-        $admin->setNom('Cottereau');
+        $admin->setNom('Samuel Cottereau');
+        $admin->setTypeUser(1);
         $manager->persist($admin);
 
         $commercant = new User();
@@ -30,7 +31,8 @@ class UserFixtures extends Fixture
         $commercant->setRoles(['ROLE_USER', 'ROLE_COMMERCANT']);
         $hashpassword = $this->hasher->hashPassword($commercant, 'Thiebaut');
         $commercant->setPassword($hashpassword);
-        $commercant->setNom('Thiebaut');
+        $commercant->setNom('Thiebaut Pinardon');
+        $commercant->setTypeUser(1);
         $manager->persist($commercant);
 
 
@@ -39,7 +41,8 @@ class UserFixtures extends Fixture
         $user->setRoles(['ROLE_USER']);
         $hashpassword = $this->hasher->hashPassword($user, 'Gregory');
         $user->setPassword($hashpassword);
-        $user->setNom('Marini');
+        $user->setNom('Grégory Marini');
+        $user->setTypeUser(0);
         $manager->persist($user);
 
 
