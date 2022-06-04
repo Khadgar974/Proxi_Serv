@@ -13,17 +13,17 @@ class BoutiqueFormType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('description')
+            ->add('description') 
             ->add('SIRET')
             ->add('adresse')
             ->add('code_postal')
             ->add('ville')
             ->add('tel')
-            ->add('image')
-            ->add('logo')
+            ->add('image') // Faire l'upload d'image
+            ->add('logo') // faire l'upload d'image
             ->add('is_siret_verified')
             ->add('is_active')            
-            ->add('user')
+            // ->add('user') user setter dans le controller
         ;
     }
 
