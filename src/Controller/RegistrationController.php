@@ -21,23 +21,22 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // encode the plain password
-            $user->setCreatedAt(new \DateTimeImmutable());
-            $user->setModifiedAt(new \DateTimeImmutable());
+            
             $user->setPassword(
             $userPasswordHasher->hashPassword(
                     $user,
                     $form->get('plainPassword')->getData()
                 )
             );
+
             $user->getTypeUser();
             $entityManager->persist($user);
             $entityManager->flush();
             // do anything else you need here, like send an email
             if($user->getTypeUser('Utilisateur')) {
-            return $this->redirectToRoute('app_home');
-            } else {
-            return $this->redirectToRoute('app_boutiques');
+                return $this->redirectToRoute('app_home');
+            } else {                
+                return $this->redirectToRoute('app_boutiques');
             }
         }
 
