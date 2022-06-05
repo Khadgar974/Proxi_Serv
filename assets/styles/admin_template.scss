@@ -1,4 +1,4 @@
-.app_admin_default {
+.commercant {
     .page-container {
         .sidebar-menu,
         .sidebar-header {
@@ -7,18 +7,18 @@
     }
 }
 
-.main-menu {
-    .slimScrollDiv {
-        .menu-inner {
-            nav {
-                .metismenu#menu {
-                    li {
-                        a {
-                            background-color: $color-adm-commercant-side-bar-link;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+// .main-menu {
+//     .slimScrollDiv {
+//         .menu-inner {
+//             nav {
+//                 .metismenu#menu {
+//                     li {
+//                         a {
+//                             background-color: $color-adm-commercant-side-bar;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
