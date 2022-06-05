@@ -14,16 +14,16 @@ class BoutiqueFormType extends AbstractType
     {
         $builder
             ->add('title', TextType::class)
-            ->add('description') 
-            ->add('SIRET')
-            ->add('adresse')
-            ->add('code_postal')
-            ->add('ville')
-            ->add('tel')
-            ->add('image') // Faire l'upload d'image - jpg / png
-            ->add('logo') // faire l'upload d'image - jpg / png / svg
-            ->add('is_siret_verified')
-            ->add('is_active')            
+            ->add('description', TextAreaType::class) 
+            ->add('SIRET', TextType::class)
+            ->add('adresse', TextType::class)
+            ->add('code_postal', IntegerType::class )
+            ->add('ville', TextType::class)
+            ->add('tel', TextType::class )
+            ->add('image', TextType::class) // Faire l'upload d'image - jpg / png
+            ->add('logo', TextType::class) // faire l'upload d'image - jpg / png / svg
+            // ->add('is_siret_verified')
+            // ->add('is_active')            
             // ->add('user') user setter dans le controller
         ;
     }
