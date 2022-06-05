@@ -34,7 +34,7 @@ class RegistrationController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
             // do anything else you need here, like send an email
-            if($user->getTypeUser('Utilisateur')) {
+            if($user->getTypeUser(0)) {
             return $this->redirectToRoute('app_home');
             } else {
             return $this->redirectToRoute('app_boutiques');
