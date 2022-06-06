@@ -23,11 +23,19 @@
                 <div class="menu-inner">
                     <nav>
                         <ul class="metismenu" id="menu">
-                            <li class="active">
-                                <a href="javascript:void(0)" aria-expanded="true"><ion-icon name="apps-outline"></ion-icon><span>Gérer les produits</span></a>
+                            <li class="">
+                                <a href="javascript:void(0)" aria-expanded="true"><ion-icon class="admin-icon" name="storefront-outline"></ion-icon><span>Gérer ma boutique</span></a>
+                                <ul class="collapse">                                   
+                                    <li><a href="#">Voir ma boutique</a></li>
+                                    <li><a href="#">Modifier ma boutique</a></li>
+                                                                        
+                                </ul>
+                            </li>
+                            <li class="">
+                                <a href="javascript:void(0)" aria-expanded="true"><ion-icon class="admin-icon" name="apps-outline"></ion-icon><span>Gérer les produits</span></a>
                                 <ul class="collapse">                                   
                                     <li><a href="{{path('app_commercant_produits_index')}}">Tous les produits</a></li>
-                                    <li><a href="#">Ajouter un produit.</a></li>                                    
+                                    <li><a href="#">Ajouter un produit</a></li>                                    
                                 </ul>
                             </li>
                             {# <li><a href="#"><i class="ti-map-alt"></i><span>Not expanding</span></a></li> #}

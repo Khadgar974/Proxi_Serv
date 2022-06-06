@@ -3,6 +3,7 @@
 namespace App\Controller\Commercant;
 
 use App\Entity\Boutique;
+use App\Form\BoutiqueFormType;
 use App\Repository\BoutiqueRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -27,7 +28,7 @@ class CommercantBoutiqueController extends AbstractController
             return $this->redirectToRoute('app_home', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->render('commercant_boutique/boutique_create.html.twig', [
+        return $this->render('commercant/commercant_boutique/boutique_create.html.twig', [
             'form' => $form->createView(),
         ]);
        

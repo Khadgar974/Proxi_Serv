@@ -29,7 +29,8 @@
     {% endblock %}        
 </head>
     
-    <body class="{{ app.request.get('_route') == 'app_admin_default' ? 'admin' : 'commercant'  }}">
+    {# revoir en disant start with app_admin #}
+    <body class="{{ app.request.get('_route') == 'app_admin_default' ? 'admin' : 'commercant'  }}"> 
     {# <header>
             <nav>
                 <ul> 

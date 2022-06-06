@@ -1,6 +1,11 @@
-{% extends 'layouts/commercant.html.twig' %}
-
+{% extends 'layouts/admin.html.twig' %}
 {% block body %}
     <h1>Formulaire de création de boutique ici</h1>
+
+    {{ form_start(form) }}
+     {{ form_widget(form) }}
+
+     <input type="submit" value="create boutique" formnovalidate>
+    {{ form_end(form) }}
    
 {% endblock %}
