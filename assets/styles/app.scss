@@ -1,8 +1,13 @@
-@import "abstracts/variables";
-
-@import "admin_template";
 @import "~bootstrap/scss/bootstrap";
 
-body {
-    background-color: lightgray;
-}
+@import "abstracts/_variables";
+
+@import "base/_base";
+@import "base/_typography";
+@import "base/_utilities";
+
+@import "components/_admin_template";
+@import "components/_button";
+@import "components/_card";
+
+@import "layout/_grid";

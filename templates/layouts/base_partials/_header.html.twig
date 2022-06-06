@@ -1,0 +1,29 @@
+<header>
+            <div class="nav-bar">
+                <nav>
+                    <ul>
+                        {% if app.user %}
+                            <li><a href="{{path('app_commercant_default')}}">Gestion commercant</a></li> 
+                            <li><a href="{{path('app_admin_default')}}">Gestion admin</a></li> 
+                            <li><a href="{{path('app_logout')}}">Se déconnecter</a></li> 
+                        {% else %}
+                        
+                            <li><a href="{{path('app_register')}}">Inscription</a></li>
+                            <li><a href="{{path('app_login')}}">Se connecter</a></li>
+                        {% endif %}
+
+                        {% if app.request.get('_route') != 'app_index_boutiques' %}
+                            <li><a href="{{path('app_index_boutiques')}}">Les boutiques</a></li>
+                        {% endif %}
+
+                        {% if app.request.get('_route') != 'app_produit_bonplans' %}
+                            <li><a href="{{path('app_produit_bonplans')}}">Les bon plans</a></li> 
+                        {% endif %}
+
+                        {% if app.request.get('_route') != 'app_home' %}
+                            <li><a href="{{path('app_home')}}">retour home</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </header>
