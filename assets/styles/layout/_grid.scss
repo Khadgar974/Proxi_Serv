@@ -1,0 +1,12 @@
+// Pour mon projet comment ca marche
+.grid {
+    max-width: $grid-width;
+    margin: 0 auto;
+    display: grid;
+    column-gap: 2.8rem;
+    row-gap: 9.6rem;
+}
+
+.grid--4-cols {
+    grid-template-columns: repeat(4, 1fr);
+}
