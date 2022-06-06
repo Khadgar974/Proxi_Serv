@@ -43,7 +43,8 @@ class RegistrationFormType extends AbstractType
                     'Utilisateur' => 'Utilisateur'
                 ],
                 'expanded' => true,
-                'multiple' => false                
+                'multiple' => false,
+                'mapped' => false               
                 ],
             )
         ;

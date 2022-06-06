@@ -22,8 +22,7 @@ class RegistrationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
-            $user->setCreatedAt(new \DateTimeImmutable());
-            $user->setModifiedAt(new \DateTimeImmutable());
+           
             $user->setPassword(
             $userPasswordHasher->hashPassword(
                     $user,
@@ -34,11 +33,10 @@ class RegistrationController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
             // do anything else you need here, like send an email
-            if($user->getTypeUser(0)) {
-            return $this->redirectToRoute('app_home');
-            } else {
-            return $this->redirectToRoute('app_boutiques');
-            }
+
+            if ($form->get('type_user')->getData() === 'Commerçant') {
+               return $this->redirectToRoute('app_create_boutique');
+            } else {return $this->redirectToRoute('app_home');};
         }
 
         return $this->render('registration/register.html.twig', [
