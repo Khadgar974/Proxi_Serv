@@ -39,6 +39,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'string', length: 255)]
     private $type_user = 0;
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $token;
     
     public function getId(): ?int
     {
@@ -147,6 +150,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setTypeUser(string $type_user): self
     {
         $this->type_user = $type_user;
+
+        return $this;
+    }
+
+    public function getToken(): ?string
+    {
+        return $this->token;
+    }
+
+    public function setToken(?string $token): self
+    {
+        $this->token = $token;
 
         return $this;
     }
