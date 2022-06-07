@@ -24,7 +24,7 @@ class BoutiqueFormType extends AbstractType
             ->add('code_postal', IntegerType::class)
             ->add('ville', TextType::class)
             ->add('tel', TextType::class )
-            ->add('image', FileType::class , [
+            ->add('image', FileType::class /* ,  [
                 'label' => 'La photo de votre boutique',
                 'mapped' => false,
                 'required' => true,
@@ -38,7 +38,7 @@ class BoutiqueFormType extends AbstractType
                         'mimeTypesMessage' => 'Please upload a valid jpeg or png document',
                     ])
                 ],
-            ]) // Faire l'upload d'image - jpg / png
+            ]*/) // Faire l'upload d'image - jpg / png
             ->add('logo', TextType::class, [
                 'mapped' => 'false',
             ]) // faire l'upload d'image - jpg / png / svg

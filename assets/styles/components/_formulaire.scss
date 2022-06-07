@@ -1,9 +1,26 @@
 .form-style {
-  padding: 2rem;
+  padding: 4rem;
   max-width: 80%;
   margin: 0 auto;
   background-color: orange;
-  .boutique input {
-    margin-left: 3rem;
+
+  &--left,
+  &--right {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 2rem;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      input {
+        border: none;
+        border-radius: 6px;
+      }
+    }
+  }
+  &--right {
   }
 }
