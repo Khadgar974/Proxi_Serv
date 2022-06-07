@@ -1,8 +1,25 @@
-<header>
-            <div class="nav-bar">
-                <nav>
-                    <ul>
-                        {% if app.user %}
+<html lang="fr" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0", maximum-scale=1.0, minimum scale=1.0>
+        <title>Proxi'Services Boutique</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css%22%3E
+        <link rel="stylesheet" href="./asset/css/style.css">
+    </head>
+    <body>
+        <header id="header">
+            <div class="wrap">
+
+                <div class="logo">
+                    <img src="assets\images\proxi_service.jpg" alt="" width="200"/>
+                </div>
+                <div class="menu">
+                    <nav>
+                        <ul>
+                            {% if app.user %}
                             {% if is_granted('ROLE_ADMIN') %}
                             <li><a href="{{path('app_admin_default')}}">Gestion admin</a></li>
                             {% endif %}
@@ -28,7 +45,8 @@
                         {% if app.request.get('_route') != 'app_home' %}
                             <li><a href="{{path('app_home')}}">retour home</a></li>
                         {% endif %}
-                    </ul>
-                </nav>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </header>
