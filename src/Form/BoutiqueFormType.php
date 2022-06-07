@@ -19,7 +19,7 @@ class BoutiqueFormType extends AbstractType
             ->add('description', TextareaType::class) 
             ->add('SIRET', TextType::class)
             ->add('adresse', TextType::class)
-            ->add('code_postal', IntegerType::class )
+            ->add('code_postal', IntegerType::class)
             ->add('ville', TextType::class)
             ->add('tel', TextType::class )
             ->add('image', TextType::class , [

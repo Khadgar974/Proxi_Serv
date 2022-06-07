@@ -7,6 +7,7 @@ use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
@@ -23,6 +24,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $id;
 
     #[ORM\Column(type: 'string', length: 180, unique: true)]
+    #[Assert\NotBlank(message:'Veuillez entrer votre email')]
+    #[Assert\Email(message:'Veuillez entrer une addresse email valide')]
     private $email;
 
     #[ORM\Column(type: 'json')]
@@ -32,6 +35,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $password;
 
     #[ORM\Column(type: 'string', length: 150)]
+    #[Assert\NotBlank(message:'Veuillez entrer votre prénom')]
+    #[Assert\Length(min: 3, minMessage: "minimum 3 caractères")]
     private $nom;
     
     #[ORM\OneToOne(mappedBy: 'user', targetEntity: Boutique::class, cascade: ['persist', 'remove'])]
