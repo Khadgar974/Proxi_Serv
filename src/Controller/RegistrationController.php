@@ -33,7 +33,8 @@ class RegistrationController extends AbstractController
             $user->getTypeUser();
             $entityManager->persist($user);
             $entityManager->flush();
-            // do anything else you need here, like send an email
+            $this->addFlash('success', 'Vous êtes bien inscrit');
+        
             if($user->getTypeUser('Utilisateur')) {
             return $this->redirectToRoute('app_home');
             } else {
