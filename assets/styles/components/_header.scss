@@ -55,10 +55,12 @@ img{
     justify-content: space-between;
     background: var(--noirclair);
     height: 7.1rem;
+    
 }
 #header .wrap {
     display: flex;
     justify-content: space-between;
+    padding: 1rem;
 }
 #header .menu {
     margin-top: 1.5rem;
