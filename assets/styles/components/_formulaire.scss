@@ -1,5 +1,9 @@
-.synf-style {
+.form-style {
+  padding: 2rem;
   max-width: 80%;
   margin: 0 auto;
   background-color: orange;
+  .boutique input {
+    margin-left: 3rem;
+  }
 }

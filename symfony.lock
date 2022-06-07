@@ -92,6 +92,9 @@
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.12"
     },
+    "gumlet/php-image-resize": {
+        "version": "2.0.2"
+    },
     "laminas/laminas-code": {
         "version": "4.5.1"
     },
@@ -210,6 +213,9 @@
             "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
         }
     },
+    "symfony/mime": {
+        "version": "v6.1.0"
+    },
     "symfony/options-resolver": {
         "version": "v6.1.0"
     },
@@ -220,6 +226,9 @@
         "version": "v1.25.0"
     },
     "symfony/polyfill-intl-icu": {
+        "version": "v1.26.0"
+    },
+    "symfony/polyfill-intl-idn": {
         "version": "v1.26.0"
     },
     "symfony/polyfill-intl-normalizer": {

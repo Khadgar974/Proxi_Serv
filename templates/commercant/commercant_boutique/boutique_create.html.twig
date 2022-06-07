@@ -2,10 +2,14 @@
 {% block body %}
     <h1>Formulaire de création de boutique ici</h1>
 
-    {{ form_start(form) }}
-     {{ form_widget(form) }}
+    {{ form_start(form) }}        
+        <div class="form-style">
+            
+            {{ form_widget(form) }}
 
-     <input type="submit" value="create boutique" formnovalidate>
+            <input type="submit" value="créer la boutique" formnovalidate>
+
+        </div>
     {{ form_end(form) }}
    
 {% endblock %}
