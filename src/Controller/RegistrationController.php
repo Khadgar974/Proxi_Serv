@@ -37,6 +37,8 @@ class RegistrationController extends AbstractController
             if ($form->get('type_user')->getData() === 'Commerçant') {
                return $this->redirectToRoute('app_create_boutique');
             } else {return $this->redirectToRoute('app_home');};
+            $this->addFlash('success', 'Vous êtes bien inscrit');
+        
         }
 
         return $this->render('registration/register.html.twig', [

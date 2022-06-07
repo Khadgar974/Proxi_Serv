@@ -9,8 +9,23 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}        
     </head>
+<<<<<<< HEAD
     <body class="body">
         {% include 'layouts/base_partials/_header.html.twig' %}
+=======
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="{{path('app_register')}}">Inscription</a></li>
+                    <li><a href="{{path('app_login')}}">Connexion</a></li>
+                    <li><a href="{{path('app_boutiques')}}">Les boutiques</a></li>
+                    <li><a href="{{path('app_produit_bonplans')}}">Les bon plans</a></li>                    
+                    <li><a href="{{path('app_home')}}">retour home</a></li>
+                </ul>
+            </nav>
+        </header>
+>>>>>>> dev_sam
 
         {% block body %}{% endblock %}
 
