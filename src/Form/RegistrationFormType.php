@@ -36,18 +36,22 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
-            ->add('type_user', ChoiceType::class, [
-                'label' => 'Etes-vous ?',
-                'choices' => [
-                    'Commerçant' => 'Commerçant',
-                    'Utilisateur' => 'Utilisateur'
+            ->add(
+                'type_user',
+                ChoiceType::class,
+                [
+                    'label' => 'Etes-vous ?',
+                    'choices' => [
+                        'Commerçant' => 'ROLE_COMMERCANT',
+                        'Utilisateur' => 'ROLE_USER'
+                    ],
+                    'expanded' => true,
+                    'multiple' => false,
+                    'mapped' => false,
+                
                 ],
-                'expanded' => true,
-                'multiple' => false,
-                'mapped' => false               
-                ],
-            )
-        ;
+                
+            );
     }
 
     public function configureOptions(OptionsResolver $resolver): void

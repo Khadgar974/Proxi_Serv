@@ -21,23 +21,27 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            
+
             $user->setPassword(
-            $userPasswordHasher->hashPassword(
+                $userPasswordHasher->hashPassword(
                     $user,
                     $form->get('plainPassword')->getData()
                 )
             );
 
-            $user->getTypeUser();
+            //$user->getTypeUser();
+
+            $choicerole = $form->get('type_user')->getData();
+            
+            if (empty($choicerole)) {
+               
+            } else {
+                $user->setRoles([$choicerole]);               
+            }
+
             $entityManager->persist($user);
             $entityManager->flush();
-
-            if ($form->get('type_user')->getData() === 'Commerçant') {
-               return $this->redirectToRoute('app_create_boutique');
-            } else {return $this->redirectToRoute('app_home');};
-            $this->addFlash('success', 'Vous êtes bien inscrit');
-        
+            return $this->redirectToRoute('app_login');
         }
 
         return $this->render('registration/register.html.twig', [

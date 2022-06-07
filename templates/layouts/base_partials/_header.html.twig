@@ -3,8 +3,12 @@
                 <nav>
                     <ul>
                         {% if app.user %}
+                            {% if is_granted('ROLE_ADMIN') %}
+                            <li><a href="{{path('app_admin_default')}}">Gestion admin</a></li>
+                            {% endif %}
+                            {% if is_granted('ROLE_COMMERCANT') %}
                             <li><a href="{{path('app_commercant_default')}}">Gestion commercant</a></li> 
-                            <li><a href="{{path('app_admin_default')}}">Gestion admin</a></li> 
+                             {% endif %}
                             <li><a href="{{path('app_logout')}}">Se déconnecter</a></li> 
                         {% else %}
                         
