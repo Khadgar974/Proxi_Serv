@@ -6,7 +6,10 @@ use App\Entity\Traits\Timestampable;
 use App\Repository\BoutiqueRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
+#[Vich\Uploadable] 
 #[ORM\Entity(repositoryClass: BoutiqueRepository::class)]
 class Boutique
 {   
@@ -51,9 +54,21 @@ class Boutique
     #[Assert\Length(min: 10, minMessage: "minimum 10 caractères")] 
     private $tel;
 
+     /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     */
+    #[Vich\UploadableField(mapping: 'boutique_image', fileNameProperty: 'image')]
+    private ?File $imageFileBoutique = null;
+
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\NotBlank(message: 'Vous devez remplir ce champ')]
     private $image;
+
+     /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     */
+    #[Vich\UploadableField(mapping: 'logo_image', fileNameProperty: 'logo')]
+    private ?File $imageFileLogo = null;
 
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\NotBlank(message: 'Vous devez remplir ce champ')]
@@ -158,16 +173,54 @@ class Boutique
         return $this;
     }
 
+    /**     
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
+     */
+    public function setImageFileBoutique(?File $imageFileBoutique = null): void
+    {
+        $this->imageFileBoutique = $imageFileBoutique;
+
+        if (null !== $imageFileBoutique) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->setModifiedAt(new \DateTimeImmutable);
+        }
+    }
+
+    public function getImageFileBoutique(): ?File
+    {
+        return $this->imageFileBoutique;
+    }
+
     public function getImage(): ?string
     {
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage(?string $image): self
     {
         $this->image = $image;
 
         return $this;
+    }
+
+    /**     
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
+     */
+    public function setImageFileLogo(?File $imageFileLogo = null): void
+    {
+        $this->imageFileLogo = $imageFileLogo;
+
+        if (null !== $imageFileLogo) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->setModifiedAt(new \DateTimeImmutable);
+        }
+    }
+
+    public function getImageFileLogo(): ?File
+    {
+        return $this->imageFileLogo;
     }
 
     public function getLogo(): ?string
@@ -175,7 +228,7 @@ class Boutique
         return $this->logo;
     }
 
-    public function setLogo(string $logo): self
+    public function setLogo(?string $logo): self
     {
         $this->logo = $logo;
 
