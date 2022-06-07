@@ -13,6 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/boutique')]
 class BoutiqueController extends AbstractController
 {
+    // Va renvoyer toutes les boutiques
     #[Route('/', name: 'app_index_boutiques')]
     public function index(): Response
     {        

@@ -2,10 +2,28 @@
 {% block body %}
     <h1>Formulaire de création de boutique</h1>
 
-    {{ form_start(form) }}
-     {{ form_widget(form) }}
+    {{ form_start(form) }}        
+        <div class="form-style grid grid--2-cols">
 
-     <input type="submit" value="Créer Boutique" formnovalidate>
+            <div class="form-style--left">
+                {{form_row(form.title)}}
+                {{form_row(form.adresse)}}
+                {{form_row(form.code_postal)}}
+                {{form_row(form.ville)}}
+                {{form_row(form.tel)}}
+            </div>
+
+            <div class="form-style--right">
+                {{form_row(form.SIRET)}}
+                {{form_row(form.image)}}
+                {{form_row(form.logo)}}
+                {{form_row(form.description)}}
+            </div>
+            
+        </div>
+
+            <input class="submit" type="submit" value="créer la boutique" formnovalidate>
+
     {{ form_end(form) }}
    
 {% endblock %}

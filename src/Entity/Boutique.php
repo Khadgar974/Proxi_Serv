@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Entity\Traits\Timestampable;
 use App\Repository\BoutiqueRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: BoutiqueRepository::class)]
 class Boutique
@@ -18,30 +19,44 @@ class Boutique
     private $id;
 
     #[ORM\Column(type: 'string', length: 150)]
+    #[Assert\NotBlank(message: 'Vous devez remplir ce champ')]
+    #[Assert\Length(min: 3, minMessage: "minimum 3 caractères")] 
     private $title;
 
     #[ORM\Column(type: 'text', nullable: true)]
+    #[Assert\Length(min: 3, minMessage: "minimum 3 caractères")] 
     private $description;
 
     #[ORM\Column(type: 'string', length: 150)]
+    #[Assert\NotBlank(message: 'Vous devez remplir ce champ')]
+    #[Assert\Length(exactly: 14, exactMessage: "Le SIRET doit faire 14 charactères")] 
     private $SIRET;
 
     #[ORM\Column(type: 'string', length: 150)]
+    #[Assert\NotBlank(message: 'Vous devez remplir ce champ')]
+    #[Assert\Length(min: 5, minMessage: "minimum 5 caractères")] 
     private $adresse;
 
     #[ORM\Column(type: 'integer')]
+    #[Assert\NotBlank(message: 'Vous devez remplir ce champ')]
+    #[Assert\Length(exactly: 5, exactMessage: 'Le code postal doit avoir 5 chiffres')] 
     private $code_postal;
 
     #[ORM\Column(type: 'string', length: 150)]
+    #[Assert\NotBlank(message: 'Vous devez remplir ce champ')]
+    #[Assert\Length(min: 3, minMessage: "minimum 3 caractères")]  
     private $ville;
 
     #[ORM\Column(type: 'string', length: 150, nullable: true)]
+    #[Assert\Length(min: 10, minMessage: "minimum 10 caractères")] 
     private $tel;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\NotBlank(message: 'Vous devez remplir ce champ')]
     private $image;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Assert\NotBlank(message: 'Vous devez remplir ce champ')]
     private $logo;
 
     #[ORM\Column(type: 'boolean')]
