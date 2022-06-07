@@ -17,5 +17,5 @@ yarn-error.log
 ###< symfony/webpack-encore-bundle ###
 
 ###> vinch uploader dossier upload ###
-/public/upload/
+/public/uploads/
 ###< vinch uploader dossier upload ###
