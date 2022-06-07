@@ -1,26 +1,29 @@
 .form-style {
-  padding: 4rem;
-  max-width: 80%;
-  margin: 0 auto;
-  background-color: orange;
+    padding: 4rem;
+    max-width: 80%;
+    margin: 0 auto;
+    background-color: orange;
 
-  &--left,
-  &--right {
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    gap: 2rem;
+    &--left,
+    &--right {
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        gap: 2rem;
 
-    div {
-      display: flex;
-      flex-direction: column;
-      input {
-        border: none;
-        border-radius: 6px;
-      }
+        div {
+            display: flex;
+            flex-direction: column;
+            input {
+                border: none;
+                border-radius: 6px;
+            }
+            textarea {
+                padding: 1rem;
+                height: 15rem;
+                resize: none;
+            }
+        }
     }
-  }
-  &--right {
-  }
 }

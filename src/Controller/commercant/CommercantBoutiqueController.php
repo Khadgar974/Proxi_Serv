@@ -21,11 +21,11 @@ class CommercantBoutiqueController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // A faire l'upload d'image pour le logo et pour la photo de la boutique.
             // A faire le setUser avec l'utilisateur connecter.
+            $boutique->setUser($this->getUser());
             $boutiqueRepo->add($boutique, true);
 
-            return $this->redirectToRoute('app_home', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_commercant_default', [], Response::HTTP_SEE_OTHER); // route a modifier, sera redirigé vers la page boutique
         }
 
         return $this->render('commercant/commercant_boutique/boutique_create.html.twig', [
