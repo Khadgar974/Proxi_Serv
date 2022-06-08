@@ -45,6 +45,10 @@
                         {% if app.request.get('_route') != 'app_home' %}
                             <li><a href="{{path('app_home')}}">retour home</a></li>
                         {% endif %}
+
+                        {% if app.request.get('_route') != 'app_user' %}
+                            <li><a href="{{path('app_user')}}">Mon Compte</a></li>
+                        {% endif %}
                         </ul>
                     </nav>
                 </div>
