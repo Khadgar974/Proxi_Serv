@@ -84,8 +84,8 @@ transition: 1s;
 #intro {
     background: url('../../images/img_main/arriere_plan3.jpg') no-repeat;
     background-position: center;
-    margin: 0 auto;
     text-align: center;
+    margin-top: 1rem;;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -114,10 +114,10 @@ transition: 1s;
     border-radius: 10px;
 }
 #intro .wrap1 .introduction p {
-    padding: .8rem;
+    font-size: 1.5rem;
 }
 #intro .wrap1 .introduction h1 {
-    padding: .8rem;
+    font-size: 3rem;
 }
 
 #program {
@@ -419,6 +419,33 @@ label {
     );
     box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
     border: 2px solid rgb(28, 110, 164);
+}
+input {
+    margin-left: 25%;
+    transform: translateX(-50%);
+    width: 15rem;
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+    line-height: 17px;
+    padding: 10px;
+    border-radius: 9px;
+    font-family: Georgia, serif;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-image: linear-gradient(
+    to right,
+    rgb(28, 164, 96) 0%,
+    rgb(30, 189, 109) 50%,
+    rgb(17, 153, 85) 100%
+    );
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+    border: 2px solid black;
+    display: inline-block;
+    margin: .5rem;
+    text-align: center;
 }
 .pagination li a {
     text-decoration: none;
