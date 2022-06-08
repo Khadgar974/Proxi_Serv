@@ -31,7 +31,6 @@ class CommercantBoutiqueController extends AbstractController
         return $this->render('commercant/commercant_boutique/boutique_create.html.twig', [
             'form' => $form->createView(),
         ]);
-       
     }
 
     #[Route('/edit_boutique/{id<[0-9]+>}', name: 'app_edit_boutique', methods: 'GET|POST')]
