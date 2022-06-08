@@ -16,6 +16,10 @@ class CommercantBoutiqueController extends AbstractController
     #[Route('/create_boutique', name: 'app_create_boutique')]
     public function createBoutique(Request $request, BoutiqueRepository $boutiqueRepo): Response
     {
+        if($this->getUser()->getBoutique()) {
+            return $this->redirectToRoute('app_home', [], Response::HTTP_SEE_OTHER);
+        }
+
         $boutique = new Boutique;
         $form = $this->createForm(BoutiqueFormType::class, $boutique);
         $form->handleRequest($request);
