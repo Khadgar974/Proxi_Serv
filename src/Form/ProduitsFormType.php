@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ProduitsFormType extends AbstractType
@@ -37,9 +38,8 @@ class ProduitsFormType extends AbstractType
                     'multiple' => false,
                     'mapped' => true,
 
-                ],
-
-            );
+                ])
+            ->add('Enregistrer', SubmitType::class);
         ;
     }
 
