@@ -18,10 +18,12 @@
       input {
         border: none;
         border-radius: 6px;
-        padding: 0 2rem;
+      }
+      textarea {
+        padding: 1rem;
+        height: 15rem;
+        resize: none;
       }
     }
-  }
-  &--right {
   }
 }
