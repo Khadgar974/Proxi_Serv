@@ -63,7 +63,8 @@ class Boutique implements Serializable
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      * 
      * @Vich\UploadableField(mapping="boutique_image", fileNameProperty="image")
-     * @Assert\Image(maxSize="2M", maxSizeMessage="taille max du fichier {{ size }} {{ suffix }}")
+     * @Assert\Image(maxSize="2M")
+     * @Assert\NotNull(message="il faut choisir une image")
      * 
      * @var File|null
      */
@@ -76,7 +77,9 @@ class Boutique implements Serializable
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      * 
      * @Vich\UploadableField(mapping="logo_image", fileNameProperty="logo")
-     * 
+     * @Assert\Image(maxSize="2M")
+     * @Assert\NotNull(message="il faut choisir une image")
+     *
      * @var File|null
      */    
     private $imageFileLogo;
