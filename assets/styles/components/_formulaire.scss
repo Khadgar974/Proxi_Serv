@@ -19,8 +19,11 @@
         border: none;
         border-radius: 6px;
       }
+      textarea {
+        padding: 1rem;
+        height: 15rem;
+        resize: none;
+      }
     }
-  }
-  &--right {
   }
 }

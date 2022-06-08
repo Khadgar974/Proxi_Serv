@@ -6,11 +6,16 @@ use App\Entity\Traits\Timestampable;
 use App\Repository\BoutiqueRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: BoutiqueRepository::class)]
+#[ORM\HasLifecycleCallbacks]
+/**
+ * @Vich\Uploadable
+ */
 class Boutique
-{   
-
+{ 
     use Timestampable;
 
     #[ORM\Id]
@@ -51,19 +56,35 @@ class Boutique
     #[Assert\Length(min: 10, minMessage: "minimum 10 caractères")] 
     private $tel;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    #[Assert\NotBlank(message: 'Vous devez remplir ce champ')]
+    /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     * 
+     * @Vich\UploadableField(mapping="boutique_image", fileNameProperty="image")
+     * 
+     * @var File|null
+     */
+    private  $imageFileBoutique;
+
+    #[ORM\Column(type: 'string', length: 255)]    
     private $image;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    #[Assert\NotBlank(message: 'Vous devez remplir ce champ')]
+     /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     * 
+     * @Vich\UploadableField(mapping="logo_image", fileNameProperty="logo")
+     * 
+     * @var File|null
+     */    
+    private $imageFileLogo;
+
+    #[ORM\Column(type: 'string', length: 255)]    
     private $logo;
 
     #[ORM\Column(type: 'boolean')]
-    private $is_siret_verified;
+    private $is_siret_verified = true;
 
     #[ORM\Column(type: 'boolean')]
-    private $is_active;
+    private $is_active = false;
 
     #[ORM\OneToOne(inversedBy: 'boutique', targetEntity: User::class, cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
@@ -79,7 +100,7 @@ class Boutique
         return $this->title;
     }
 
-    public function setTitle(string $title): self
+    public function setTitle(?string $title): self
     {
         $this->title = $title;
 
@@ -103,7 +124,7 @@ class Boutique
         return $this->SIRET;
     }
 
-    public function setSIRET(string $SIRET): self
+    public function setSIRET(?string $SIRET): self
     {
         $this->SIRET = $SIRET;
 
@@ -115,7 +136,7 @@ class Boutique
         return $this->adresse;
     }
 
-    public function setAdresse(string $adresse): self
+    public function setAdresse(?string $adresse): self
     {
         $this->adresse = $adresse;
 
@@ -127,7 +148,7 @@ class Boutique
         return $this->code_postal;
     }
 
-    public function setCodePostal(int $code_postal): self
+    public function setCodePostal(?int $code_postal): self
     {
         $this->code_postal = $code_postal;
 
@@ -139,7 +160,7 @@ class Boutique
         return $this->ville;
     }
 
-    public function setVille(string $ville): self
+    public function setVille(?string $ville): self
     {
         $this->ville = $ville;
 
@@ -158,16 +179,54 @@ class Boutique
         return $this;
     }
 
+    /**     
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFileBoutique
+     */
+    public function setImageFileBoutique(?File $imageFileBoutique = null): void
+    {
+        $this->imageFileBoutique = $imageFileBoutique;
+
+        if (null !== $imageFileBoutique) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->setModifiedAt(new \DateTimeImmutable);
+        }
+    }
+
+    public function getImageFileBoutique(): ?File
+    {
+        return $this->imageFileBoutique;
+    }
+
     public function getImage(): ?string
     {
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage(?string $image): self
     {
         $this->image = $image;
 
         return $this;
+    }
+
+    /**     
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFileLogo
+     */
+    public function setImageFileLogo(?File $imageFileLogo = null): void
+    {
+        $this->imageFileLogo = $imageFileLogo;
+
+        if (null !== $imageFileLogo) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->setModifiedAt(new \DateTimeImmutable);
+        }
+    }
+
+    public function getImageFileLogo(): ?File
+    {
+        return $this->imageFileLogo;
     }
 
     public function getLogo(): ?string
@@ -175,7 +234,7 @@ class Boutique
         return $this->logo;
     }
 
-    public function setLogo(string $logo): self
+    public function setLogo(?string $logo): self
     {
         $this->logo = $logo;
 
@@ -187,7 +246,7 @@ class Boutique
         return $this->is_siret_verified;
     }
 
-    public function setIsSiretVerified(bool $is_siret_verified): self
+    public function setIsSiretVerified(?bool $is_siret_verified): self
     {
         $this->is_siret_verified = $is_siret_verified;
 
@@ -199,7 +258,7 @@ class Boutique
         return $this->is_active;
     }
 
-    public function setIsActive(bool $is_active): self
+    public function setIsActive(?bool $is_active): self
     {
         $this->is_active = $is_active;
 
@@ -211,7 +270,7 @@ class Boutique
         return $this->user;
     }
 
-    public function setUser(User $user): self
+    public function setUser(?User $user): self
     {
         $this->user = $user;
 
