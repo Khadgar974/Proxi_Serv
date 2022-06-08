@@ -7,6 +7,7 @@ use App\Repository\BoutiqueRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Serializable;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -16,7 +17,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 /**
  * @Vich\Uploadable
  */
-class Boutique
+class Boutique implements Serializable
 { 
     use Timestampable;
 
@@ -312,7 +313,22 @@ class Boutique
         }
 
         return $this;
-    }   
+    }
+    
+    
+
+    public function serialize()
+    {
+        $this->image = base64_encode($this->image);
+        $this->logo = base64_encode($this->logo);
+    }
+
+    public function unserialize($serialized)
+    {
+        $this->image = base64_decode($this->image);
+        $this->logo = base64_decode($this->logo);
+
+    }
 
     
 }

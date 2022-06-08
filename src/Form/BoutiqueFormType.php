@@ -27,24 +27,16 @@ class BoutiqueFormType extends AbstractType
             ->add('imageFileBoutique', VichImageType::class, [
                 'label' => 'Image de votre boutique (format JPG ou PNG)',
                 'required' => true,
-                'allow_delete' => true,
-                'delete_label' => '...',
-                'download_label' => '...',
-                'download_uri' => true,
-                'image_uri' => true,
-                // 'imagine_pattern' => '...',
-                'asset_helper' => true,
+                'allow_delete' => false,                
+                'download_uri' => false
+                // 'imagine_pattern' => '...',                
             ]) // Faire l'upload d'image - jpg / png
             ->add('imageFileLogo', VichImageType::class, [
                 'label' => 'Votre logo (format JPG ou PNG)',
                 'required' => true,
-                'allow_delete' => true,
-                'delete_label' => '...',
-                'download_label' => '...',
-                'download_uri' => true,
-                'image_uri' => true,
-                // 'imagine_pattern' => '...',
-                'asset_helper' => true,
+                'allow_delete' => false,                
+                'download_uri' => false
+                // 'imagine_pattern' => '...',               
             ]) // faire l'upload d'image - jpg / png / svg
                     
             // ->add('user') user setter dans le controller
