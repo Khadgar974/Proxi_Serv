@@ -26,6 +26,14 @@ class CommercantProduitController extends AbstractController
         $produits = new Produits;
         $form = $this->createForm(ProduitsFormType::class, $produits);
         $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // A faire le setUser avec l'utilisateur connecter.
+            
+            $produitsRepo->add($produits, true);
+
+            return $this->redirectToRoute('app_commercant_default', [], Response::HTTP_SEE_OTHER); // route a modifier, sera redirigé vers la page boutique
+        }
         return $this->render('commercant/commercant_produit/add_produit.html.twig', ['form' => $form->createView()]);
         
     }
