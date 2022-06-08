@@ -1,0 +1,14 @@
+{% extends 'layouts/base.html.twig' %}
+
+
+
+{% block body %}
+<title>Mon Compte</title>
+
+<h1>Bonjour {{app.user.nom}} </h1>
+<h2>Votre adresse email est : {{app.user.email}}</h2>
+<a href="{{ path('app_user_edit_user')}}">Editer</a>
+
+
+
+{% endblock %}
