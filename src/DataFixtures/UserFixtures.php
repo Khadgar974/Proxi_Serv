@@ -36,8 +36,8 @@ class UserFixtures extends Fixture
         $manager->persist($admin2);
 
         $commercant = new User();
-        $commercant->setEmail('titiviking27@gmail.com');
-        $commercant->setRoles(['ROLE_USER', 'ROLE_COMMERCANT']);
+        $commercant->setEmail('thiebaut_pinardon@yahoo.fr');
+        $commercant->setRoles(['ROLE_USER', 'ROLE_ADMIN', 'ROLE_COMMERCANT']);
         $hashpassword = $this->hasher->hashPassword($commercant, 'Thiebaut');
         $commercant->setPassword($hashpassword);
         $commercant->setNom('Thiebaut Pinardon');
