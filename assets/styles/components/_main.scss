@@ -367,7 +367,6 @@ float: left;
 }
 label {
     margin-left: 50%;
-    transform: translateX(-50%);
     width: 15rem;
     color: rgb(255, 255, 255);
     font-size: 17px;
@@ -391,7 +390,6 @@ label {
 }
 input {
     margin-left: 25%;
-    transform: translateX(-50%);
     width: 15rem;
     color: rgb(255, 255, 255);
     font-size: 17px;
@@ -419,7 +417,6 @@ input {
 .pagination li a {
     text-decoration: none;
     color: wheat;
-    transform: translateX(-50%);
     width: 5rem;
     color: rgb(255, 255, 255);
     font-size: 17px;
@@ -459,7 +456,6 @@ input {
 }
 .details {
     margin-left: 25%;
-    transform: translateX(-50%);
     width: 15rem;
     color: rgb(255, 255, 255);
     font-size: 17px;
