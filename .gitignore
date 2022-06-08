@@ -19,3 +19,7 @@ yarn-error.log
 ###> vinch uploader dossier upload ###
 /public/uploads/
 ###< vinch uploader dossier upload ###
+
+###> liip/imagine-bundle ###
+/public/media/cache/
+###< liip/imagine-bundle ###
