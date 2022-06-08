@@ -21,18 +21,18 @@ class BoutiqueRepository extends ServiceEntityRepository
         parent::__construct($registry, Boutique::class);
     }
 
-    public function add(Boutique $entity, bool $flush = false): void
+    public function add(Boutique $boutique, bool $flush = false): void
     {
-        $this->getEntityManager()->persist($entity);
+        $this->getEntityManager()->persist($boutique);
 
         if ($flush) {
             $this->getEntityManager()->flush();
         }
     }
 
-    public function remove(Boutique $entity, bool $flush = false): void
+    public function remove(Boutique $boutique, bool $flush = false): void
     {
-        $this->getEntityManager()->remove($entity);
+        $this->getEntityManager()->remove($boutique);
 
         if ($flush) {
             $this->getEntityManager()->flush();
