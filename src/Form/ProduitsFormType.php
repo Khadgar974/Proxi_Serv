@@ -39,7 +39,14 @@ class ProduitsFormType extends AbstractType
                     'mapped' => true,
 
                 ])
-            ->add('Enregistrer', SubmitType::class);
+            ->add('imageFileProduit', VichImageType::class, [
+                'label' => 'Image de votre produit (format JPG ou PNG)',
+                'required' => true,
+                'allow_delete' => false,
+                'download_uri' => false
+                // 'imagine_pattern' => '...',                
+            ])
+            ->add('Enregistrer', SubmitType::class)
         ;
     }
 
