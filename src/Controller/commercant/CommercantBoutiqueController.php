@@ -33,4 +33,30 @@ class CommercantBoutiqueController extends AbstractController
         ]);
        
     }
+
+    #[Route('/edit_boutique/{id<[0-9]+>}', name: 'app_edit_boutique', methods: 'GET|POST')]
+    public function editBoutique($id, Request $request, BoutiqueRepository $boutiqueRepo): Response
+    {
+        // Verif if user is propriétaire of this Animation +++++
+        $boutique = $boutiqueRepo->findOneBy( array(
+            'id'   => $id,
+            'user' => $this->getUser()->getId()
+        ));
+        
+        $form = $this->createForm(BoutiqueFormType::class, $boutique);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            
+            $boutiqueRepo->add($boutique, true);
+            // $this->addflash('success', 'Votre boutique a bien été modifié!');
+
+            return $this->redirectToRoute('app_commercant_default', [], Response::HTTP_SEE_OTHER); // route a modifier, sera redirigé vers la page boutique
+        }
+
+        return $this->render('commercant/commercant_boutique/boutique_edit.html.twig', [
+            'form' => $form->createView(),
+        ]);
+       
+    }
 }
