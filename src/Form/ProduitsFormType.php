@@ -10,6 +10,8 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ProduitsFormType extends AbstractType
 {
@@ -18,12 +20,26 @@ class ProduitsFormType extends AbstractType
         $builder
             ->add('title', TextType::class)
             ->add('description', TextareaType::class)
-            ->add('image')
+            
             ->add('prix', IntegerType::class)
             ->add('quantite', IntegerType::class)
             ->add('reference', TextType::class)
-            ->add('bon_plan')
-            ->add('boutique')
+            ->add(
+                'bon_plan',
+                ChoiceType::class,
+                [
+                    'label' => 'Souhaitez-vous mettre en avant ce produit ?',
+                    'choices' => [
+                        'oui' => '1',
+                        'non' => '0'
+                    ],
+                    'expanded' => true,
+                    'multiple' => false,
+                    'mapped' => true,
+
+                ],
+
+            );
         ;
     }
 
