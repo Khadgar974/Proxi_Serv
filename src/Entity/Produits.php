@@ -59,9 +59,6 @@ class Produits implements Serializable
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
     private $modified_at;
 
-    #[ORM\ManyToMany(targetEntity: Boutique::class, inversedBy: 'produits')]
-    private $boutique;
-
     public function __construct()
     {
         $this->boutique = new ArrayCollection();
@@ -195,30 +192,6 @@ class Produits implements Serializable
     public function setModifiedAt(?\DateTimeImmutable $modified_at): self
     {
         $this->modified_at = $modified_at;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Boutique>
-     */
-    public function getBoutique(): Collection
-    {
-        return $this->boutique;
-    }
-
-    public function addBoutique(Boutique $boutique): self
-    {
-        if (!$this->boutique->contains($boutique)) {
-            $this->boutique[] = $boutique;
-        }
-
-        return $this;
-    }
-
-    public function removeBoutique(Boutique $boutique): self
-    {
-        $this->boutique->removeElement($boutique);
 
         return $this;
     }

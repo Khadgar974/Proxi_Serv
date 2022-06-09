@@ -97,9 +97,6 @@ class Boutique implements Serializable
     #[ORM\JoinColumn(nullable: false)]
     private $user;
 
-    #[ORM\ManyToMany(targetEntity: Produits::class, mappedBy: 'boutique')]
-    private $produits;
-
     public function __construct()
     {
         $this->produits = new ArrayCollection();
@@ -291,35 +288,6 @@ class Boutique implements Serializable
 
         return $this;
     }
-
-    /**
-     * @return Collection<int, Produits>
-     */
-    public function getProduits(): Collection
-    {
-        return $this->produits;
-    }
-
-    public function addProduit(Produits $produit): self
-    {
-        if (!$this->produits->contains($produit)) {
-            $this->produits[] = $produit;
-            $produit->addBoutique($this);
-        }
-
-        return $this;
-    }
-
-    public function removeProduit(Produits $produit): self
-    {
-        if ($this->produits->removeElement($produit)) {
-            $produit->removeBoutique($this);
-        }
-
-        return $this;
-    }
-    
-    
 
     public function serialize()
     {
