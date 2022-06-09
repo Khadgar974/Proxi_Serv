@@ -52,6 +52,8 @@ img{
     max-width: 850px;width: 100%;margin: 0 auto;padding: 0 1rem;
 }
 
+//////// hero///////////////
+
 #intro {
     background: url('../../images/img_main/arriere_plan3.jpg') no-repeat;
     background-position: center;
@@ -90,7 +92,26 @@ img{
 #intro .wrap1 .introduction h1 {
     font-size: 3rem;
 }
-
+.banniere {
+    background-color: var(--bleulogo);
+    filter: opacity(.8);
+    border-radius: 10px;
+}
+.banniere .boxs {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 2rem;
+    flex-flow: row nowrap;
+}
+.banniere .boxs li {
+    width: 25%;
+}
+.banniere .boxs img {
+    width: 80%;
+    border-radius: 10px;
+}
+// /////// Comment ça marche //////////////////////////
 #program {
     background-color: var(--bleulogo);
     margin: 0 auto;
@@ -132,26 +153,7 @@ img{
     width: 80%;
     border-radius: 10px;
 }
-.banniere {
-    background-color: var(--bleulogo);
-    filter: opacity(.8);
-    border-radius: 10px;
-}
-.banniere .boxs {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 2rem;
-    flex-flow: row nowrap;
-}
-.banniere .boxs li {
-    width: 25%;
-}
-.banniere .boxs img {
-    width: 80%;
-    border-radius: 10px;
-}
-
+// /////// Bon Plans ///////////////////
 #program2 {
     background-color: var(--bleulogo);
     margin: 0 auto;
@@ -193,6 +195,7 @@ img{
     width: 80%;
     border-radius: 10px;
 }
+// ////////// Footer /////////////////
 footer{
     bottom: 0;
     left: 0;
@@ -309,6 +312,7 @@ float: left;
     width: 100%;
     height: 2px;
 }
+// ////// Page Boutique //////////
 #commerce {
     background-color: var(--bleulogo);
     margin: 0 auto;
@@ -385,6 +389,7 @@ float: left;
 .shop-container .produits .boxs img {
     border-radius: 1rem;
 }
+// ///////// css spécial ////////////
 .labello {
     width: 15rem;
     color: rgb(255, 255, 255);
@@ -450,19 +455,6 @@ float: left;
     margin: .5rem;
     text-align: center;
 }
-.loupe {
-
-    position: absolute;
-    display: flex;
-    flex-flow: row nowrap;
-    top: 1rem;
-    right: 1%;
-    justify-content: center;
-    width: 10rem; 
-}
-.loupe a {
-    position: absolute; top: 0; right: 0; color: white;
-}
 .details {
     width: 7rem;
     color: rgb(255, 255, 255);
@@ -484,26 +476,7 @@ float: left;
 .logo {
     padding: .5em;
 }
-.prix {
-    display: flex;
-    width: 4.6rem;
-    height: 4.6rem;
-    border-radius: 50%;
-    background-color: var(--vertfonce);
-    margin: 0 auto;
-    position: absolute;
-    top: 5px;
-    transform: translateX(350%);
-    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
-}
-.prix p{
-    font-size: 1.5rem;
-}
-.prix .dash {
-    text-align: center;
-    margin-top: .6rem;
-    align-items: center;
-}
+// ////////Boutique////////////////
 .produits .inscriptions {
     padding-top: 1rem;
     filter: opacity(.8);
@@ -531,6 +504,28 @@ float: left;
     text-align: left;
     padding: .8rem;
 }
+// /////Prix /////////
+.prix {
+    display: flex;
+    width: 4.6rem;
+    height: 4.6rem;
+    border-radius: 50%;
+    background-color: var(--vertfonce);
+    margin: 0 auto;
+    position: absolute;
+    top: 5px;
+    transform: translateX(350%);
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+}
+.prix p{
+    font-size: 1.5rem;
+}
+.prix .dash {
+    text-align: center;
+    margin-top: .6rem;
+    align-items: center;
+}
+// /////// les boutiques//////////
 .boxs_boutiques {
     background-color: var(--vertfeuille);
     border-radius: 10px;
