@@ -45,8 +45,7 @@ class ProduitsFormType extends AbstractType
                 'allow_delete' => false,
                 'download_uri' => false
                 // 'imagine_pattern' => '...',                
-            ])
-            ->add('Enregistrer', SubmitType::class)
+            ])            
         ;
     }
 

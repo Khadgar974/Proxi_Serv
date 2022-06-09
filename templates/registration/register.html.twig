@@ -4,7 +4,7 @@
     <h1>Inscription</h1>
 
     {{ form_start(registrationForm) }}
-        <div class="form-style">
+        <div class="form-style form-style--connexion">
 
             <div class="mb-3">
             {{ form_row(registrationForm.nom)}}
@@ -17,8 +17,13 @@
                 label: 'Mot de passe'
             }) }}
             </div >
+            <div class="mb-3">
+            {{ form_row(registrationForm.type_user) }}
+            </div >
 
-            <button type="submit" class="btn" formnovalidate>Valider</button>
+            <div class="form-style--div-submit">
+                <input class="form-style--btn-submit btn-connexion" type="submit" value="Valider" formnovalidate>
+            </div>
 
         </div>
     {{ form_end(registrationForm) }}

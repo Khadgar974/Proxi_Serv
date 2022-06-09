@@ -1,4 +1,4 @@
-{% extends 'layouts/admin.html.twig' %}
+                                                                                                                                     {% extends 'layouts/admin.html.twig' %}
 
 {% block body %}
    
@@ -59,8 +59,29 @@
             <!-- page title area end -->
             <div class="main-content-inner">
                 <!-- MAIN CONTENT GOES HERE -->
-                <h1>Création de produits</h1>
-                {{form(form)}}
+                <h1 class="u-margin-top-medium u-center-text heading-primary">Création de produits</h1>                
+                    
+                {{ form_start(form) }}        
+                    <div class="form-style grid grid--2-cols">
+                        <div class="form-style--left">
+                            {{form_row(form.title)}}                
+                            {{form_row(form.description)}}
+                            {{form_row(form.prix)}}
+                            {{form_row(form.quantite)}}
+                        </div>
+
+                        <div class="form-style--right">
+                            {{form_row(form.reference)}}                                                      
+                            {{form_row(form.imageFileProduit)}}                            
+                            {{form_row(form.bon_plan)}}           
+                        </div>  
+                    </div>
+                    <div class="form-style--div-submit">
+                        <input class="form-style--btn-submit" type="submit" value="Valider" formnovalidate>
+                    </div>
+
+                {{ form_end(form) }}
+                
             </div>
             
         </div>
