@@ -29,12 +29,12 @@ class RegistrationController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $newPassword = $userPasswordHasher->hashPassword($user, $form->get('plainpassword')->getData());
-            $user->setPassword($newPassword);
-            $user->setToken(null);
-            $userRepository->add($user, true);
-            return $this->redirectToRoute('app_login', [], Response::HTTP_SEE_OTHER);
-            //$user->getTypeUser();
+            $user->setPassword(
+                $userPasswordHasher->hashPassword(
+                    $user,
+                    $form->get('plainPassword')->getData()
+                )
+                );
 
             $choicerole = $form->get('type_user')->getData();
             
