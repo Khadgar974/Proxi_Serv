@@ -3,6 +3,7 @@
     perspective: 150rem;
     --moz-perspective: 150rem;
     position: relative;
+    background-color: $color--noirclair;
     border: none;
     height: 42rem;
     width: 100%;
@@ -28,31 +29,30 @@
             &-1 {
                 background-image: linear-gradient(
                     to right bottom,
-                    $color-blue-light,
-                    $color-blue-dark
+                    $color-primary-light,
+                    $color-primary-dark
                 );
             }
             &-2 {
                 background-image: linear-gradient(
                     to right bottom,
-                    $color-blue-light,
-                    $color-blue-dark
+                    $color-primary-light,
+                    $color-primary-dark
                 );
             }
             &-3 {
                 background-image: linear-gradient(
                     to right bottom,
-                    $color-blue-light,
-                    $color-blue-dark
+                    $color-primary-light,
+                    $color-primary-dark
                 );
             }
 
-            // rajout pour le comment ca marche
             &-4 {
                 background-image: linear-gradient(
                     to right bottom,
-                    $color-blue-light,
-                    $color-blue-dark
+                    $color-primary-light,
+                    $color-primary-dark
                 );
             }
         }
@@ -74,84 +74,64 @@
         border-radius: 9px;
 
         &--1 {
-            background-image: linear-gradient(
-                    to right bottom,
-                    $color-blue-light,
-                    $color-blue-dark
-                ),
-                url(../../images/commentCaMarche/Etape1.jpg);
+            background-image: url(../../images/commentCaMarche/Etape1.jpg);
         }
         &--2 {
-            background-image: linear-gradient(
-                    to right bottom,
-                    $color-blue-light,
-                    $color-blue-dark
-                ),
-                url(../../images/commentCaMarche/Etape2.jpg);
+            background-image: url(../../images/commentCaMarche/Etape2.jpg);
         }
         &--3 {
-            background-image: linear-gradient(
-                    to right bottom,
-                    $color-blue-light,
-                    $color-blue-dark
-                ),
-                url(../../images/commentCaMarche/Etape3.jpg);
+            background-image: url(../../images/commentCaMarche/Etape3.jpg);
         }
 
         // rajout pour le comment ca marche en 4 carte
         &--4 {
-            background-image: linear-gradient(
-                    to right bottom,
-                    $color-blue-light,
-                    $color-blue-dark
-                ),
-                url(../../images/commentCaMarche/Etape4.jpg);
+            background-image: url(../../images/commentCaMarche/Etape4.jpg);
         }
     }
 
     &__heading {
-        font-size: 1.8rem;
-        font-weight: 300;
+        font-size: 2.2rem;
+        font-weight: 700;
         text-align: right;
         color: $color-white;
         position: absolute;
-        top: 5rem;
-        right: 2rem;
+        top: 3rem;
+        right: 1rem;
         width: 75%;
     }
     &__heading-span {
         padding: 1rem 1.5rem;
+        border-radius: 9px;
         -webkit-box-decoration-break: clone;
         &--1 {
             background-image: linear-gradient(
                 to right bottom,
-                rgba($color-blue-light, 0.85),
-                rgba($color-blue-dark, 0.85)
+                rgba($color-primary-light, 0.95),
+                rgba($color-primary-dark, 0.95)
             );
         }
 
         &--2 {
             background-image: linear-gradient(
                 to right bottom,
-                rgba($color-blue-light, 0.85),
-                rgba($color-blue-dark, 0.85)
+                rgba($color-primary-light, 0.95),
+                rgba($color-primary-dark, 0.95)
             );
         }
 
         &--3 {
             background-image: linear-gradient(
                 to right bottom,
-                rgba($color-blue-light, 0.85),
-                rgba($color-blue-dark, 0.85)
+                rgba($color-primary-light, 0.95),
+                rgba($color-primary-dark, 0.95)
             );
         }
 
-        // Rajout pour le comment ca marche
         &--4 {
             background-image: linear-gradient(
                 to right bottom,
-                rgba($color-blue-light, 0.85),
-                rgba($color-blue-dark, 0.85)
+                rgba($color-primary-light, 0.85),
+                rgba($color-primary-dark, 0.85)
             );
         }
     }
@@ -194,8 +174,4 @@
         width: 90%;
         text-align: center;
     }
-}
-
-.btn__ccm {
-    text-align: center;
 }
