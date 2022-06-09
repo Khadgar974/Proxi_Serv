@@ -12,16 +12,18 @@
                     <div class="produits">
                         <div class="boxs">
                             <ul class="boxs">
+                            {% for produit in produits %}
                                 <li class="shadow">
                                     <div class="bloc_text">
                                         <img src="{{asset('images/image-box.jpg')}}" alt="">
-                                        <h3>numéro 1</h3>
+                                        <h3>{{produit.title}}</h3>
                                         <div class="box-button">
                                             <input class="inp-btn" type="submit" value="Ajouter au Panier"></input>
-                                            <a class="details" href="{{path('app_single_produit')}}">details</a>
+                                            <a class="details" href="{{path('app_single_produit', {id: produit.id})}}">details</a>
                                         </div>
                                     </div>
                                 </li>
+                            {% endfor %}
                             </ul>
                         </div>
                         <div class="inscriptions">

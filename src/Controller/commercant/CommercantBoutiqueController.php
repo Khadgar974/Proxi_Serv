@@ -3,8 +3,10 @@
 namespace App\Controller\Commercant;
 
 use App\Entity\Boutique;
+use App\Entity\Produits;
 use App\Form\BoutiqueFormType;
 use App\Repository\BoutiqueRepository;
+use App\Repository\ProduitsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,11 +15,14 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/commercant')]
 class CommercantBoutiqueController extends AbstractController
 {
+    
     #[Route('/show', name: 'app_boutique_detail')]
-    public function show(): Response
+    public function show(ProduitsRepository $produitsRepo): Response
     {
+        $produits = $produitsRepo->findAll();
+
         return $this->render('boutique/boutique_detail.html.twig', [
-            
+            'produits' => $produits
         ]);
     }
 
