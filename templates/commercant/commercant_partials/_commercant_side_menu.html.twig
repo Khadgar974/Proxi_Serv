@@ -13,9 +13,10 @@
                                 <a href="javascript:void(0)" aria-expanded="true"><ion-icon class="admin-icon" name="storefront-outline"></ion-icon><span>Gérer ma boutique</span></a>
                                 
                                 <ul class="collapse">                                   
-                                    <li><a href="#">Voir ma boutique</a></li>
+                                    
                                     {% if app.user.boutique %}
                                         <li><a href="{{ path('app_edit_boutique', { id: app.user.boutique.id } )}}">Modifier ma boutique</a></li>
+                                        <li><a href="{{ path('app_boutique_detail', { id: app.user.boutique.id } )}}">Voir ma boutique</a></li>
                                     {% endif %}
                                     
                                                                         

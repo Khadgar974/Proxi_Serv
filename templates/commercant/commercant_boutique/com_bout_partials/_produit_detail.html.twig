@@ -1,0 +1,55 @@
+<hr class="hr-text">
+<section id="commerce">
+    <div class="wrap">
+        <div class="logo">
+            <img src="{{asset('images/logo_rislepizza2.png')}}" alt="" width="200"/>
+        </div>
+        <div class ="titre">
+            <h1>Boutique Risle Pizza</h1>
+        </div>
+        {# /////zone produit///// #}
+        <div class ="shop-container">
+            <div class="produits">
+                <div class="boxs">
+                    <ul class="boxs">
+                        
+                        <li class="shadow">
+                            <div class="bloc_text">
+
+                                <img src="{{asset('images/image-box.jpg')}}" alt="">
+                                <h3>Pizza savoyarde façon tartiflette</h3>
+                                <div class="prix">
+                                    <div class="dash">
+                                        <p>4.49€</p>
+                                    </div>
+                                </div>
+                                <p>Une délicieuse pizza savoyarde tartiflette,
+                                moelleuse à souhait et garnie de crème fraîche,
+                                de pomme de terre fondante, d’oignon caramélisé,
+                                de lardons fumés et de belles tranches de fromage à raclette,
+                                Reblechon, mozzarella et d’emmental.
+                                Cette pizza est parfaite pour satisfaire les envies de tartiflette</p>
+                                <div class="box-button">
+                                    <input class="inp-btn" type="submit" value="Ajouter au Panier"></input>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="inscriptions">
+                    <input class="inp-btn" type="submit " value="Valider le Panier">
+                </div>
+            </div>
+            
+        </div>
+        <div class="pagination">
+            <ul>
+                <li>
+                    <a href="{{path('app_commercant_produits_index')}}">Retour Boutique</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<hr class="hr-text">
+{# ////////////////////////////////////////////////// #}

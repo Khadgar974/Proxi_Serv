@@ -14,6 +14,20 @@ use App\Form\ProduitsFormType;
 #[Route('/commercant')]
 class CommercantProduitController extends AbstractController
 {
+    #[Route('/produits/single_com/', name: 'app_single_com_produit')]
+    public function singleCom(): Response
+    {
+        return $this->render('commercant/commercant_produit/produit_detail_com.html.twig', []);
+    }
+
+    #[Route('/produits/single/', name: 'app_single_produit')]
+    public function single(): Response
+    {
+        return $this->render('produit/detail_produit.html.twig', [
+            
+        ]);
+    }
+
     #[Route('/produits', name: 'app_commercant_produits_index')]
     public function index(): Response
     {

@@ -13,6 +13,14 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/commercant')]
 class CommercantBoutiqueController extends AbstractController
 {
+    #[Route('/show', name: 'app_boutique_detail')]
+    public function show(): Response
+    {
+        return $this->render('boutique/boutique_detail.html.twig', [
+            
+        ]);
+    }
+
     #[Route('/create_boutique', name: 'app_create_boutique')]
     public function createBoutique(Request $request, BoutiqueRepository $boutiqueRepo): Response
     {
