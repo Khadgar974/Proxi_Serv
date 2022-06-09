@@ -336,66 +336,60 @@ float: left;
     text-align: center;
     padding: 0.5em;
 }
-#commerce .infos img {
-    margin-left: 3rem;
-}
 .shop-container {
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
     padding: .5em;
-    border-radius: 10px;
+    border-radius: 1rem;
     
 }
 .shop-container .produits {
     width:80%;
     background-color: lightgray;
     margin: 1rem;
-    border-radius: 10px;
+    border-radius: 1rem;
+}
+.shop-container .produits .bloc_text{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
 }
 .shop-container .infos {
     width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row nowrap;
+}
+.shop-container .infos img {
+    width: 100%;
+    margin: 0 auto;
 }
 .shop-container .produits .boxs {
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
-    padding: 2rem;
+    margin: 0 auto;
+}
+.shop-container .produits .boxs .boxs .bloc_text {
+    background-color: var(--bleulogo);
+    border-radius: 1rem;
+    color: #fff;
+    padding: 1rem;
+    margin: 1rem;
+    filter: opacity(.8);
 }
 .shop-container .produits .boxs img {
-    border-radius: 10px;
+    border-radius: 1rem;
 }
 .labello {
-    margin-left: 50%;
     width: 15rem;
     color: rgb(255, 255, 255);
-    font-size: 17px;
-    line-height: 17px;
-    padding: 10px;
-    border-radius: 9px;
-    font-family: Georgia, serif;
-    font-weight: normal;
-    text-decoration: none;
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;
-    background-image: linear-gradient(
-    to right,
-        rgb(28, 110, 164) 0%,
-        rgb(35, 136, 203) 50%,
-        rgb(20, 78, 117) 100%
-    );
-    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
-    border: 2px solid rgb(28, 110, 164);
-}
-.inp-btn {
-    margin-left: 25%;
-    width: 15rem;
-    color: rgb(255, 255, 255);
-    font-size: 17px;
-    line-height: 17px;
-    padding: 10px;
-    border-radius: 9px;
+    font-size: 1.7rem;
+    line-height: 1.7rem;
+    padding: 1rem;
+    border-radius: .9rem;
     font-family: Georgia, serif;
     font-weight: normal;
     text-decoration: none;
@@ -414,21 +408,14 @@ float: left;
     margin: .5rem;
     text-align: center;
 }
-.pagination li a {
-    text-decoration: none;
-    color: wheat;
-    width: 5rem;
+.inp-btn {
+    margin-left: 25%;
+    width: 10rem;
     color: rgb(255, 255, 255);
-    font-size: 17px;
-    line-height: 17px;
-    padding: 10px;
-    border-radius: 9px;
-    font-family: Georgia, serif;
-    font-weight: normal;
-    text-decoration: none;
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;
+    font-size: 1rem;
+    line-height: 1rem;
+    padding: .7rem;
+    border-radius: .9rem;
     background-image: linear-gradient(
     to right,
     rgb(28, 164, 96) 0%,
@@ -436,6 +423,26 @@ float: left;
     rgb(17, 153, 85) 100%
     );
     box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+    border: 2px solid black;
+    display: inline-block;
+    margin: .5rem;
+    text-align: center;
+}
+.pagination li a {
+    text-decoration: none;
+    color: wheat;
+    width: 7rem;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    line-height: 1rem;
+    padding: 1rem;
+    border-radius: .9rem;
+    background-image: linear-gradient(
+    to right,
+    rgb(28, 164, 96) 0%,
+    rgb(30, 189, 109) 50%,
+    rgb(17, 153, 85) 100%
+    );
     border: 2px solid black;
     display: inline-block;
     margin: .5rem;
@@ -455,26 +462,70 @@ float: left;
     position: absolute; top: 0; right: 0; color: white;
 }
 .details {
-    margin-left: 25%;
-    width: 15rem;
+    width: 7rem;
     color: rgb(255, 255, 255);
-    font-size: 17px;
-    line-height: 17px;
-    padding: 10px;
-    border-radius: 9px;
-    font-family: Georgia, serif;
-    font-weight: normal;
-    text-decoration: none;
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;
+    font-size: 1rem;
+    line-height: .5rem;
+    padding: .5rem;
+    border-radius: .9rem;
     background-image: linear-gradient(
     to right,
-    rgb(28, 164, 96) 0%,
-    rgb(30, 189, 109) 50%,
+    rgb(61, 233, 27) 0%,
+    rgb(32, 218, 41) 50%,
     rgb(17, 153, 85) 100%
     );
     box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
     border: 2px solid black;
     display: inline-block;
+    text-align: center;
+}
+.logo {
+    padding: .5em;
+}
+.prix {
+    display: flex;
+    width: 4.6rem;
+    height: 4.6rem;
+    border-radius: 50%;
+    background-color: var(--vertfonce);
+    margin: 0 auto;
+    position: absolute;
+    top: 5px;
+    transform: translateX(350%);
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+}
+.prix p{
+    font-size: 1.5rem;
+}
+.prix .dash {
+    text-align: center;
+    margin-top: .6rem;
+    align-items: center;
+}
+.produits .inscriptions {
+    padding-top: 1rem;
+    filter: opacity(.8);
+    text-align: center;
+    margin: 1rem;
+}
+.produits .inscriptions a {
+    color: var(--vertlogo);
+    background-color: var(--bleulogo);
+    padding: .5rem 2rem;
+    transition: all 1s;
+    border-radius: .4rem;
+}
+.produits .inscriptions a:hover{
+    color: var(--vert);
+    background-color: var(--bleufonce);
+}
+.box-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.boxs .shadow .bloc_text p {
+    text-align: left;
+    padding: .8rem;
 }
