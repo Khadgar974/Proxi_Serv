@@ -25,6 +25,7 @@
         "symfony/validator": "6.1.*",
         "symfony/webpack-encore-bundle": "^1.14",
         "symfony/yaml": "6.1.*",
+        "twig/string-extra": "^3.4",
         "vich/uploader-bundle": "^1.19"
     },
     "require-dev": {

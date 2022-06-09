@@ -7,7 +7,6 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -19,7 +18,9 @@ class BoutiqueFormType extends AbstractType
         $builder
             ->add('title', TextType::class)
             ->add('description', TextareaType::class) 
-            ->add('SIRET', TextType::class)
+            ->add('SIRET', TextType::class, [
+                'label' => 'Votre SIRET',
+            ])
             ->add('adresse', TextType::class)
             ->add('code_postal', IntegerType::class)
             ->add('ville', TextType::class)

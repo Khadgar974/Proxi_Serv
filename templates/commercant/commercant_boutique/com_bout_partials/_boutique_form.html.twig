@@ -1,23 +1,23 @@
 {{ form_start(form) }}        
-        <div class="form-style grid grid--2-cols">
+    <div class="form-style grid grid--2-cols">
 
-            <div class="form-style--left">
-                {{form_row(form.title)}}
-                {{form_row(form.adresse)}}
-                {{form_row(form.code_postal)}}
-                {{form_row(form.ville)}}
-                {{form_row(form.tel)}}
-            </div>
-
-            <div class="form-style--right">
-                {{form_row(form.SIRET)}}
-                {{form_row(form.imageFileBoutique)}}
-                {{form_row(form.imageFileLogo)}}
-                {{form_row(form.description)}}
-            </div>
-            
+        <div class="form-style--left">
+            {{form_row(form.title)}}                
+            {{form_row(form.adresse)}}
+            {{form_row(form.code_postal)}}
+            {{form_row(form.ville)}}
+            {{form_row(form.tel)}}
+            {{form_row(form.SIRET)}}
+            {{form_row(form.description)}}
         </div>
 
-            <input class="submit" type="submit" value="Valider" formnovalidate>
+        <div class="form-style--right">
+            {{form_row(form.imageFileBoutique)}}
+            {{form_row(form.imageFileLogo)}}
+        </div>            
+    </div>
+    <div class="form-style--div-submit">
+        <input class="form-style--btn-submit" type="submit" value="Valider" formnovalidate>
+    </div>
 
-    {{ form_end(form) }}
+{{ form_end(form) }}
