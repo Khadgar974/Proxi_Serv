@@ -9,6 +9,8 @@
     --bleulogo: #162a3d;
     --noirclair: #111111;
     --blanc: #fff;
+    --bleuvert: #47fdd8;
+    --vertfeuille: #40e394;
 }
 
 * {
@@ -528,4 +530,15 @@ float: left;
 .boxs .shadow .bloc_text p {
     text-align: left;
     padding: .8rem;
+}
+.boxs_boutiques {
+    background-color: var(--vertfeuille);
+    border-radius: 10px;
+    margin: 1rem;
+    align-items: center;
+    filter: opacity(.8);
+}
+.boxs_boutiques h2 {
+    padding: .5rem;
+    text-align: center;
 }

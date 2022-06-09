@@ -1,8 +1,76 @@
 {% extends 'layouts/base.html.twig' %}    
 
 {% block body %}
-
-<div class="example-wrapper">
-    <h1>Toutes les boutiques</h1>  
-    
+<section id="commerce">
+    <div class="wrap">
+        <div class ="titre">
+            <h1>Les Boutiques</h1>
+        </div>
+        <div class ="shop-container">
+            <div class="produits">
+                <div class="boxs">
+                    <div class="boxs_boutiques">
+                        <h2>Type de Boutique</h2>
+                        <ul class="boxs">
+                            <li class="shadow">
+                                <div class="bloc_text">
+                                    <h2>Risle Pizza</h2>
+                                    <img src="{{asset('images/arriere-plan.png')}}" alt="" width="150">
+                                    <div class="box-button">
+                                        <a class="details" href="#">boutique</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="shadow">
+                                <div class="bloc_text">
+                                    <h2>Shop Name</h2>
+                                    <img src="{{asset('images/arriere-plan.png')}}" alt="" width="150">
+                                    <div class="box-button">
+                                        <a class="details" href="#">boutique</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="shadow">
+                                <div class="bloc_text">
+                                    <h2>Shop Name</h2>
+                                    <img src="{{asset('images/arriere-plan.png')}}" alt="" width="150">
+                                    <div class="box-button">
+                                        <a class="details" href="#">boutique</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="shadow">
+                                <div class="bloc_text">
+                                    <h2>Shop Name</h2>
+                                    <img src="{{asset('images/arriere-plan.png')}}" alt="" width="150">
+                                    <div class="box-button">
+                                        <a class="details" href="#">boutique</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+                <!-- --------nav bar d'information-------------- -->
+            <div class="infos">
+                <p><strong>Risle pizza</strong></p>
+                <img src="{{asset('images/arriere-plan.png')}}" alt="" width="">
+                <p>horraires d'ouvertures:</p>
+                <p>du mardi au vendredi</p>
+                <p>de 9h a 18h</p>
+                <p>du samedi au dimanche</p>
+                <p>de 11h a 16h</p>
+                <hr class="hr-text">
+                <p>adresse postale:</p>
+                <p>6rue du paradis</p>
+                <p>arnacq la poste 36000</p>
+                <p>numéro de téléphone:</p>
+                <p href="tel:08.69.69.69.69">08.69.69.69.69</p>
+                <hr class="hr-text">
+            </div>
+            <!-- /////////////////////////////////////////////////// -->
+        </div>
+    </div>
+</section>
 {% endblock %}
