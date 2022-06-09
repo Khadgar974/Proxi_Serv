@@ -537,3 +537,19 @@ float: left;
     padding: .5rem;
     text-align: center;
 }
+// @media screen and (max-width:300px) {
+    
+//     }
+@media screen and (max-width:500px) {
+    .footer-menu ul{
+        display: flex;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    // .banniere {
+        
+    // }
+    }
+// @media screen and (max-width:800px) {
+    
+//     }
