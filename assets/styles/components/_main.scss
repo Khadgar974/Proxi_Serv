@@ -375,8 +375,9 @@ float: left;
 }
 .shop-container .produits .boxs {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin: 0 auto;
+    padding: 0;
 }
 .shop-container .produits .boxs .boxs .bloc_text {
     background-color: var(--bleulogo);
