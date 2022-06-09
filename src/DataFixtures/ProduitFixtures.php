@@ -17,7 +17,7 @@ class ProduitFixtures extends Fixture
         $produit->setQuantite('5');
         $produit->setReference('Cala');
         $produit->setImage('pouet.jpg');
-        
+        $produit->setBonPlan('1');
         $manager->persist($produit);
         $manager->flush();
     }
