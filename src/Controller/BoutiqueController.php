@@ -10,14 +10,14 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/boutique')]
+#[Route('/boutiques')]
 class BoutiqueController extends AbstractController
 {
     // Va renvoyer toutes les boutiques
     #[Route('/', name: 'app_index_boutiques')]
     public function index(): Response
     {        
-        return $this->render('boutique/boutiques_index.html.twig');
+        return $this->render('boutiques/boutiques_index.html.twig');
     }    
    
 }
