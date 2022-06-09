@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use App\Entity\Boutique;
+use App\Entity\User;
 
 class BoutiqueFixtures extends Fixture
 {
@@ -22,6 +23,7 @@ class BoutiqueFixtures extends Fixture
         $boutique -> setLogo('Oh le beau logo');
         $boutique -> setIsSiretVerified('1');
         $boutique -> setIsActive('1');
+        $boutique -> setUser($this->getReference());
 
         $manager->persist($boutique);
         $manager->flush();
