@@ -287,7 +287,7 @@ class Boutique implements Serializable
         $this->user = $user;
 
         return $this;
-    }
+    }  
 
     public function serialize()
     {
