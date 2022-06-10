@@ -4,10 +4,11 @@ namespace App\DataFixtures;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use App\Entity\Boutique;
 use App\Entity\User;
 
-class BoutiqueFixtures extends Fixture
+class BoutiqueFixtures extends Fixture implements DependentFixtureInterface
 {
     public function load(ObjectManager $manager): void
     {
@@ -23,9 +24,16 @@ class BoutiqueFixtures extends Fixture
         $boutique -> setLogo('Oh le beau logo');
         $boutique -> setIsSiretVerified('1');
         $boutique -> setIsActive('1');
-        $boutique -> setUser($this->getReference());
+        $boutique -> setUser($this->getReference('user'));
 
         $manager->persist($boutique);
         $manager->flush();
+    }
+
+    public function getDependencies()
+    {
+        return [
+            UserFixtures::class,
+        ];
     }
 }
