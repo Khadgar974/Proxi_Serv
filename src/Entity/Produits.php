@@ -59,8 +59,6 @@ class Produits implements Serializable
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
     private $modified_at;
 
-
-
     public function getId(): ?int
     {
         return $this->id;
