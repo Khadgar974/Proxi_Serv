@@ -38,7 +38,7 @@ class CommercantProduitController extends AbstractController
     #[Route('/produits', name: 'app_commercant_produits_index')]
     public function index(ProduitsRepository $produitsRepo): Response
     {
-        $produits = $produitsRepo->findAll();
+        $produits = $produitsRepo->findAll();        
 
         return $this->render('commercant/commercant_produit/produits_index.html.twig',[
             'produits' => $produits
@@ -52,8 +52,7 @@ class CommercantProduitController extends AbstractController
         $form = $this->createForm(ProduitsFormType::class, $produits);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            // A faire le setUser avec l'utilisateur connecter.
+        if ($form->isSubmitted() && $form->isValid()) {                       
             
             $produitsRepo->add($produits, true);
 
