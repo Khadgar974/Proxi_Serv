@@ -23,16 +23,7 @@
                     <nav>
                         <ul>
                             {% if app.user %}
-                                {% if is_granted('ROLE_ADMIN') %}
-                                    <li><a href="{{path('app_admin_default')}}">Gestion admin</a></li>
-                                {% endif %}
-                                {% if is_granted('ROLE_COMMERCANT') %}
-                                    {% if app.user.boutique %}
-                                        <li><a href="{{path('app_commercant_default')}}">Gestion commercant</a></li>
-                                    {% else %}                                                
-                                        <li><a href="{{path('app_create_boutique')}}">Création boutique</a></li>
-                                    {% endif %}                            
-                            {% endif %}
+                                
                             {% if is_granted('ROLE_USER') %}
                                 {% if app.request.get('_route') != 'app_user' %}
                                     <li><a href="{{path('app_user')}}">Mon Compte</a></li>

@@ -88,12 +88,33 @@ img{
     filter: opacity(.8);
     border-radius: 10px;
 }
+
 #intro .wrap1 .introduction p {
     font-size: 1.5rem;
 }
 #intro .wrap1 .introduction h1 {
     font-size: 3rem;
 }
+
+#intro .wrap1 .gestion_com {
+    background-color: var(--bleulogo);
+    filter: opacity(.8);
+    border-radius: 10px;
+    width: 65%;
+    margin: 0 auto;
+}
+
+#intro .wrap1 .gestion_com ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+#intro .wrap1 .gestion_com li{
+   font-size: 3rem;
+}
+
 .banniere {
     background-color: var(--bleulogo);
     filter: opacity(.8);
