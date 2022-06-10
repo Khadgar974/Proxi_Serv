@@ -126,4 +126,14 @@
       background-color: $color--bleufonce;
     }
   }
+  .input-group {
+    #produits_form_prix {
+      width: 30%;
+      border-radius: 9px;
+    }
+    .input-group-text {
+      display: none;
+      width: 20%;
+    }
+  }
 }

@@ -20,7 +20,7 @@
                                 <h2> {{ produit.title }} </h2>
                                 <div class="prix">
                                     <div class="dash">
-                                        <p>{{produit.prix}}€</p>
+                                        <p>{{ (produit.prix)/100 }}€</p>
                                     </div>
                                 </div>
                                 <p>{{ produit.description }}</p>
