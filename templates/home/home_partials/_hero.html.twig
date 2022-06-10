@@ -1,5 +1,21 @@
 <section id="intro">
     <div class="wrap1">
+        <div class='gestion_com'>
+            <ul>
+            {% if app.user %}
+                {% if is_granted('ROLE_ADMIN') %}
+                <li><a href="{{path('app_admin_default')}}">Gestion admin</a></li>
+                {% endif %}
+                {% if is_granted('ROLE_COMMERCANT') %}
+                    {% if app.user.boutique %}
+                        <li><a href="{{path('app_commercant_default')}}">Gestion commercant</a></li>
+                    {% else %}                                                
+                    <li><a href="{{path('app_create_boutique')}}">Création boutique</a></li>
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+            </ul>        
+        </div>
         <div class="introduction">
             <div class="titre">
                 <h1>Proxi' Services</h1>
@@ -15,6 +31,7 @@
             <p>et aux utilisateurs d'acheter local.</p>
             </div>
         </div>
+        
     </div>
     <div class="wrap">
         <div class="banniere">
