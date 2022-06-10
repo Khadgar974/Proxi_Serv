@@ -46,7 +46,7 @@ class ProduitsFormType extends AbstractType
                 'required' => true,
                 'allow_delete' => false,
                 'download_uri' => false,
-                'imagine_pattern' => '...'                
+                // 'imagine_pattern' => '...'                
             ])            
         ;
     }

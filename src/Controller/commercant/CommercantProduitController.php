@@ -62,4 +62,25 @@ class CommercantProduitController extends AbstractController
         return $this->render('commercant/commercant_produit/add_produit.html.twig', ['form' => $form->createView()]);
         
     }
+
+    #[Route('/produits/edit/{id}', name: 'app_edit_produit', methods: 'GET|POST')]
+    public function editProduit( $id,Request $request, ProduitsRepository $produitRepo): Response
+    {
+        
+        $produit = $produitRepo->findOneBy(array('id' => $id));
+        $form = $this->createForm(ProduitsFormType::class, $produit);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $produitRepo->add($produit, true);
+            // $this->addflash('success', 'Votre boutique a bien été modifié!');
+
+            return $this->redirectToRoute('app_commercant_default', [], Response::HTTP_SEE_OTHER); // route a modifier, sera redirigé vers la page boutique
+        }
+
+        return $this->render('commercant/commercant_produit/edit_produit.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
 }
