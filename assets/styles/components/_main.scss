@@ -348,7 +348,7 @@ float: left;
     flex-flow: row nowrap;
     padding: .5em;
     border-radius: 1rem;
-    
+
 }
 .shop-container .produits {
     width:80%;
@@ -375,19 +375,23 @@ float: left;
 }
 .shop-container .produits .boxs {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin: 0 auto;
+    padding: 0;
 }
 .shop-container .produits .boxs .boxs .bloc_text {
     background-color: var(--bleulogo);
     border-radius: 1rem;
     color: #fff;
     padding: 1rem;
-    margin: 1rem;
+    
     filter: opacity(.8);
 }
 .shop-container .produits .boxs img {
     border-radius: 1rem;
+}
+.shadow {
+    padding: 1rem;
 }
 // ///////// css spécial ////////////
 .labello {
@@ -527,11 +531,9 @@ float: left;
 }
 // /////// les boutiques//////////
 .boxs_boutiques {
-    background-color: var(--vertfeuille);
     border-radius: 10px;
     margin: 1rem;
     align-items: center;
-    filter: opacity(.8);
 }
 .boxs_boutiques h2 {
     padding: .5rem;

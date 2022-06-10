@@ -1,14 +1,10 @@
 .card {
-  // FUNCTIONNALITY
-  perspective: 150rem;
-  --moz-perspective: 150rem;
-  position: relative;
-  background-color: $color--noirclair;
-  border: none;
-  height: 42rem;
-  width: 100%;
-
-  &__side {
+    // FUNCTIONNALITY
+    perspective: 150rem;
+    --moz-perspective: 150rem;
+    position: relative;
+    background-color: $color--noirclair;
+    border: none;
     height: 42rem;
     transition: all 0.8s ease;
     position: absolute;
@@ -20,8 +16,54 @@
     overflow: hidden;
     box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
 
-    &--front {
-      background-color: $color-white;
+    &__side {
+        height: 42rem;
+        transition: all 0.8s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        border-radius: 9px;
+        overflow: hidden;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+        &--front {
+            background-color: $color-white;
+        }
+
+        &--back {
+            transform: rotateY(180deg);
+            &-1 {
+                background-image: linear-gradient(
+                    to right bottom,
+                    $color-primary-light,
+                    $color-primary-dark
+                );
+            }
+            &-2 {
+                background-image: linear-gradient(
+                    to right bottom,
+                    $color-primary-light,
+                    $color-primary-dark
+                );
+            }
+            &-3 {
+                background-image: linear-gradient(
+                    to right bottom,
+                    $color-primary-light,
+                    $color-primary-dark
+                );
+            }
+
+            &-4 {
+                background-image: linear-gradient(
+                    to right bottom,
+                    $color-primary-light,
+                    $color-primary-dark
+                );
+            }
+        }
     }
 
     &--back {
@@ -108,54 +150,73 @@
         ),
         url(../../images/commentCaMarche/Etape4.jpg);
     }
-  }
+  
 
-  &__heading {
-    font-size: 1.8rem;
-    font-weight: 300;
-    text-align: right;
-    color: $color-white;
-    position: absolute;
-    top: 5rem;
-    right: 2rem;
-    width: 75%;
-  }
-  &__heading-span {
-    padding: 1rem 1.5rem;
-    -webkit-box-decoration-break: clone;
-    &--1 {
-      background-image: linear-gradient(
-        to right bottom,
-        rgba($color-blue-light, 0.85),
-        rgba($color-blue-dark, 0.85)
-      );
+        &--1 {
+            background-image: url(../../images/commentCaMarche/Etape1.jpg);
+        }
+        &--2 {
+            background-image: url(../../images/commentCaMarche/Etape2.jpg);
+        }
+        &--3 {
+            background-image: url(../../images/commentCaMarche/Etape3.jpg);
+        }
+
+        // rajout pour le comment ca marche en 4 carte
+        &--4 {
+            background-image: url(../../images/commentCaMarche/Etape4.jpg);
+        }
     }
 
-    &--2 {
-      background-image: linear-gradient(
-        to right bottom,
-        rgba($color-blue-light, 0.85),
-        rgba($color-blue-dark, 0.85)
-      );
+    &__heading {
+        font-size: 2.2rem;
+        font-weight: 700;
+        text-align: right;
+        color: $color-white;
+        position: absolute;
+        top: 3rem;
+        right: 1rem;
+        width: 75%;
+    }
+    &__heading-span {
+        padding: 1rem 1.5rem;
+        border-radius: 9px;
+        -webkit-box-decoration-break: clone;
+        &--1 {
+            background-image: linear-gradient(
+                to right bottom,
+                rgba($color-primary-light, 0.95),
+                rgba($color-primary-dark, 0.95)
+            );
+        }
+
+        &--2 {
+            background-image: linear-gradient(
+                to right bottom,
+                rgba($color-primary-light, 0.95),
+                rgba($color-primary-dark, 0.95)
+            );
+        }
+
+        &--3 {
+            background-image: linear-gradient(
+                to right bottom,
+                rgba($color-primary-light, 0.95),
+                rgba($color-primary-dark, 0.95)
+            );
+        }
+
+        &--4 {
+            background-image: linear-gradient(
+                to right bottom,
+                rgba($color-primary-light, 0.85),
+                rgba($color-primary-dark, 0.85)
+            );
+        }
     }
 
-    &--3 {
-      background-image: linear-gradient(
-        to right bottom,
-        rgba($color-blue-light, 0.85),
-        rgba($color-blue-dark, 0.85)
-      );
-    }
+   
 
-    // Rajout pour le comment ca marche
-    &--4 {
-      background-image: linear-gradient(
-        to right bottom,
-        rgba($color-blue-light, 0.85),
-        rgba($color-blue-dark, 0.85)
-      );
-    }
-  }
 
   &__details {
     padding: 3rem;
@@ -195,8 +256,4 @@
     width: 90%;
     text-align: center;
   }
-}
-
-.btn__ccm {
-  text-align: center;
 }
