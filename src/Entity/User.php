@@ -17,6 +17,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     use Timestampable;
+    const ROLES = ['ROLE_COMMERCANT', 'ROLE_USER'];
 
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -43,6 +44,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $boutique;
 
     #[ORM\Column(type: 'string', length: 255)]
+    /**
+     *
+     * @Assert\Choice(choices=User::ROLES, message="Choisissez un rôle.")
+     */
     private $type_user = 0;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
