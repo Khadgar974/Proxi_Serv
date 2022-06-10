@@ -97,13 +97,8 @@ class Boutique implements Serializable
     #[ORM\JoinColumn(nullable: false)]
     private $user;
 
-    #[ORM\OneToMany(mappedBy: 'boutique', targetEntity: Produits::class)]
-    private $produits;
 
-    public function __construct()
-    {
-        $this->produits = new ArrayCollection();
-    }    
+  
 
     public function getId(): ?int
     {
