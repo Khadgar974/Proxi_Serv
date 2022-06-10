@@ -20,12 +20,12 @@
                                 {# <img src="{{vich_uploader_asset(produit.image, 'imageFileProduit')}}" alt=""> #}
 
                                 <h2> {{ produit.title }} </h2>
-                                <div class="prix">
-                                    <div class="dash">
-                                        <p>{{produit.prix}}€</p>
-                                    </div>
-                                </div>
+                                
                                 <p>{{ produit.description }}</p>
+                                <p>Quantité : {{ produit.quantite }}</p>
+                                <p>Prix : {{ produit.prix }}</p>
+                                <p>Reference : {{ produit.reference }}</p>
+                                <p>Bon Plan : {{ produit.bonplan }}</p>
                                 
                             </div>
                         </li>
