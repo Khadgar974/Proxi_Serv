@@ -21,7 +21,7 @@ class CommercantBoutiqueController extends AbstractController
     {
         $boutiques = $BoutiqueRepo->findOneBy(['id' => $id]);
 
-        return $this->render('boutiques/boutique_index.html.twig', [
+        return $this->render('boutique/boutique_index.html.twig', [
             'boutiques' => $boutiques
         ]);
     }
@@ -31,7 +31,7 @@ class CommercantBoutiqueController extends AbstractController
     {
         $produits = $produitsRepo->findAll();
 
-        return $this->render('boutiques/boutique_detail.html.twig', [
+        return $this->render('boutique/boutique_detail.html.twig', [
             'produits' => $produits
         ]);
     }
