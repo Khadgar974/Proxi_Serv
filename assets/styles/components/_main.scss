@@ -52,6 +52,8 @@ img{
     max-width: 850px;width: 100%;margin: 0 auto;padding: 0 1rem;
 }
 
+.wrap2 {max-width: 1200px; width:100%; margin: 0 auto;}
+
 //////// hero///////////////
 
 #intro {
@@ -111,91 +113,29 @@ img{
     width: 80%;
     border-radius: 10px;
 }
-// /////// Comment ça marche //////////////////////////
-#program {
-    background-color: var(--bleulogo);
-    margin: 0 auto;
-    border-radius: 70px;
+
+#home_plan {
+    .lesbonsplans {
+        .wrap2 {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+        }
+        .mini_plan {
+            background-color: white;
+            width: 19%;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+
+            .plan_img {
+                img {width:100%;}
+            }
+            .plan_text h2{
+                text-align: center;
+            }
+        }
+    }
 }
-#program .wrap1 {
-    text-align: center;
-    padding-top: 3rem;
-}
-#program .wrap1 h1 {
-    color: white;
-    padding: .5rem;
-    font-weight: 400;
-}
-#program .wrap1 .separator {
-    margin: 0 auto;
-    height: 3px;
-    width: 5%;
-    background-color: var(--vertfonce);
-}
-#program .wrap1 p {
-    color: white;
-    padding: .5rem;
-}
-#program .boxs {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 2rem;
-    flex-flow: row nowrap;
-}
-#program h3 {
-    color: white;
-}
-#program .boxs li {
-    width: 25%;
-}
-#program .boxs img {
-    width: 80%;
-    border-radius: 10px;
-}
-// /////// Bon Plans ///////////////////
-#program2 {
-    background-color: var(--bleulogo);
-    margin: 0 auto;
-    border-radius: 70px;
-}
-#program2 .wrap1 {
-    text-align: center;
-    padding-top: 3rem;
-}
-#program2 .wrap1 h1 {
-    color: white;
-    padding: .5rem;
-    font-weight: 400;
-}
-#program2 .wrap1 .separator {
-    margin: 0 auto;
-    height: 3px;
-    width: 5%;
-    background-color: var(--vertfonce);
-}
-#program2 .wrap1 p {
-    color: white;
-    padding: .5rem;
-}
-#program2 .boxs {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 2rem;
-    flex-flow: row nowrap;
-}
-#program2 h3 {
-    color: white;
-}
-#program2 .boxs li {
-    width: 25%;
-}
-#program2 .boxs img {
-    width: 80%;
-    border-radius: 10px;
-}
-// ////////// Footer /////////////////
 footer{
     bottom: 0;
     left: 0;
@@ -502,10 +442,6 @@ float: left;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.boxs .shadow .bloc_text p {
-    text-align: left;
-    padding: .8rem;
 }
 // /////Prix /////////
 .prix {
