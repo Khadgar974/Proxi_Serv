@@ -18,6 +18,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     use Timestampable;
 
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
@@ -42,8 +43,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToOne(mappedBy: 'user', targetEntity: Boutique::class, cascade: ['persist', 'remove'])]
     private $boutique;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    private $type_user = 0;
+    #[ORM\Column(type: 'string', length: 255)]    
+    private $type_user;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $token;

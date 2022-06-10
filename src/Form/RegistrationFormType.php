@@ -40,7 +40,7 @@ class RegistrationFormType extends AbstractType
                 'type_user',
                 ChoiceType::class,
                 [
-                    'label' => 'Etes-vous ?',
+                    'label' => 'Etes-vous ?',                    
                     'choices' => [
                         'Commerçant' => 'ROLE_COMMERCANT',
                         'Utilisateur' => 'ROLE_USER'
