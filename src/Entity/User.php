@@ -17,7 +17,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     use Timestampable;
-    const ROLES = ['ROLE_COMMERCANT', 'ROLE_USER'];
+    const ROLES = [1, 0];
 
 
     #[ORM\Id]
