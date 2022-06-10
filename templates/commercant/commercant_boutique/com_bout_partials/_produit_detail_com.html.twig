@@ -2,10 +2,10 @@
 <section id="commerce">
     <div class="wrap">
         <div class="logo">
-            <img src="{{asset('images/logo_rislepizza2.png')}}" alt="" width="200"/>
+            <img src="{{ vich_uploader_asset(app.user.boutique, 'imageFileBoutique') }}" alt="" width="200"/>
         </div>
         <div class ="titre">
-            <h1>Boutique Risle Pizza</h1>
+            <h1>Boutique {{ app.user.boutique.title }}</h1>
         </div>
         {# /////zone produit///// #}
         <div class ="shop-container">
@@ -16,7 +16,9 @@
                         <li class="shadow">
                             <div class="bloc_text">
 
-                                <img src="{{asset('images/image-box.jpg')}}" alt="">
+                                <img src="{{vich_uploader_asset(produit, 'imageFileProduit')}}" alt="{{ produit.title }}">                                
+                                {# <img src="{{vich_uploader_asset(produit.image, 'imageFileProduit')}}" alt=""> #}
+
                                 <h2> {{ produit.title }} </h2>
                                 <div class="prix">
                                     <div class="dash">

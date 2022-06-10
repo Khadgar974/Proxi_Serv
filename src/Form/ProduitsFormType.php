@@ -19,7 +19,9 @@ class ProduitsFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('title', TextType::class)
+            ->add('title', TextType::class, [
+                'label' => "Titre"
+            ])
             ->add('description', TextareaType::class)
             
             ->add('prix', IntegerType::class)
@@ -43,8 +45,8 @@ class ProduitsFormType extends AbstractType
                 'label' => 'Image de votre produit (format JPG ou PNG)',
                 'required' => true,
                 'allow_delete' => false,
-                'download_uri' => false
-                // 'imagine_pattern' => '...',                
+                'download_uri' => false,
+                'imagine_pattern' => '...'                
             ])            
         ;
     }
