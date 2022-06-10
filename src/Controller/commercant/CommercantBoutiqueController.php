@@ -16,7 +16,16 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/commercant')]
 class CommercantBoutiqueController extends AbstractController
 {
-    
+    #[Route('/showOne/{id}', name: 'app_one_boutique_detail')]
+    public function showOne($id, BoutiqueRepository $BoutiqueRepo): Response
+    {
+        $boutiques = $BoutiqueRepo->findOneBy(['id' => $id]);
+
+        return $this->render('boutique/boutique_index.html.twig', [
+            'boutiques' => $boutiques
+        ]);
+    }
+
     #[Route('/show', name: 'app_boutique_detail')]
     public function show(ProduitsRepository $produitsRepo): Response
     {

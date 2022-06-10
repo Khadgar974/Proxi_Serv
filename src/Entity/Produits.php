@@ -59,11 +59,6 @@ class Produits implements Serializable
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
     private $modified_at;
 
-    public function __construct()
-    {
-        $this->boutique = new ArrayCollection();
-    }
-
     public function getId(): ?int
     {
         return $this->id;
@@ -206,5 +201,17 @@ class Produits implements Serializable
     {
         $this->image = base64_decode($this->image);
         
+    }
+
+    public function getBoutique(): ?Boutique
+    {
+        return $this->boutique;
+    }
+
+    public function setBoutique(?Boutique $boutique): self
+    {
+        $this->boutique = $boutique;
+
+        return $this;
     }
 }

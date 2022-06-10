@@ -15,9 +15,20 @@ class BoutiqueController extends AbstractController
 {
     // Va renvoyer toutes les boutiques
     #[Route('/', name: 'app_index_boutiques')]
-    public function index(): Response
-    {        
-        return $this->render('boutiques/boutiques_index.html.twig');
-    }    
-   
+    public function index(BoutiqueRepository $boutiqueRepo): Response
+    {   
+        $boutiques = $boutiqueRepo->findAll();     
+        return $this->render('boutique/boutiques_index.html.twig', ['boutiques' => $boutiques]);
+    }
+
+    #[Route('/single/{id}', name: 'app_single_boutique')]
+    public function single($id, BoutiqueRepository $boutiqueRepo): Response
+    {
+        $boutiques = $boutiqueRepo->findOneBy(['id' => $id]);
+
+
+        return $this->render('boutique/boutique_detail.html.twig', [
+            'boutiques' => $boutiques
+            ]);
+    }
 }

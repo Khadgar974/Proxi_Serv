@@ -17,6 +17,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     use Timestampable;
+    const ROLES = ['ROLE_COMMERCANT', 'ROLE_USER'];
 
 
     #[ORM\Id]
@@ -43,8 +44,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToOne(mappedBy: 'user', targetEntity: Boutique::class, cascade: ['persist', 'remove'])]
     private $boutique;
 
-    #[ORM\Column(type: 'string', length: 255)]    
-    private $type_user;
+    #[ORM\Column(type: 'string', length: 255)]
+    /**
+     *
+     * @Assert\Choice(choices=User::ROLES, message="Choisissez un rôle.")
+     */
+    private $type_user = 0;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $token;

@@ -3,69 +3,41 @@
 
 {% block body %}
 <section id="commerce">
-    <div class="wrap">
+    <div class="wrap2">
         <div class ="titre">
             <h1>Bons Plans !!!</h1>
         </div>
         <div class ="shop-container">
             <div class="produits">
                 <div class="boxs">
-                    <div class="boxs_boutiques">
-                        <h2>Type de Bons Plans !</h2>
-                        <ul class="boxs">
-                            <li class="shadow">
-                                <div class="bloc_text">
-                                    <h2>Pizza 4 fromages</h2>
-                                    <img src="{{asset('images/arriere-plan.png')}}" alt="" width="150">
+                    <div id="home_plan">
+                        <div class="u-center-text u-margin-bottom-little">
+                            <h2 class="heading-secondary">
+                                Les Bons plans
+                            </h2>
+                        </div>
+                        <div class="lesbonsplans">
+                            <div class="wrap2">
+                            {% for i in 1..4 %}
+                                <div class="mini_plan">
+                                    <div class="plan_img">
+                                        <img src="https://picsum.photos/id/23{{i}}/200/300">
+                                    </div>
+                                    <div class="plan_text">
+                                        <h2>Titre {{ i }} super text méga génial</h2>
+                                    </div>
                                     <div class="box-button">
-                                        <a class="details" href="#">Article</a>
+                                        <a class="details" href="{{path('app_boutique_detail')}}">details</a>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="shadow">
-                                <div class="bloc_text">
-                                    <h2>Designation</h2>
-                                    <img src="{{asset('images/arriere-plan.png')}}" alt="" width="150">
-                                    <div class="box-button">
-                                        <a class="details" href="#">Article</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="shadow">
-                                <div class="bloc_text">
-                                    <h2>Designation</h2>
-                                    <img src="{{asset('images/arriere-plan.png')}}" alt="" width="150">
-                                    <div class="box-button">
-                                        <a class="details" href="#">Article</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="shadow">
-                                <div class="bloc_text">
-                                    <h2>Designation</h2>
-                                    <img src="{{asset('images/arriere-plan.png')}}" alt="" width="150">
-                                    <div class="box-button">
-                                        <a class="details" href="#">Article</a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                            {% endfor %}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
                 <!-- --------nav bar d'information-------------- -->
-            <div class="infos">
-                <p><strong>Actualités Pont-Audemer</strong></p>
-                <img src="{{asset('images/arriere-plan.png')}}" alt="" width="">
-                <p>Marché de Pont-Audemer:</p>
-                <p>Lundi Matin / Vendredi Matin</p>
-                <hr class="hr-text">
-                <p>Foire à tout:</p>
-                <p>le 12-06-2022 à Beuzeville de 7h - 17h</p>
-                <p>le 19-06-2022 à Pont-Audemer de 7h - 17h</p>
-                <p>le 26-06-2022 à Fourmetot de 7h - 17h</p>
-                <hr class="hr-text">
-            </div>
+            {% include "nav/nav_partials/_nav.html.twig" %}
             <!-- /////////////////////////////////////////////////// -->
         </div>
     </div>

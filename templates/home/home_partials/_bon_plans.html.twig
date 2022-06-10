@@ -1,0 +1,28 @@
+<section id="home_plan">
+    <div class="u-center-text u-margin-bottom-big">
+        <h2 class="heading-secondary">
+            Bon plan
+        </h2>
+    </div>
+
+
+    <div class="lesbonsplans">
+        <div class="wrap2">
+        {% for i in 1..4 %}
+            <div class="mini_plan">
+                <div class="plan_img">
+                    <img src="https://picsum.photos/id/23{{i}}/200/300">
+                </div>
+                <div class="plan_text">
+                    <h2>Titre {{ i }} super text méga génial</h2>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+
+
+    <div class="btn__ccm u-margin-top-medium u-margin-bottom-huge">{# bouton pour Voir les bons plans #} 
+        <a href="{{path('app_produit_bonplans')}}" class="ccm btn-front btn-front--green">Les Bons Plans</a>
+    </div>
+</section>
