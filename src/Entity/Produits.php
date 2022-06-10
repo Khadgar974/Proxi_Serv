@@ -59,6 +59,10 @@ class Produits implements Serializable
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
     private $modified_at;
 
+    #[ORM\ManyToOne(targetEntity: Boutique::class, inversedBy: 'produits')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $boutique;
+
     public function __construct()
     {
         $this->boutique = new ArrayCollection();
@@ -206,5 +210,17 @@ class Produits implements Serializable
     {
         $this->image = base64_decode($this->image);
         
+    }
+
+    public function getBoutique(): ?Boutique
+    {
+        return $this->boutique;
+    }
+
+    public function setBoutique(?Boutique $boutique): self
+    {
+        $this->boutique = $boutique;
+
+        return $this;
     }
 }

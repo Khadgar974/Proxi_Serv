@@ -18,7 +18,7 @@
                                     <h2>{{ boutique.title }}</h2>
                                     <img src="{{asset('images/arriere-plan.png')}}" alt="" width="150">
                                     <div class="box-button">
-                                        <a class="details" href="{{path('app_boutique_detail')}}">boutique</a>
+                                        <a class="details" href="{{path('app_single_boutique', {id: boutique.id})}}">boutique</a>
                                     </div>
                                 </div>
                             </li>
