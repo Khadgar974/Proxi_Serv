@@ -123,7 +123,7 @@ img{
         }
         .mini_plan {
             background-color: white;
-            width: 19%;
+            width: 24%;
             border-radius: 10px;
             margin-bottom: 1rem;
 
@@ -478,7 +478,7 @@ float: left;
 // @media screen and (max-width:300px) {
     
 //     }
-@media screen and (max-width:500px) {
+@media screen and (max-width:600px) {
     .footer-menu ul{
         display: flex;
         margin-top: 10px;
@@ -488,6 +488,19 @@ float: left;
         
     // }
     }
-// @media screen and (max-width:800px) {
-    
-//     }
+@media screen and (max-width:900px) {
+    #home_plan {
+        .lesbonsplans {
+            .wrap2 {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+            }
+            .mini_plan {
+                background-color: white;
+                width: 48%;
+                margin-bottom: 2rem;
+        }
+    }
+    }
+}
