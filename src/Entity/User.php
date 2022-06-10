@@ -16,9 +16,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 #[UniqueEntity(fields: ['email'], message: 'Il y a déjà un compte enregistré avec cette email')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
-    use Timestampable;
-    const ROLES = [1, 0];
-
+    use Timestampable;    
 
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -44,11 +42,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToOne(mappedBy: 'user', targetEntity: Boutique::class, cascade: ['persist', 'remove'])]
     private $boutique;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    /**
-     *
-     * @Assert\Choice(choices=User::ROLES, message="Choisissez un rôle.")
-     */
+    #[ORM\Column(type: 'string', length: 255)]   
     private $type_user = 0;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]

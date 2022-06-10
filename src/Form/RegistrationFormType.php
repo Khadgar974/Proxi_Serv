@@ -44,7 +44,8 @@ class RegistrationFormType extends AbstractType
                     'choices' => [
                         'Commerçant' => 'ROLE_COMMERCANT',
                         'Utilisateur' => 'ROLE_USER'
-                    ],
+                    ], 
+                    'data' => 'ROLE_USER',                   
                     'expanded' => true,
                     'multiple' => false,
                     'mapped' => false,
