@@ -75,7 +75,7 @@ class CommercantProduitController extends AbstractController
             $produitRepo->add($produit, true);
             // $this->addflash('success', 'Votre boutique a bien été modifié!');
 
-            return $this->redirectToRoute('app_commercant_default', [], Response::HTTP_SEE_OTHER); // route a modifier, sera redirigé vers la page boutique
+            return $this->redirectToRoute('app_commercant_produits_index', [], Response::HTTP_SEE_OTHER); // route a modifier, sera redirigé vers la page boutique
         }
 
         return $this->render('commercant/commercant_produit/edit_produit.html.twig', [

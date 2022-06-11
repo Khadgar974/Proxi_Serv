@@ -34,6 +34,8 @@ class Produits implements Serializable
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      * 
      * @Vich\UploadableField(mapping="produit_image", fileNameProperty="image")
+     * @Assert\Image(maxSize="2M")
+     * @Assert\NotNull(message="il faut choisir une image")
      * 
      * @var File|null
      */
@@ -51,13 +53,7 @@ class Produits implements Serializable
     private $reference;
 
     #[ORM\Column(type: 'boolean')]
-    private $bon_plan;
-
-    #[ORM\Column(type: 'datetime_immutable')]
-    private $created_at;
-
-    #[ORM\Column(type: 'datetime_immutable', nullable: true)]
-    private $modified_at;
+    private $bon_plan;    
 
     public function getId(): ?int
     {
@@ -69,7 +65,7 @@ class Produits implements Serializable
         return $this->title;
     }
 
-    public function setTitle(string $title): self
+    public function setTitle(?string $title): self
     {
         $this->title = $title;
 
@@ -112,7 +108,7 @@ class Produits implements Serializable
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage(?string $image): self
     {
         $this->image = $image;
 
@@ -124,7 +120,7 @@ class Produits implements Serializable
         return $this->prix;
     }
 
-    public function setPrix(int $prix): self
+    public function setPrix(?int $prix): self
     {
         $this->prix = $prix;
 
@@ -136,7 +132,7 @@ class Produits implements Serializable
         return $this->quantite;
     }
 
-    public function setQuantite(int $quantite): self
+    public function setQuantite(?int $quantite): self
     {
         $this->quantite = $quantite;
 
@@ -160,37 +156,13 @@ class Produits implements Serializable
         return $this->bon_plan;
     }
 
-    public function setBonPlan(bool $bon_plan): self
+    public function setBonPlan(?bool $bon_plan): self
     {
         $this->bon_plan = $bon_plan;
 
         return $this;
-    }
-
-    public function getCreatedAt(): ?\DateTimeImmutable
-    {
-        return $this->created_at;
-    }
-
-    public function setCreatedAt(\DateTimeImmutable $created_at): self
-    {
-        $this->created_at = $created_at;
-
-        return $this;
-    }
-
-    public function getModifiedAt(): ?\DateTimeImmutable
-    {
-        return $this->modified_at;
-    }
-
-    public function setModifiedAt(?\DateTimeImmutable $modified_at): self
-    {
-        $this->modified_at = $modified_at;
-
-        return $this;
-    }
-
+    }    
+    
     public function serialize()
     {
         $this->image = base64_encode($this->image);
@@ -203,15 +175,4 @@ class Produits implements Serializable
         
     }
 
-    public function getBoutique(): ?Boutique
-    {
-        return $this->boutique;
-    }
-
-    public function setBoutique(?Boutique $boutique): self
-    {
-        $this->boutique = $boutique;
-
-        return $this;
-    }
 }
