@@ -97,6 +97,14 @@ class Boutique implements Serializable
     #[ORM\JoinColumn(nullable: false)]
     private $user;
 
+    #[ORM\OneToMany(mappedBy: 'boutique', targetEntity: produits::class, orphanRemoval: true)]
+    private $produits;
+
+    public function __construct()
+    {
+        $this->produits = new ArrayCollection();
+    }
+
 
   
 
@@ -298,5 +306,35 @@ class Boutique implements Serializable
         $this->image = base64_decode($this->image);
         $this->logo = base64_decode($this->logo);
 
+    }
+
+    /**
+     * @return Collection<int, produits>
+     */
+    public function getProduits(): Collection
+    {
+        return $this->produits;
+    }
+
+    public function addProduit(produits $produit): self
+    {
+        if (!$this->produits->contains($produit)) {
+            $this->produits[] = $produit;
+            $produit->setBoutique($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProduit(produits $produit): self
+    {
+        if ($this->produits->removeElement($produit)) {
+            // set the owning side to null (unless already changed)
+            if ($produit->getBoutique() === $this) {
+                $produit->setBoutique(null);
+            }
+        }
+
+        return $this;
     } 
 }

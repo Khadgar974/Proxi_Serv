@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\ProduitsRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Entity\Traits\Timestampable;
 use Symfony\Component\HttpFoundation\File\File;
@@ -53,7 +51,11 @@ class Produits implements Serializable
     private $reference;
 
     #[ORM\Column(type: 'boolean')]
-    private $bon_plan;    
+    private $bon_plan;
+
+    #[ORM\ManyToOne(targetEntity: Boutique::class, inversedBy: 'produits')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $boutique;    
 
     public function getId(): ?int
     {
@@ -173,6 +175,18 @@ class Produits implements Serializable
     {
         $this->image = base64_decode($this->image);
         
+    }
+
+    public function getBoutique(): ?Boutique
+    {
+        return $this->boutique;
+    }
+
+    public function setBoutique(?Boutique $boutique): self
+    {
+        $this->boutique = $boutique;
+
+        return $this;
     }
 
 }
