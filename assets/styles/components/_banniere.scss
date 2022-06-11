@@ -1,0 +1,30 @@
+.banniere-des-marques {
+    border-top: 1px solid $color--vert;
+    border-bottom: 1px solid $color--vert;
+    background-color: $color-black;
+}
+
+.banniere {
+    margin: 0 auto;
+    h2 {
+        display: block;
+    }
+
+    .boxs {
+        display: flex;
+        justify-content: space-around;
+        gap: 1rem;
+        padding: 2rem;
+        flex-flow: row nowrap;
+        li {
+            width: 9%;
+            text-align: center;
+            img {
+                height: 8rem;
+                object-fit: cover;
+                border-radius: 10px;
+                opacity: 0.8;
+            }
+        }
+    }
+}

@@ -1,11 +1,11 @@
 :root {
-    --vert: #17C1A4;
-    --vertfonce: #12A791;
+    --vert: #17c1a4;
+    --vertfonce: #12a791;
     --vertlogo: #7ed957;
-    --bleuclair: #3C5598;
-    --bleufonce: #293A70;
-    --bleucyan: #30BAE8;
-    --bleu: #1D264F;
+    --bleuclair: #3c5598;
+    --bleufonce: #293a70;
+    --bleucyan: #30bae8;
+    --bleu: #1d264f;
     --bleulogo: #162a3d;
     --noirclair: #111111;
     --blanc: #fff;
@@ -15,12 +15,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition:all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 body {
     background-color: var(--noirclair);
-    font-family: 'Signika', sans-serif;
+    font-family: "Signika", sans-serif;
     overflow-x: hidden;
 }
 
@@ -28,7 +28,7 @@ ul ol {
     list-style: none;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -40,35 +40,37 @@ html {
     scroll-behavior: smooth;
 }
 
-img{
+img {
     max-width: 100%;
 }
 
-.wrap {max-width: 1600px; width:100%; margin: 0 auto;}
+.wrap {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+}
 
 .wrap1 {
-    max-width: 850px;width: 100%;margin: 0 auto;padding: 0 1rem;
+    max-width: 850px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 #header {
     display: flex;
     justify-content: space-between;
-    background: var(--noirclair);
-    
-}
-
-#header .wrap {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 1rem 1rem 1rem 1rem;
+    padding: 1rem 2rem;
+    background: var(--noirclair);
+    border-bottom: 3px solid $color--vertlogo;
 }
 
 #header .menu {
     margin-top: 1.5rem;
 }
 
-#header nav ul{
+#header nav ul {
     display: flex;
 }
 
@@ -76,11 +78,11 @@ img{
     display: inline-block;
     line-height: 2em;
     padding: 0 10px;
-    font-size:20px;
+    font-size: 20px;
     color: #fff;
 }
 
-#header nav ul li a:hover{
-color: var(--vertlogo);
-transition: 1s;
+#header nav ul li a:hover {
+    color: var(--vertlogo);
+    transition: 1s;
 }
