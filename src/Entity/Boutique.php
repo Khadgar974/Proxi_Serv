@@ -32,7 +32,7 @@ class Boutique implements Serializable
     private $title;
 
     #[ORM\Column(type: 'text', nullable: true)]
-    #[Assert\Length(min: 3, minMessage: "minimum 3 caractères")] 
+    #[Assert\Length(min: 10, minMessage: "minimum 3 caractères")] 
     private $description;
 
     #[ORM\Column(type: 'string', length: 150)]
@@ -96,6 +96,14 @@ class Boutique implements Serializable
     #[ORM\OneToOne(inversedBy: 'boutique', targetEntity: User::class, cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]
     private $user;
+
+    #[ORM\OneToMany(mappedBy: 'boutique', targetEntity: Produits::class, orphanRemoval: true)]
+    private $produits;
+
+    public function __construct()
+    {
+        $this->produits = new ArrayCollection();
+    }
 
 
   
@@ -301,14 +309,14 @@ class Boutique implements Serializable
     }
 
     /**
-     * @return Collection<int, Produits>
+     * @return Collection<int, produits>
      */
     public function getProduits(): Collection
     {
         return $this->produits;
     }
 
-    public function addProduit(Produits $produit): self
+    public function addProduit(produits $produit): self
     {
         if (!$this->produits->contains($produit)) {
             $this->produits[] = $produit;
@@ -318,7 +326,7 @@ class Boutique implements Serializable
         return $this;
     }
 
-    public function removeProduit(Produits $produit): self
+    public function removeProduit(produits $produit): self
     {
         if ($this->produits->removeElement($produit)) {
             // set the owning side to null (unless already changed)
@@ -328,7 +336,5 @@ class Boutique implements Serializable
         }
 
         return $this;
-    }
-
-    
+    } 
 }
