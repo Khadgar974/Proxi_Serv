@@ -24,9 +24,12 @@ class Produits implements Serializable
     private $id;
 
     #[ORM\Column(type: 'string', length: 150)]
+    #[Assert\NotBlank(message: 'Vous devez remplir ce champ')]
+    #[Assert\Length(min: 3, minMessage: "minimum 3 caractères")] 
     private $title;
 
     #[ORM\Column(type: 'text', nullable: true)]
+    #[Assert\Length(min: 10, minMessage: "minimum 3 caractères")] 
     private $description;
 
     /**
@@ -43,9 +46,13 @@ class Produits implements Serializable
     private $image;
 
     #[ORM\Column(type: 'integer')]
+    #[Assert\NotBlank(message: 'Vous devez remplir ce champ')]
+    #[Assert\Positive(message: 'Le prix ne peux pas être négatif.')]
     private $prix;
 
     #[ORM\Column(type: 'integer')]
+    #[Assert\NotBlank(message: 'Vous devez remplir ce champ')]
+    #[Assert\Positive(message: 'Il ne peux pas y avoir de stock négatif.')]
     private $quantite;
 
     #[ORM\Column(type: 'string', length: 40, nullable: true)]
