@@ -38,6 +38,7 @@ class ProduitsFormType extends AbstractType
                         'oui' => '1',
                         'non' => '0'
                     ],
+                    'data' => '0', 
                     'expanded' => true,
                     'multiple' => false,
                     'mapped' => true,

@@ -32,7 +32,7 @@ class Boutique implements Serializable
     private $title;
 
     #[ORM\Column(type: 'text', nullable: true)]
-    #[Assert\Length(min: 3, minMessage: "minimum 3 caractères")] 
+    #[Assert\Length(min: 10, minMessage: "minimum 3 caractères")] 
     private $description;
 
     #[ORM\Column(type: 'string', length: 150)]
