@@ -107,12 +107,13 @@ img{
 #intro .wrap1 .gestion_com ul{
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: center;
     padding: 2rem;
 }
 
 #intro .wrap1 .gestion_com li{
    font-size: 3rem;
+   padding: 1rem;
 }
 
 .banniere {
