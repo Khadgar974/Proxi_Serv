@@ -213,7 +213,7 @@ footer{
     text-align: center;
 }
 .footer-bottom p{
-float: left;
+    float: left;
     font-size: 14px;
     word-spacing: 2px;
 }
@@ -503,11 +503,7 @@ float: left;
     
 //     }
 @media screen and (max-width:600px) {
-    .footer-menu ul{
-        display: flex;
-        margin-top: 10px;
-        margin-bottom: 20px;
-    }
+    
     // .banniere {
         
     // }
@@ -527,4 +523,14 @@ float: left;
         }
     }
     }
+    footer {
+        .footer-bottom p {
+            float: none;
+        }
+        .footer-menu {
+            float: none;
+            display: inline-block;
+        }
+    }
+    
 }
