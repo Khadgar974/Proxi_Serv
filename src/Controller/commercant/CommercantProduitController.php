@@ -48,13 +48,14 @@ class CommercantProduitController extends AbstractController
     #[Route('/produits/add', name: 'app_commercant_add_produit')]
     public function addProduit(Request $request, ProduitsRepository $produitsRepo): Response
     {
-        $produits = new Produits;
-        $form = $this->createForm(ProduitsFormType::class, $produits);
+        $produit = new Produits;
+        $form = $this->createForm(ProduitsFormType::class, $produit);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {                       
-            
-            $produitsRepo->add($produits, true);
+        if ($form->isSubmitted() && $form->isValid()) {    
+                            
+            $produit->setBoutique($this->getUser()->getBoutique());            
+            $produitsRepo->add($produit, true);
 
             return $this->redirectToRoute('app_commercant_produits_index', [], Response::HTTP_SEE_OTHER); // route a modifier, sera redirigé vers la page boutique
         }

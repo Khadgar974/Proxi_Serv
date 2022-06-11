@@ -97,7 +97,7 @@ class Boutique implements Serializable
     #[ORM\JoinColumn(nullable: false)]
     private $user;
 
-    #[ORM\OneToMany(mappedBy: 'boutique', targetEntity: produits::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'boutique', targetEntity: Produits::class, orphanRemoval: true)]
     private $produits;
 
     public function __construct()

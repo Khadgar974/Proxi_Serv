@@ -24,17 +24,18 @@ class BoutiqueFixtures extends Fixture implements DependentFixtureInterface
         $boutique -> setLogo('Oh le beau logo');
         $boutique -> setIsSiretVerified('1');
         $boutique -> setIsActive('1');
-        $boutique -> setUser($this->getReference('admin2'));
+        $boutique -> setUser($this->getReference('admin2'));        
 
         $manager->persist($boutique);
         $manager->flush();
-    }
 
+        $this->addReference('boutique', $boutique);        
+    } 
 
     public function getDependencies()
     {
         return [
-            UserFixtures::class,
+            UserFixtures::class,            
         ];
     }
 }
