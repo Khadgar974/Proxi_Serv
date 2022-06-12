@@ -77,7 +77,6 @@ img {
   .wrap1 .introduction {
     margin-top: 12rem;
     width: 100%;
-<<<<<<< HEAD
     height: 70rem;
     background-position: center;
     text-align: center;
@@ -107,12 +106,6 @@ img {
                 font-size: 2.2rem;
             }
         }
-=======
-    max-height: 100%;
-    padding: 8rem;
-    .titre {
-      max-height: 20%;
->>>>>>> dev_sam
     }
 
     .text {
@@ -149,7 +142,6 @@ img {
 //     border-radius: 10px;
 // }
 
-<<<<<<< HEAD
 #intro {
     .wrap1 {
         .gestion_com {
@@ -187,26 +179,6 @@ img {
             }
         }
     }
-=======
-#intro .wrap1 .gestion_com {
-  background-color: var(--bleulogo);
-  filter: opacity(0.8);
-  border-radius: 10px;
-  width: 65%;
-  margin: 0 auto;
-}
-
-#intro .wrap1 .gestion_com ul {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  padding: 2rem;
-}
-
-#intro .wrap1 .gestion_com li {
-  font-size: 3rem;
-  padding: 1rem;
->>>>>>> dev_sam
 }
 
 #home_plan {
@@ -571,7 +543,6 @@ footer {
 }
 ////////// Mon Compte //////////
 .mon_compte {
-<<<<<<< HEAD
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -580,27 +551,12 @@ footer {
     border-radius: 10px;
     text-align: center;
     align-items: center;
-=======
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  background-color: var(--bleulogo);
-  filter: opacity(0.8);
-  border-radius: 10px;
-  text-align: center;
-  align-items: center;
->>>>>>> dev_sam
 }
 
 .mon_compte h1,
 h2 {
-<<<<<<< HEAD
     color: white;
     padding: 0.5rem;
-=======
-  color: white;
-  padding: 0.5rem;
->>>>>>> dev_sam
 }
 
 .mon_compte a {
