@@ -489,6 +489,16 @@ float: left;
     margin-top: .6rem;
     align-items: center;
 }
+////////// Mon Compte //////////
+.mon_compte {
+    background-color: var(--bleulogo);
+    filter: opacity(.8);
+    border-radius: 10px;
+}
+
+.mon_comte h2,  {
+    color: white;
+}
 // /////// les boutiques//////////
 .boxs_boutiques {
     border-radius: 10px;
