@@ -62,10 +62,10 @@ img {
 
 #intro {
     background: linear-gradient(($color-filter-hero), ($color-filter-hero)),
-        url("../../images/img_main/arriere_plan3.jpg") no-repeat;
+        url("../../../images/img_main/arriere_plan3.jpg") no-repeat;
     background-size: cover;
     width: 100%;
-    height: 80vh;
+    height: 70rem;
     background-position: center;
     text-align: center;
     display: flex;
@@ -76,11 +76,17 @@ img {
     font-size: 1.4rem;
     .wrap1 .introduction {
         width: 100%;
-        padding: 10rem;
+        max-height: 100%;
+        padding: 8rem;
+        .titre {
+            max-height: 20%;
+        }
 
         .text {
             margin: 0 auto;
+            max-height: 40%;
             max-width: 40%;
+
             p {
                 display: inline;
                 text-align: center;
