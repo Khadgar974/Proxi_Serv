@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Boutique;
 use App\Form\BoutiqueFormType;
 use App\Repository\BoutiqueRepository;
-use App\Repository\ProduitsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,7 +22,7 @@ class BoutiqueController extends AbstractController
     }
 
     #[Route('/single/{id}', name: 'app_single_boutique')]
-    public function single($id, BoutiqueRepository $boutiqueRepo, ProduitsRepository $produitsRepo ): Response
+    public function single($id, BoutiqueRepository $boutiqueRepo, ProduitsRepository $produitsRepo): Response
     {
         $boutique = $boutiqueRepo->findOneBy(['id' => $id]);
         $produits_boutique = $boutique->getProduits();
