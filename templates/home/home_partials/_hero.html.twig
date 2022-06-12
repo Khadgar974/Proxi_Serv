@@ -1,54 +1,31 @@
 <section id="intro">
     <div class="wrap1">
-        <div class='gestion_com'>
-            <ul>
-            {% if app.user %}
-                {% if is_granted('ROLE_ADMIN') %}
-                <li><a href="{{path('app_admin_default')}}">Gestion admin</a></li>
-                {% endif %}
-                {% if is_granted('ROLE_COMMERCANT') %}
+        {% if app.user %}
+            {% if is_granted('ROLE_COMMERCANT') %}
+                <div class='gestion_com'>
+                    <ul>
                     {% if app.user.boutique %}
                         <li><a href="{{path('app_commercant_default')}}">Gestion commercant</a></li>
                     {% else %}                                                
-                    <li><a href="{{path('app_create_boutique')}}">Création boutique</a></li>
+                        <li><a href="{{path('app_create_boutique')}}">Création boutique</a></li>
                     {% endif %}
-                {% endif %}
+
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <li><a href="{{path('app_admin_default')}}">Gestion admin</a></li>
+                    {% endif %}                    
+                    </ul>        
+                </div>
             {% endif %}
-            </ul>        
-        </div>
+        {% endif %}
         <div class="introduction">
             <div class="titre">
-                <h1>Proxi' Services</h1>
-                <h1>Pont-audemer</h1>
+                <h1 class="heading-primary heading-primary--main">Proxi'Services<br> Pont-audemer</h1>
+                
             </div>
             <div class="text">
-            <p>Est un site de vente</p>
-            <p>regroupant les commerçants</p>
-            <p>d'une communauté de commune.</p>
-            <p>Son principe est de permettre</p>
-            <p>au petit commerçants</p>
-            <p>d'avoir une fenêtre sur internet</p>
-            <p>et aux utilisateurs d'acheter local.</p>
+                <p>Proxi'Service est un site de ventes et de services regroupant les commerçants d'une communauté de commune. Son principe est de permettre aux petits commerçants d'avoir une fenêtre sur internet. Les services proposés seront adaptés à chaque type de commerce dans le but d'optimiser l'activité local et d'améliorer les services apportés aux clients.</p>
             </div>
-        </div>
+        </div>        
+    </div>  
         
-    </div>
-    <div class="wrap">
-        <div class="banniere">
-            <ul class="boxs">
-                <li class="shadow">
-                    <img src="{{asset('images/logo_rislepizza.png')}}" alt="">
-                </li>
-                <li class="shadow">
-                    <img src="{{asset('images/logo_laurette.png')}}" alt="">
-                </li>
-                <li class="shadow">
-                    <img src="{{asset('images/logo_proxygen.png')}}" alt="">
-                </li>
-                <li class="shadow">
-                    <img src="{{asset('images/Logo-CDC.jpg')}}" alt="">
-                </li>
-            </ul>
-        </div>
-    </div>
 </section>
