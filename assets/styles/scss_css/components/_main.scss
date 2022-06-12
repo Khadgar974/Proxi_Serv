@@ -75,6 +75,7 @@ img {
     color: var(--blanc);
     font-size: 1.4rem;
     .wrap1 .introduction {
+        margin-top: 12rem;
         width: 100%;
         max-height: 100%;
         padding: 8rem;
@@ -85,12 +86,12 @@ img {
         .text {
             margin: 0 auto;
             max-height: 40%;
-            max-width: 40%;
+            max-width: 60%;
 
             p {
                 display: inline;
                 text-align: center;
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
         }
     }
@@ -484,7 +485,7 @@ footer {
     position: absolute;
     top: 5px;
     transform: translateX(350%);
-    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+    box-shadow: $color-black 5px 5px 15px 5px;
 }
 .prix p {
     font-size: 1.5rem;
@@ -505,20 +506,33 @@ footer {
     text-align: center;
     min-height: 7rem;
 }
-// @media screen and (max-width:300px) {
 
-//     }
-@media screen and (max-width: 600px) {
-    .footer-menu ul {
-        display: flex;
-        margin-top: 10px;
-        margin-bottom: 20px;
-    }
-    // .banniere {
-
-    // }
-}
 @media screen and (max-width: 900px) {
+    //////// hero///////////////
+
+    #intro {
+        height: 60rem;
+        .heading-primary--main {
+            font-size: 4rem;
+        }
+
+        .wrap1 .introduction {
+            padding: 6rem;
+            .titre {
+                max-height: 20%;
+            }
+
+            .text {
+                max-width: 80%;
+
+                p {
+                    display: inline;
+                    text-align: center;
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
     #home_plan {
         .lesbonsplans {
             .wrap2 {
@@ -530,6 +544,69 @@ footer {
                 background-color: white;
                 width: 48%;
                 margin-bottom: 2rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    //////// hero///////////////
+
+    #intro {
+        .heading-primary--main {
+            font-size: 4rem;
+        }
+
+        .wrap1 .introduction {
+            padding: 4rem;
+            .titre {
+                max-height: 20%;
+            }
+
+            .text {
+                max-width: 90%;
+
+                p {
+                    display: inline;
+                    text-align: center;
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
+
+    .footer-menu ul {
+        display: flex;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    // .banniere {
+
+    // }
+}
+
+@media screen and (max-width: 450px) {
+    //////// hero///////////////
+
+    #intro {
+        .heading-primary--main {
+            font-size: 2.5rem;
+        }
+
+        .wrap1 .introduction {
+            padding: 3rem;
+            .titre {
+                max-height: 20%;
+            }
+
+            .text {
+                max-width: 95%;
+
+                p {
+                    display: inline;
+                    text-align: center;
+                    font-size: 1.5rem;
+                }
             }
         }
     }
