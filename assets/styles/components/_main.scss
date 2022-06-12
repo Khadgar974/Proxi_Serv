@@ -491,14 +491,25 @@ float: left;
 }
 ////////// Mon Compte //////////
 .mon_compte {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     background-color: var(--bleulogo);
     filter: opacity(.8);
     border-radius: 10px;
+    text-align: center;
+    align-items: center;
 }
 
-.mon_comte h2  {
+.mon_compte h1,h2  {
     color: white;
+    padding: 0.5rem;
 }
+
+.mon_compte a {
+    width: 15%;
+}
+
 // /////// les boutiques//////////
 .boxs_boutiques {
     border-radius: 10px;
