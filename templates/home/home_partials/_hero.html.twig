@@ -1,30 +1,29 @@
 <section id="intro">
-    <div class="wrap1">
-        {% if app.user %}
+    <div class="wrap1">        
+        <div class="introduction">
+            <div class="titre">
+                <h1 class="heading-primary heading-primary--main">Proxi'Services<br> Pont-audemer</h1>                
+            </div>
+            <div class="text">
+                <p>Proxi'Service est un site de ventes et de services regroupant les commerçants d'une communauté de commune. Son principe est de permettre aux petits commerçants d'avoir une fenêtre sur internet. Les options proposés seront adaptés à chaque type de commerce dans le but d'optimiser l'activité local et d'améliorer les services apportés aux clients.</p>
+            </div>
+            {% if app.user %}
             {% if is_granted('ROLE_COMMERCANT') %}
                 <div class='gestion_com'>
                     <ul>
                     {% if app.user.boutique %}
-                        <li><a href="{{path('app_commercant_default')}}">Gestion commercant</a></li>
+                        <li><a class="admin_com_link" href="{{path('app_commercant_default')}}">Gestion commercant</a></li>
                     {% else %}                                                
-                        <li><a href="{{path('app_create_boutique')}}">Création boutique</a></li>
+                        <li><a class="admin_com_link" href="{{path('app_create_boutique')}}">Créer ma boutique</a></li>
                     {% endif %}
 
                     {% if is_granted('ROLE_ADMIN') %}
-                    <li><a href="{{path('app_admin_default')}}">Gestion admin</a></li>
+                    <li><a class="admin_com_link" href="{{path('app_admin_default')}}">Gestion admin</a></li>
                     {% endif %}                    
                     </ul>        
                 </div>
             {% endif %}
         {% endif %}
-        <div class="introduction">
-            <div class="titre">
-                <h1 class="heading-primary heading-primary--main">Proxi'Services<br> Pont-audemer</h1>
-                
-            </div>
-            <div class="text">
-                <p>Proxi'Service est un site de ventes et de services regroupant les commerçants d'une communauté de commune. Son principe est de permettre aux petits commerçants d'avoir une fenêtre sur internet. Les services proposés seront adaptés à chaque type de commerce dans le but d'optimiser l'activité local et d'améliorer les services apportés aux clients.</p>
-            </div>
         </div>        
     </div>  
         

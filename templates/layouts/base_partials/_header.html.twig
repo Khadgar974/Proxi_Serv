@@ -1,64 +1,53 @@
-<html lang="fr" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0", maximum-scale=1.0, minimum scale=1.0>
-        <title>Proxi'Services Boutique</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">        
-    </head>
-    <body>
-        <header id="header">  
-
-            <div class="box-logo logo">
-                <img src={{asset('images/proxi-service1.png')}} alt="" width="200"/>
-                {# <img src=" \media\cache\squared_thumbnail_medium\uploads\boutiques\images-62a0cb556ca24681761163.jpg " /> #}
-            </div> 
-            
-            <nav class="menu main-nav">
-                <ul class="main-nav-list">
-                    {% if app.user %}
-                        
-                        {% if is_granted('ROLE_USER') %}
-                            {% if app.request.get('_route') != 'app_user' %}
-                                <li><a class="main-nav-link" href="{{path('app_user')}}">Mon Compte</a></li>
-                            {% endif %}
-                        {% endif %}
-
-                        <li><a class="main-nav-link" href="{{path('app_logout')}}">Se déconnecter</a></li> 
-                    {% else %}
-                
-                        <li><a class="main-nav-link" href="{{path('app_register')}}">Inscription</a></li>
-                        <li><a class="main-nav-link" href="{{path('app_login')}}">Se connecter</a></li>
+<header id="header">  
+    <div class="box-logo logo">
+        <img src={{asset('images/proxi-service1.png')}} alt="" width="200"/>
+        {# <img src=" \media\cache\squared_thumbnail_medium\uploads\boutiques\images-62a0cb556ca24681761163.jpg " /> #}
+    </div> 
+    
+    <nav class="menu main-nav">
+        <ul class="main-nav-list">
+            {% if app.user %}                
+                {% if is_granted('ROLE_USER') %}
+                    {% if app.request.get('_route') != 'app_user' %}
+                        <li><a class="main-nav-link" href="{{path('app_user')}}">Mon Compte</a></li>
                     {% endif %}
+                {% endif %}
 
-                    {% if app.request.get('_route') != 'app_index_boutiques' %}
-                        <li><a class="main-nav-link" href="{{path('app_index_boutiques')}}">Les boutiques</a></li>
-                    {% endif %}
+                <li><a class="main-nav-link" href="{{path('app_logout')}}">Se déconnecter</a></li> 
+            {% else %}
+        
+                <li><a class="main-nav-link" href="{{path('app_register')}}">Inscription</a></li>
+                <li><a class="main-nav-link" href="{{path('app_login')}}">Se connecter</a></li>
+            {% endif %}
 
-                    {% if app.request.get('_route') != 'app_produit_bonplans' %}
-                        <li><a class="main-nav-link" href="{{path('app_produit_bonplans')}}">Les bon plans</a></li> 
-                    {% endif %}
+            {% if app.request.get('_route') != 'app_index_boutiques' %}
+                <li><a class="main-nav-link" href="{{path('app_index_boutiques')}}">Les boutiques</a></li>
+            {% endif %}
 
-                    {% if app.request.get('_route') != 'app_home' %}
-                        <li><a href="{{path('app_home')}}">retour home</a></li>
-                    {% endif %}
-                
-                </ul>
-            </nav>
+            {% if app.request.get('_route') != 'app_produit_bonplans' %}
+                <li><a class="main-nav-link" href="{{path('app_produit_bonplans')}}">Les bon plans</a></li> 
+            {% endif %}
 
-            <!-- responsive mobile button -->            
-            <button class="btn-mobile-nav">
-                <ion-icon
-                    class="icon-mobile-nav"
-                    name="menu-outline"
-                ></ion-icon>
-                <ion-icon
-                    class="icon-mobile-nav"
-                    name="close-outline"
-                ></ion-icon>
-            </button>                
-           
-         </header>
-               
+            {% if app.request.get('_route') != 'app_home' %}
+                <li><a href="{{path('app_home')}}">retour home</a></li>
+            {% endif %}
+        
+        </ul>
+    </nav>
+
+    <!-- responsive mobile button -->            
+    <button class="btn-mobile-nav">
+        <ion-icon
+            class="icon-mobile-nav"
+            name="menu-outline"
+        ></ion-icon>
+        <ion-icon
+            class="icon-mobile-nav"
+            name="close-outline"
+        ></ion-icon>
+    </button> 
+</header>
+<div class="marge-header-position-fix"></div>
+
+  
+        
