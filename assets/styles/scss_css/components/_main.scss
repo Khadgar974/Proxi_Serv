@@ -75,7 +75,6 @@ img {
     color: var(--blanc);
     font-size: 1.4rem;
     .wrap1 .introduction {
-        margin-top: 12rem;
         width: 100%;
         height: 70rem;
         background-position: center;
@@ -165,7 +164,7 @@ img {
             .admin_com_link {
                 &:link,
                 &:visited {
-                    font-size: 3rem;
+                    font-size: 2rem;
                     display: inline;
                     background-color: $color--bleulogo;
                     color: $color--bleucyan;
@@ -586,31 +585,73 @@ h2 {
 }
 
 @media screen and (max-width: 900px) {
-    //////// hero///////////////
-
+    //////// hero  ///////////////
     #intro {
         height: 60rem;
         .heading-primary--main {
             font-size: 4rem;
         }
 
-        .wrap1 .introduction {
-            padding: 6rem;
-            .titre {
-                max-height: 20%;
+        .wrap1 {
+            .introduction {
+                padding: 2rem;
+                .titre {
+                    max-height: 20%;
+                }
+
+                .text {
+                    max-width: 80%;
+
+                    p {
+                        display: inline;
+                        text-align: center;
+                        font-size: 1.8rem;
+                    }
+                }
             }
 
-            .text {
-                max-width: 80%;
+            .gestion_com {
+                border-radius: 10px;
+                width: 65%;
+                margin: 0 auto;
+            }
 
-                p {
-                    display: inline;
-                    text-align: center;
-                    font-size: 2rem;
+            .gestion_com ul {
+                margin-top: 2rem;
+
+                gap: 2rem;
+                padding: 1rem;
+            }
+
+            .gestion_com li {
+                .admin_com_link {
+                    &:link,
+                    &:visited {
+                        font-size: 1.8rem;
+                        padding: 0.8rem 1.6rem;
+                    }
                 }
             }
         }
     }
+
+    .banniere {
+        .boxs {
+            padding: 1.5rem;
+
+            li {
+                width: 14%;
+
+                img {
+                    width: 90%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    // comment ça marche
+
     #home_plan {
         .lesbonsplans {
             .wrap2 {
@@ -636,7 +677,7 @@ h2 {
         }
 
         .wrap1 .introduction {
-            padding: 4rem;
+            padding: 2rem;
             .titre {
                 max-height: 20%;
             }
@@ -647,8 +688,16 @@ h2 {
                 p {
                     display: inline;
                     text-align: center;
-                    font-size: 1.8rem;
+                    font-size: 1.6rem;
                 }
+            }
+        }
+    }
+
+    .banniere {
+        .boxs {
+            li {
+                width: 16%;
             }
         }
     }
@@ -671,20 +720,51 @@ h2 {
             font-size: 2.5rem;
         }
 
-        .wrap1 .introduction {
-            padding: 3rem;
-            .titre {
-                max-height: 20%;
+        .wrap1 {
+            .introduction {
+                padding: 1.5rem;
+                .titre {
+                    max-height: 20%;
+                }
+
+                .text {
+                    max-width: 95%;
+
+                    p {
+                        display: inline;
+                        text-align: center;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+            .gestion_com {
+                width: 100%;
+                margin: 0 auto;
             }
 
-            .text {
-                max-width: 95%;
+            .gestion_com ul {
+                margin-top: 2rem;
 
-                p {
-                    display: inline;
-                    text-align: center;
-                    font-size: 1.5rem;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .gestion_com li {
+                .admin_com_link {
+                    &:link,
+                    &:visited {
+                        font-size: 1.6rem;
+                        padding: 0.6rem 1.4rem;
+                    }
                 }
+            }
+        }
+    }
+
+    .banniere {
+        .boxs {
+            li {
+                width: 20%;
             }
         }
     }
