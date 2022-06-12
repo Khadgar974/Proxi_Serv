@@ -140,7 +140,7 @@ img {
             .admin_com_link {
                 &:link,
                 &:visited {
-                    font-size: 2rem;
+                    font-size: 3rem;
                     display: inline;
                     background-color: $color--bleulogo;
                     color: $color--bleucyan;
@@ -519,6 +519,9 @@ footer {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    padding: 5rem;
     background-color: var(--bleulogo);
     filter: opacity(0.8);
     border-radius: 10px;
@@ -528,12 +531,14 @@ footer {
 
 .mon_compte h1,
 h2 {
+    padding: 0.5rem 2rem;
     color: white;
-    padding: 0.5rem;
 }
 
 .mon_compte a {
-    width: 15%;
+    margin-top: 2rem;
+    color: white;
+    padding: 0.5rem 2rem;
 }
 
 // /////// les boutiques//////////
