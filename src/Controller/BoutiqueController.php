@@ -20,9 +20,9 @@ class BoutiqueController extends AbstractController
         $boutiques = $boutiqueRepo->findAll();     
         return $this->render('boutique/boutiques_index.html.twig', ['boutiques' => $boutiques]);
     }
-
+    // Va renvoyer une seule boutique
     #[Route('/single/{id}', name: 'app_single_boutique')]
-    public function single($id, BoutiqueRepository $boutiqueRepo, ProduitsRepository $produitsRepo): Response
+    public function single($id, BoutiqueRepository $boutiqueRepo): Response
     {
         $boutique = $boutiqueRepo->findOneBy(['id' => $id]);
         $produits_boutique = $boutique->getProduits();
