@@ -6,7 +6,6 @@ use App\Entity\Boutique;
 use App\Entity\Produits;
 use App\Form\BoutiqueFormType;
 use App\Repository\BoutiqueRepository;
-use App\Repository\ProduitsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

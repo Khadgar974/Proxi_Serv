@@ -11,6 +11,8 @@
                 <div class="boxs">
                     <div class="boxs_boutiques">
                         <h2>Type de Boutique</h2>
+                        <div class="box_boutique_categorie">
+                        <h1> Catégorie <h1>
                         <ul class="boxs">
                             {% for boutique in boutiques %}
                                 <li class="shadow">
@@ -22,8 +24,25 @@
                                         </div>
                                     </div>
                                 </li>
-                            {% endfor %}                            
+                            {% endfor %} 
                         </ul>
+                        </div>
+                        <div class="box_boutique_categorie">
+                        <h1> Catégorie <h1>
+                        <ul class="boxs">
+                            {% for boutique in boutiques %}
+                                <li class="shadow">
+                                    <div class="bloc_text">
+                                        <h2>{{ boutique.title }}</h2>
+                                        <img src="{{asset('images/arriere-plan.png')}}" alt="" width="150">
+                                        <div class="box-button">
+                                            <a class="details" href="{{path('app_single_boutique', {id: boutique.id})}}">boutique</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endfor %}                                                    
+                        </ul>
+                        </div>
                     </div>                    
                 </div>
             </div>
