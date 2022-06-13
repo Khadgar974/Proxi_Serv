@@ -18,10 +18,9 @@
                             <div class="lesbonsplans">
                                 <div class="wrap2">
                                 {% for boutique in boutiques %}
-                                {% for i in 1..4 %}
                                         <div class="mini_plan">
                                             <div class="plan_img">
-                                                <img src="https://picsum.photos/id/23{{i}}/200/300">
+                                                <img src="{{vich_uploader_asset(boutique, 'imageFileBoutique')}}" alt="{{boutique.title}}">
                                             </div>
                                             <div class="plan_text">
                                                 <h2>{{ boutique.title }}</h2>
@@ -31,7 +30,6 @@
                                             </div>
                                         </div>
                                 {% endfor %}
-                                {% endfor %}  
                                 </div>
                             </div>
                         </div>

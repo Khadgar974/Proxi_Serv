@@ -81,17 +81,24 @@
             <!-- page title area end -->
             <div class="main-content-inner">
                 <!-- MAIN CONTENT GOES HERE -->
-                <h2>Les catégories</h2>
-                <div>
-                    <ul>
-                        <hr>
-                        {% for categorie in categories %}
-                        
-                        <li>Titre : {{ categorie.title }}</li>
-                        <li>Description : {{ categorie.description}} <a href="">Editer ce produit</a></li>
-                        <hr>
-                        {% endfor %}
-                    </ul>
+                
+                <div class="categorie">
+                <h2>LES CATEGORIES</h2>
+                    <div class="pagination">
+                        <ul>
+                            <hr>
+                            {% for categorie in categories %}
+                            
+                            <li>Titre : {{ categorie.title }}</li>
+                            <li>Description : {{ categorie.description}}
+                            
+                            <a href="{{path('app_edit_categorie', {id : categorie.id})}}">Editer Catégorie</a> 
+                            {% include('admin/admin_categorie/_delete_categorie.html.twig') %}
+                            </li>
+                            <hr>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

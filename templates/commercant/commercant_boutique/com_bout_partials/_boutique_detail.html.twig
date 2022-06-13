@@ -17,7 +17,6 @@
                                 <div class="lesbonsplans">
                                     <div class="wrap2">
                                     {% for produit in produits %}
-                                    {% for i in 1..4 %}
                                             <div class="mini_plan">
                                                 <div class="plan_img">
                                                     <img src="{{vich_uploader_asset(produit, 'imageFileProduit')}}" alt="{{produit.title}}">
@@ -31,7 +30,6 @@
                                                 </div>
                                             </div>
                                     {% endfor %}
-                                    {% endfor %}  
                                     </div>
                                 </div>
                             </div>
