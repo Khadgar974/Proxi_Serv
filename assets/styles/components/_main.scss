@@ -340,14 +340,14 @@ footer{
     margin: 0 auto;
     padding: 0;
 }
-.shop-container .produits .boxs .boxs .bloc_text {
+.shop-container .produits .boxs .bloc_text {
     background-color: var(--bleulogo);
     border-radius: 1rem;
     color: #fff;
-    padding: 1rem;
+    // padding: 1rem;
     filter: opacity(.8);
 }
-.shop-container .produits .boxs .boxs .bloc_text p{
+.shop-container .produits .boxs .bloc_text p{
     color: #fff;
 }
 .shop-container .produits .boxs img {
@@ -424,8 +424,8 @@ footer{
 }
 .details {
     color: rgb(255, 255, 255);
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: 30px;
+    line-height: 3rem;
     padding: .5rem;
     border-radius: .9rem;
     background-image: linear-gradient(
@@ -434,7 +434,7 @@ footer{
     rgb(32, 218, 41) 50%,
     rgb(17, 153, 85) 100%
     );
-    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+    box-shadow: rgb(0, 0, 0) 5px 5px 10px 5px;
     border: 2px solid black;
     display: inline-block;
     text-align: center;
