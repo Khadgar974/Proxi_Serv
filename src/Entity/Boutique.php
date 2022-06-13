@@ -35,7 +35,7 @@ class Boutique implements Serializable
     #[Assert\Length(min: 10, minMessage: "minimum 3 caractères")] 
     private $description;
 
-    #[ORM\Column(type: 'string', length: 150)]
+    #[ORM\Column(type: 'string', length: 150, unique: true)]
     #[Assert\NotBlank(message: 'Vous devez remplir ce champ')]
     #[Assert\Length(exactly: 14, exactMessage: "Le SIRET doit faire 14 charactères")] 
     private $SIRET;
