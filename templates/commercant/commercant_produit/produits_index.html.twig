@@ -11,51 +11,7 @@
         <!-- main content area start -->
         <div class="main-content">
             <!-- header area start -->
-            <div class="header-area">
-                <div class="row align-items-center">
-                    <!-- nav and search button -->
-                    <div class="col-md-6 col-sm-8 clearfix">
-                        <div class="nav-btn pull-left">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>                        
-                    </div>
-                    <!-- profile info & task notification -->
-                    <div class="col-md-6 col-sm-4 clearfix">
-                        <ul class="notification-area pull-right">
-                            <li id="full-view"><i class="ti-fullscreen"></i></li>
-                            <li id="full-view-exit"><i class="ti-zoom-out"></i></li>
-                          
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- header area end -->
-            <!-- page title area start -->
-            <div class="page-title-area">
-                <div class="row align-items-center">
-                    <div class="col-sm-6">
-                        <div class="breadcrumbs-area clearfix">
-                            <h4 class="page-title pull-left">Dashboard</h4>
-                            <ul class="breadcrumbs pull-left">
-                                 <li><a href="{{path('app_commercant_default')}}">Retour Home Commerçant</a></li>
-                                <li><span>Dashboard</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 clearfix">
-                        <div class="user-profile pull-right">
-                            {# <img class="avatar user-thumb" src="{{ asset('admin-template/images/author/avatar.png')}}" alt="avatar"> #}
-                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">{{ app.user.nom }}<i class="fa fa-angle-down"></i></h4>
-                            <div class="dropdown-menu">                                
-                                <a class="dropdown-item" href="{{path('app_home')}}">Retour HomePage</a>
-                                <a href="{{path('app_logout')}}">Se déconnecter</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                {% include "layouts/admin_partials/_admin_header.html.twig" %}            
             <!-- page title area end -->
             <div class="main-content-inner">
                 <!-- MAIN CONTENT GOES HERE -->

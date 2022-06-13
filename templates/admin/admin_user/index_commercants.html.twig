@@ -1,0 +1,38 @@
+{% extends 'layouts/admin.html.twig' %}
+
+{% block body %}
+
+<!-- preloader area end -->
+<!-- page container area start -->
+<div class="page-container">
+    {% include "admin/admin_partials/_admin_side_menu.html.twig" %}
+     <!-- main content area start -->
+        <div class="main-content">
+            <!-- header area start -->
+                {% include "layouts/admin_partials/_admin_header.html.twig" %}
+            <!-- page title area end -->
+            <div class="main-content-inner">
+                <div class="admin-user-index">
+                    <!-- MAIN CONTENT GOES HERE -->
+                    <h1>Liste des commercants inscrits</h1>
+                    <ul>
+                        <hr>
+                        {% for commercant in commercants %}
+                            <li>
+                                {{ commercant.nom }}
+                            </li>
+                            <li>
+                                {{ commercant.email }}
+                            </li>
+                            <li>
+                                {{ commercant.createdAt|date('d/m/Y') }}
+                            </li>
+                        <hr>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- main content area end -->
+
+{% endblock %}
