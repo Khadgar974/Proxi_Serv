@@ -22,7 +22,7 @@ class BoutiqueController extends AbstractController
     }
 
     #[Route('/single/{id}', name: 'app_single_boutique')]
-    public function single($id, BoutiqueRepository $boutiqueRepo, ProduitsRepository $produitsRepo): Response
+    public function single($id, BoutiqueRepository $boutiqueRepo): Response
     {
         $boutique = $boutiqueRepo->findOneBy(['id' => $id]);
         $produits_boutique = $boutique->getProduits();
