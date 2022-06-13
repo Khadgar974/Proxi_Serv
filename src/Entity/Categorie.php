@@ -21,9 +21,13 @@ class Categorie
     #[ORM\Column(type: 'text', nullable: true)]
     private $description;
 
+    #[ORM\ManyToMany(targetEntity: Boutique::class, mappedBy: 'categorie')]
+    private $boutiques;
+
     public function __construct()
     {
         $this->boutique = new ArrayCollection();
+        $this->boutiques = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -51,6 +55,33 @@ class Categorie
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Boutique>
+     */
+    public function getBoutiques(): Collection
+    {
+        return $this->boutiques;
+    }
+
+    public function addBoutique(Boutique $boutique): self
+    {
+        if (!$this->boutiques->contains($boutique)) {
+            $this->boutiques[] = $boutique;
+            $boutique->addCategorie($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBoutique(Boutique $boutique): self
+    {
+        if ($this->boutiques->removeElement($boutique)) {
+            $boutique->removeCategorie($this);
+        }
 
         return $this;
     }
