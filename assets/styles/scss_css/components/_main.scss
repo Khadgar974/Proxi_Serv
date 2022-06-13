@@ -184,8 +184,8 @@ img {
   .lesbonsplans {
     .wrap2 {
       display: flex;
-      flex-flow: row nowrap;
-      justify-content: space-between;
+      flex-flow: row wrap;
+      justify-content: space-around;
     }
     .mini_plan {
       background-color: white;
@@ -591,6 +591,21 @@ width: 80%;
 }
 
 @media screen and (max-width: 900px) {
+  #home_plan {
+    .lesbonsplans {
+      .mini_plan {
+        width: 48%;
+      }
+    }
+  }
+  .footer-bottom p {
+    float: none;
+  }
+  .footer-menu {
+    float: none;
+    display: inline-block;
+  }
+
   //////// hero  ///////////////
   #intro {
     height: 60rem;
@@ -658,23 +673,19 @@ width: 80%;
 
   // comment ça marche
 
-  #home_plan {
-    .lesbonsplans {
-      .wrap2 {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-      }
-      .mini_plan {
-        background-color: white;
-        width: 48%;
-        margin-bottom: 2rem;
-      }
-    }
-  }
 }
 
 @media screen and (max-width: 600px) {
+  #home_plan {
+    .lesbonsplans {
+      .mini_plan {
+        width: 98%;
+      }
+    }
+  }
+  .footer-menu {
+    display: none;
+  }
   //////// hero///////////////
 
   #intro {
