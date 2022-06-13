@@ -38,4 +38,42 @@ class AdminCategorieController extends AbstractController
         }
         return $this->render('admin/admin_categorie/add_categorie.html.twig', ['form' => $form->createView()]);
     }
+
+    #[Route('/categorie/edit/{id}', name: 'app_edit_categorie', methods: 'GET|POST')]
+    public function editCategorie($id, Request $request, CategorieRepository $categorieRepo): Response
+    {
+
+        $categorie = $categorieRepo->findOneBy(array('id' => $id));
+        $form = $this->createForm(CategorieType::class, $categorie);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $categorieRepo->add($categorie, true);
+            
+
+            return $this->redirectToRoute('app_admin_categories_index', [], Response::HTTP_SEE_OTHER); 
+        }
+
+        return $this->render('admin/admin_categorie/edit_categorie.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
+    #[Route('/categorie/delete/{id}', name: 'app_admin_categorie_delete', methods: ['POST', 'GET'])]
+    public function delete($id, Request $request, CategorieRepository $categorieRepository): Response
+    {
+
+        $categorie = $categorieRepository->find($id);
+        
+            if(!$categorie) {
+                
+            }
+
+        if ($this->isCsrfTokenValid('delete' . $categorie->getId(), $request->request->get('_token'))) {
+            $categorieRepository->remove($categorie, true);
+        }
+
+        return $this->redirectToRoute('app_admin_categories_index', [], Response::HTTP_SEE_OTHER);
+    }
 }
