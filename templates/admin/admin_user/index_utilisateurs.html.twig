@@ -1,21 +1,23 @@
 {% extends 'layouts/admin.html.twig' %}
 
-{% block body %}    
-    <!-- preloader area end -->
+{% block body %}
+     <!-- preloader area end -->
     <!-- page container area start -->
     <div class="page-container">
 
     {% include "admin/admin_partials/_admin_side_menu.html.twig" %}
-        
-        <!-- main content area start -->
+     <!-- main content area start -->
         <div class="main-content">
             <!-- header area start -->
                 {% include "layouts/admin_partials/_admin_header.html.twig" %}
             <!-- page title area end -->
             <div class="main-content-inner">
-                <!-- MAIN CONTENT GOES HERE -->
+                <div>
+                    <!-- MAIN CONTENT GOES HERE -->
+                    <h1>Liste des utilisateurs inscrits</h1>
+                </div>
             </div>
         </div>
-        <!-- main content area end -->      
-    
+        <!-- main content area end --> 
+
 {% endblock %}

@@ -9,14 +9,20 @@
                 <div class="menu-inner">
                     <nav>
                         <ul class="metismenu" id="menu">
-                            <li class="active">
+                            <li class="">
                                 <a href="javascript:void(0)" aria-expanded="true"><ion-icon name="apps-outline"></ion-icon><span>Gérer Catégories</span></a>
                                 <ul class="collapse">                                   
                                     <li><a href="{{path('app_admin_categories_index')}}">Toutes Catégories</a></li>
                                     <li><a href="#">Ajouter une catégorie</a></li>                                    
                                 </ul>
                             </li>
-                          
+                            <li class="">
+                                <a href="javascript:void(0)" aria-expanded="true"><ion-icon name="people-outline"></ion-icon><span>Gérer les utilisateurs</span></a>
+                                <ul class="collapse">                                   
+                                    <li><a href="{{path('app_admin_utilisateurs_index')}}">utilisateurs inscrit</a></li>
+                                    <li><a href="{{path('app_admin_commercants_index')}}">commerçants inscrit</a></li>                                                                       
+                                </ul>
+                            </li>                          
                         </ul>
                     </nav>
                 </div>
