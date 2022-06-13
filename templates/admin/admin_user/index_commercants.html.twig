@@ -1,10 +1,10 @@
 {% extends 'layouts/admin.html.twig' %}
 
 {% block body %}
-     <!-- preloader area end -->
-    <!-- page container area start -->
-    <div class="page-container">
 
+<!-- preloader area end -->
+<!-- page container area start -->
+<div class="page-container">
     {% include "admin/admin_partials/_admin_side_menu.html.twig" %}
      <!-- main content area start -->
         <div class="main-content">
@@ -14,25 +14,25 @@
             <div class="main-content-inner">
                 <div class="admin-user-index">
                     <!-- MAIN CONTENT GOES HERE -->
-                    <h1>Liste des utilisateurs inscrits</h1>                    
+                    <h1>Liste des commercants inscrits</h1>
                     <ul>
                         <hr>
-                        {% for utilisateur in utilisateurs %}
+                        {% for commercant in commercants %}
                             <li>
-                                {{ utilisateur.nom }}
+                                {{ commercant.nom }}
                             </li>
                             <li>
-                                {{ utilisateur.email }}
+                                {{ commercant.email }}
                             </li>
                             <li>
-                                {{ utilisateur.createdAt|date('d/m/Y') }}
+                                {{ commercant.createdAt|date('d/m/Y') }}
                             </li>
-                        <hr>                             
+                        <hr>
                         {% endfor %}
                     </ul>
                 </div>
             </div>
         </div>
-        <!-- main content area end --> 
+        <!-- main content area end -->
 
 {% endblock %}

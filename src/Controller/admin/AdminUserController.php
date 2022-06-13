@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminUserController extends AbstractController
 {
     #[Route('/utilisateurs', name: 'app_admin_utilisateurs_index')]
-    
+
     public function utilisateursIndex(UserRepository $userRepository): Response
     { 
         $utilisateurs = $userRepository->findBy(['type_user' => 0], ['id' => 'DESC']);
@@ -22,9 +22,7 @@ class AdminUserController extends AbstractController
     #[Route('/commercants', name: 'app_admin_commercants_index')]
     public function index(UserRepository $userRepository): Response
     { 
-
-        return $this->render('admin/admin_user/index_commercants.html.twig', [
-            
-        ]);
+        $commercants = $userRepository->findBy(['type_user' => 1], ['id' => 'DESC']);        
+        return $this->render('admin/admin_user/index_commercants.html.twig', compact('commercants'));
     }
 }
