@@ -54,8 +54,7 @@ class CommercantBoutiqueController extends AbstractController
 
     #[Route('/edit_boutique/{id<[0-9]+>}', name: 'app_edit_boutique', methods: 'GET|POST')]
     public function editBoutique($id, Request $request, BoutiqueRepository $boutiqueRepo): Response
-    {
-        // Verif if user is propriétaire of this Animation +++++
+    {        
         $boutique = $boutiqueRepo->findOneBy( array(
             'id'   => $id,
             'user' => $this->getUser()->getId()

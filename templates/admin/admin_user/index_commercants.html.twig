@@ -20,13 +20,25 @@
                         {% for commercant in commercants %}
                             <li>
                                 {{ commercant.nom }}
-                            </li>
+                            </li>                            
                             <li>
                                 {{ commercant.email }}
                             </li>
                             <li>
                                 {{ commercant.createdAt|date('d/m/Y') }}
                             </li>
+                            {% if commercant.boutique %}
+                                <div class="admin-link"><a href="{{ path('app_single_boutique', {'id': commercant.boutique.id }) }}">Voir sa boutique</a></div>
+                                <div class="admin-link"><a href="{{ path('app_admin_enable_disable_shop', {'id': commercant.id }) }}" >
+                                {% if commercant.boutique.isActive %}
+                                    Désactiver la boutique
+                                {% else %}
+                                    Activer la boutique
+                                {% endif %}
+                                </a></div>
+                            {% else %}
+                                <p class="text">Ce commercant n'a pas encore créé de boutique.</p>
+                            {% endif %}
                         <hr>
                         {% endfor %}
                     </ul>

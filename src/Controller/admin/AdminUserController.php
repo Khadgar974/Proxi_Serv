@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Repository\BoutiqueRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,4 +26,15 @@ class AdminUserController extends AbstractController
         $commercants = $userRepository->findBy(['type_user' => 1], ['id' => 'DESC']);        
         return $this->render('admin/admin_user/index_commercants.html.twig', compact('commercants'));
     }
+
+    #[Route('/commercants/activer_desactiver_boutique/{id<[0-9]+>}', name: 'app_admin_enable_disable_shop')]
+    public function enableDisableShop($id, UserRepository $userRepository, BoutiqueRepository $boutiqueRepo): Response
+    { 
+        $commercant = $userRepository->findOneBy(['id' => $id]);
+        $boutique = $commercant->getBoutique();
+        $boutique->isIsActive() ? $boutique->setIsActive(false) : $boutique->setIsActive(true);
+        $boutiqueRepo->add($boutique, true);
+
+        return $this->redirectToRoute('app_admin_commercants_index', [], Response::HTTP_SEE_OTHER);
+    }    
 }
