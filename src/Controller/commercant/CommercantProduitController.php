@@ -28,7 +28,7 @@ class CommercantProduitController extends AbstractController
     public function single($id, ProduitsRepository $produitsRepo): Response
     {
         $produit = $produitsRepo->findOneBy(['id' => $id]);
-        
+        dd($produit);
         
         return $this->render('produit/detail_produit.html.twig', [
             'produit' => $produit

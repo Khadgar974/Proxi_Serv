@@ -100,9 +100,13 @@ class Boutique implements Serializable
     #[ORM\OneToMany(mappedBy: 'boutique', targetEntity: Produits::class, orphanRemoval: true)]
     private $produits;
 
+    #[ORM\ManyToMany(targetEntity: Categorie::class, inversedBy: 'boutiques')]
+    private $categorie;
+
     public function __construct()
     {
         $this->produits = new ArrayCollection();
+        $this->categorie = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -331,6 +335,30 @@ class Boutique implements Serializable
                 $produit->setBoutique(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Categorie>
+     */
+    public function getCategorie(): Collection
+    {
+        return $this->categorie;
+    }
+
+    public function addCategorie(Categorie $categorie): self
+    {
+        if (!$this->categorie->contains($categorie)) {
+            $this->categorie[] = $categorie;
+        }
+
+        return $this;
+    }
+
+    public function removeCategorie(Categorie $categorie): self
+    {
+        $this->categorie->removeElement($categorie);
 
         return $this;
     }
