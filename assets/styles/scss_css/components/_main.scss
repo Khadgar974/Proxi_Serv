@@ -232,6 +232,7 @@ footer {
     align-items: center;
     justify-content: center;
     margin: 1rem 0 3rem 0;
+    padding-left: 0 !important;
 }
 .socials li {
     margin: 0 10px;
@@ -239,13 +240,11 @@ footer {
 .socials a {
     text-decoration: none;
     color: #fff;
-    border: 1.1px solid white;
     padding: 5px;
-    border-radius: 50%;
 }
 .socials a i {
-    font-size: 1.1rem;
-    width: 20px;
+    font-size: 3rem;;
+    align-items: center;
     transition: color 0.4s ease;
 }
 .socials a:hover i {
@@ -326,7 +325,7 @@ footer {
 }
 // ////// Page Boutique //////////
 #commerce {
-    background-color: var(--bleulogo);
+    background-color: #111111;
     margin: 0 auto;
     padding: 4rem;
 }
@@ -338,7 +337,8 @@ footer {
 }
 #commerce .titre h1 {
     display: inline-block;
-    background-color: lightgray;
+    background-color: var(--bleulogo);
+    color: #fff;
     padding: 0.5em;
     border-radius: 10px;
 }
@@ -347,7 +347,8 @@ footer {
 }
 #commerce .infos {
     display: inline-block;
-    background-color: lightgray;
+    background-color: var(--bleulogo);
+    color: #fff;
     padding: 0.5em;
     border-radius: 10px;
 }
@@ -369,7 +370,7 @@ footer {
 
 .shop-container .produits {
     width: 80%;
-    background-color: lightgray;
+    background-color: var(--bleulogo);
     margin: 1rem;
     border-radius: 1rem;
 }
@@ -481,10 +482,9 @@ footer {
     text-align: center;
 }
 .details {
-    width: 7rem;
     color: rgb(255, 255, 255);
-    font-size: 1rem;
-    line-height: 0.5rem;
+    font-size: 2rem;
+    line-height: 2rem;
     padding: 0.5rem;
     border-radius: 0.9rem;
     background-image: linear-gradient(
@@ -493,10 +493,11 @@ footer {
         rgb(32, 218, 41) 50%,
         rgb(17, 153, 85) 100%
     );
-    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
-    border: 2px solid black;
+    box-shadow: 2px 2px 2px lightgrey;
+    border: 1px solid black;
     display: inline-block;
     text-align: center;
+    margin-bottom: .5rem;
 }
 .logo {
     padding: 0.5em;

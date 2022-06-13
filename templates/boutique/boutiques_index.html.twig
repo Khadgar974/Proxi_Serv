@@ -2,36 +2,45 @@
 
 {% block body %}
 <section id="commerce">
-    <div class="wrap">
-        <div class ="titre">
-            <h1>Les Boutiques</h1>
+    <div class="wrap2">
+        <div class="u-center-text u-margin-bottom-little">
+            <h2 class="heading-secondary">
+                Les Boutiques
+            </h2>
         </div>
         <div class ="shop-container">
             <div class="produits">
-                <div class="boxs">
-                    <div class="boxs_boutiques">
-                        <h2>Type de Boutique</h2>
-                        <ul class="boxs">
-                            {% for boutique in boutiques %}
-                                <li class="shadow">
-                                    <div class="bloc_text">
-                                        <h2>{{ boutique.title }}</h2>
-                                        <img src="{{asset('images/arriere-plan.png')}}" alt="" width="150">
-                                        <div class="box-button">
-                                            <a class="details" href="{{path('app_single_boutique', {id: boutique.id})}}">boutique</a>
+                    <div class="boxs">
+                        <div id="home_plan">
+                            <div class ="titre">
+                                <h1>Type de Boutique</h1>
+                            </div>
+                            <div class="lesbonsplans">
+                                <div class="wrap2">
+                                {% for boutique in boutiques %}
+                                {% for i in 1..4 %}
+                                        <div class="mini_plan">
+                                            <div class="plan_img">
+                                                <img src="https://picsum.photos/id/23{{i}}/200/300">
+                                            </div>
+                                            <div class="plan_text">
+                                                <h2>{{ boutique.title }}</h2>
+                                            </div>
+                                            <div class="box-button">
+                                                <a class="details" href="{{path('app_single_boutique', {id: boutique.id})}}">boutique</a>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                            {% endfor %}                            
-                        </ul>
+                                {% endfor %}
+                                {% endfor %}  
+                                </div>
+                            </div>
+                        </div>
                     </div>                    
-                </div>
             </div>
-            
                 <!-- --------nav bar d'information-------------- -->
             {% include "nav/nav_partials/_nav.html.twig" %}
             <!-- /////////////////////////////////////////////////// -->
         </div>
     </div>
 </section>
-{% endblock %}
+{% endblock %}   
