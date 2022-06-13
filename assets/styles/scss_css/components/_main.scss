@@ -605,6 +605,16 @@ width: 80%;
     float: none;
     display: inline-block;
   }
+  .shop-container {
+    display: inline-block;
+  }
+  .shop-container .produits {
+    width: 100%;
+  }
+  .shop-container .infos {
+    width: 100%;
+    margin-top: 1rem;
+  }
 
   //////// hero  ///////////////
   #intro {
