@@ -4,27 +4,37 @@
                 <div class="logo">
                     <img src="{{ vich_uploader_asset(boutique, 'imageFileLogo') }}" alt="{{ boutique.title }}" width="200"/>
                 </div>
-                <div class ="titre">
-                    <h1>Boutique {{ boutique.title }}</h1>
+                <div class="u-center-text u-margin-bottom-little">
+                    <h2 class="heading-secondary">
+                        Boutique {{ boutique.title }}
+                    </h2>
                 </div>
                 {# //////zone boutique #}
                 <div class ="shop-container">
                     <div class="produits">
                         <div class="boxs">
-                            <ul class="boxs">
-                            {% for produit in produits %}
-                                <li class="shadow">
-                                    <div class="bloc_text">
-                                        <img src="{{vich_uploader_asset(produit, 'imageFileProduit')}}" alt="{{produit.title}}" width="150">
-                                        <h3>{{produit.title}}</h3>
-                                        <div class="box-button">
-                                            <input class="inp-btn" type="submit" value="Ajouter au Panier"></input>
-                                            <a class="details" href="{{path('app_single_produit', {id: produit.id})}}">details</a>
-                                        </div>
+                            <div id="home_plan">
+                                <div class="lesbonsplans">
+                                    <div class="wrap2">
+                                    {% for produit in produits %}
+                                    {% for i in 1..4 %}
+                                            <div class="mini_plan">
+                                                <div class="plan_img">
+                                                    <img src="{{vich_uploader_asset(produit, 'imageFileProduit')}}" alt="{{produit.title}}">
+                                                </div>
+                                                <div class="plan_text">
+                                                    <h2>{{ produit.title }}</h2>
+                                                </div>
+                                                <div class="box-button">
+                                                    <input class="inp-btn" type="submit" value="Ajouter au Panier"></input>
+                                                    <a class="details" href="{{path('app_single_produit', {id: produit.id})}}">details</a>
+                                                </div>
+                                            </div>
+                                    {% endfor %}
+                                    {% endfor %}  
                                     </div>
-                                </li>
-                            {% endfor %}
-                            </ul>
+                                </div>
+                            </div>
                         </div>
                         <div class="inscriptions">
                             <input class="inp-btn" type="submit " value="Valider le Panier">
@@ -36,4 +46,3 @@
                 </div>
             </div>
         </section>
-        <hr class="hr-text">
