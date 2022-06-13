@@ -1,0 +1,140 @@
+.form-style {
+    padding: 4rem;
+    max-width: 80%;
+    font-size: 2rem;
+    margin: 10rem auto;
+    background-color: $color-form-background;
+    border-radius: 9px;
+
+    &--connexion {
+        width: 50%;
+    }
+
+    legend {
+        display: block;
+        margin-bottom: 2rem;
+    }
+
+    #registration_form_type_user,
+    #produits_form_bon_plan {
+        .form-check {
+            display: flex;
+            .form-check-input {
+                width: 6px;
+                margin-top: 0.8rem;
+            }
+        }
+    }
+
+    #registration_form_type_user {
+        .form-check {
+            label.form-check-label {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+
+    #produits_form_bon_plan {
+        .form-check {
+            justify-content: center;
+        }
+    }
+
+    .alert {
+        .alert-error {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 600;
+            padding: 1.6rem 3.2rem;
+            border-radius: 9px;
+            color: white;
+            background-color: red;
+        }
+    }
+
+    .invalid-feedback {
+        font-weight: 600;
+    }
+
+    fieldset {
+        &:not(:last-child) {
+            margin-bottom: 5rem !important;
+        }
+        .vich-image {
+            input {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    &--left,
+    &--right {
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        gap: 2rem;
+
+        div {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    label,
+    input,
+    textarea,
+    select,
+    legend {
+        color: $color-text-form;
+        padding: 0.3rem 1rem;
+        width: 100%;
+        font-size: inherit;
+        font-family: inherit;
+        border: none;
+        border-radius: 9px;
+        &:not(label) {
+            box-shadow: 0 1px 2px rgba($color-black, 0.1);
+        }
+    }
+
+    textarea {
+        padding: 1rem;
+        height: 15rem;
+        resize: none;
+    }
+
+    &--div-submit {
+        margin-top: 2rem;
+        width: 100%;
+        text-align: center;
+        .btn-connexion {
+            width: 30%;
+        }
+    }
+
+    &--btn-submit {
+        padding: 0.5rem 5rem;
+        border-radius: 9px;
+        margin-bottom: 10rem;
+        border: none;
+        transition: all 0.3s;
+        font-weight: 700;
+        background-color: $color--bleulogo;
+        color: $color-form-background !important;
+        &:hover {
+            background-color: $color--bleufonce;
+        }
+    }
+    .input-group {
+        #produits_form_prix {
+            width: 30%;
+            border-radius: 9px;
+        }
+        .input-group-text {
+            display: none;
+            width: 20%;
+        }
+    }
+}

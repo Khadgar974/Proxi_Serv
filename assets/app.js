@@ -12,4 +12,6 @@ import { Tooltip, Toast, Popover } from "bootstrap";
 import "./bootstrap";
 
 // any CSS you import will output into a single css file (app.css in this case)
-import "./styles/app.scss";
+import "./styles/scss_css/app.scss";
+
+import "./styles/js/script.js";

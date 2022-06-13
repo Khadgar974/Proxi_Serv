@@ -1,0 +1,182 @@
+:root {
+    --vert: #17c1a4;
+    --vertfonce: #12a791;
+    --vertlogo: #7ed957;
+    --bleuclair: #3c5598;
+    --bleufonce: #293a70;
+    --bleucyan: #30bae8;
+    --bleu: #1d264f;
+    --bleulogo: #162a3d;
+    --noirclair: #111111;
+    --blanc: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+body {
+    background-color: var(--noirclair);
+    font-family: "Signika", sans-serif;
+    overflow-x: hidden;
+}
+
+ul ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    max-width: 100%;
+}
+
+.wrap {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.wrap1 {
+    max-width: 850px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+#header {
+    width: 100%;
+    height: 15rem;
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--noirclair);
+    border-bottom: 3px solid $color--vertlogo;
+}
+
+#header .menu {
+    margin-top: 1.5rem;
+}
+
+/*******************************/
+/*        NAVIGATION           */
+/*******************************/
+
+.main-nav-list {
+    display: flex;
+    z-index: 999;
+    gap: 2.4rem;
+}
+
+#header nav ul li a {
+    display: inline-block;
+    line-height: 2em;
+    padding: 0 10px;
+    font-size: 20px;
+    color: #fff;
+}
+
+#header nav ul li a:hover {
+    color: var(--vertlogo);
+    transition: 1s;
+}
+
+/////////////////////////////////////////////
+/* MOBILE button menu */
+.btn-mobile-nav {
+    border: none;
+    background-color: none;
+    cursor: pointer;
+    display: none;
+}
+
+.icon-mobile-nav {
+    height: 4.8rem;
+    width: 4.8rem;
+    color: $color--noirclair;
+}
+
+.icon-mobile-nav[name="close-outline"] {
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    ////////////////////////////////////////////
+    ////////////////////////////////////////////
+    /* MOBILE NAVIGATION */
+    /* ** ** ** ** ** ** */
+
+    .btn-mobile-nav {
+        display: block;
+        z-index: 1000;
+    }
+
+    .box-logo {
+        margin: 0 auto;
+    }
+
+    .main-nav {
+        display: none;
+        background-color: rgba($color--noirclair, 0.95);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        transform: translate(100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s ease-in;
+
+        /* Hide navigation */
+        /* Allows No transitions at all */
+        /* display: none; */
+
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+    }
+
+    .nav-open .main-nav {
+        /* visibility: visible; */
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+        transform: translate(0);
+    }
+
+    .nav-open .icon-mobile-nav[name="close-outline"] {
+        display: block;
+    }
+
+    .nav-open .icon-mobile-nav[name="menu-outline"] {
+        display: none;
+    }
+
+    .main-nav-list {
+        flex-direction: column;
+        gap: 4.8rem;
+    }
+
+    .main-nav-link:link,
+    .main-nav-link:visited {
+        font-size: 3rem;
+    }
+}
