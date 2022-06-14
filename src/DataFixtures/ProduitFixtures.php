@@ -203,6 +203,42 @@ class ProduitFixtures extends Fixture implements DependentFixtureInterface
         $produit16->setBoutique($this->getReference('boutique3'));
         $manager->persist($produit16);
 
+        $produit17 = new Produits();
+        $produit17->setTitle('Iphone13');
+        $produit17->setDescription('Mini, 256 Go, Bleu');
+        $produit17->setPrix('1000');
+        $produit17->setQuantite('5');
+        $produit17->setReference('Iphone13');
+        $produit17->setImage('iphone13.jpg');
+        $produit17->setImageFileProduit();
+        $produit17->setBonPlan('1');
+        $produit17->setBoutique($this->getReference('boutique3'));
+        $manager->persist($produit17);
+
+        $produit18 = new Produits();
+        $produit18->setTitle('S22');
+        $produit18->setDescription('Ultra, 256 Go, Noir');
+        $produit18->setPrix('1000');
+        $produit18->setQuantite('5');
+        $produit18->setReference('S22');
+        $produit18->setImage('s22.jpg');
+        $produit18->setImageFileProduit();
+        $produit18->setBonPlan('1');
+        $produit18->setBoutique($this->getReference('boutique3'));
+        $manager->persist($produit18);
+
+        $produit19 = new Produits();
+        $produit19->setTitle('FindX5');
+        $produit19->setDescription('Pro, 256 Go, Noir');
+        $produit19->setPrix('1000');
+        $produit19->setQuantite('5');
+        $produit19->setReference('FindX5');
+        $produit19->setImage('findx5.png');
+        $produit19->setImageFileProduit();
+        $produit19->setBonPlan('1');
+        $produit19->setBoutique($this->getReference('boutique3'));
+        $manager->persist($produit19);
+
         $manager->flush();
 
         $this->addReference('produit', $produit);
@@ -221,6 +257,9 @@ class ProduitFixtures extends Fixture implements DependentFixtureInterface
         $this->addReference('produit14', $produit14);
         $this->addReference('produit15', $produit15);
         $this->addReference('produit16', $produit16);
+        $this->addReference('produit17', $produit17);
+        $this->addReference('produit18', $produit18);
+        $this->addReference('produit19', $produit19);
     }
 
     public function getDependencies()
