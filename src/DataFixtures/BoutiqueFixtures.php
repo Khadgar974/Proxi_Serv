@@ -20,8 +20,10 @@ class BoutiqueFixtures extends Fixture implements DependentFixtureInterface
         $boutique -> setCodePostal('27500');
         $boutique -> setVille('Pont Audemer');
         $boutique -> setTel('0232323232');
-        $boutique -> setImage('Oh la belle image');
+        $boutique -> setImage('logo_rislepizza.png');
+        $boutique -> setImageFileBoutique();
         $boutique -> setLogo('Oh le beau logo');
+        $boutique -> setImageFileLogo();
         $boutique -> setIsSiretVerified('1');
         $boutique -> setIsActive('1');
         $boutique -> setUser($this->getReference('admin2'));
