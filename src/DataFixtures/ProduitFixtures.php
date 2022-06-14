@@ -239,6 +239,90 @@ class ProduitFixtures extends Fixture implements DependentFixtureInterface
         $produit19->setBoutique($this->getReference('boutique3'));
         $manager->persist($produit19);
 
+        $produit20 = new Produits();
+        $produit20->setTitle('Oppo Reno 6');
+        $produit20->setDescription('256 Go, Noir/Bleu');
+        $produit20->setPrix('400');
+        $produit20->setQuantite('5');
+        $produit20->setReference('Reno6');
+        $produit20->setImage('reno6.jpeg');
+        $produit20->setImageFileProduit();
+        $produit20->setBonPlan('1');
+        $produit20->setBoutique($this->getReference('boutique3'));
+        $manager->persist($produit20);
+
+        $produit21 = new Produits();
+        $produit21->setTitle('Redmi Note 11 Pro');
+        $produit21->setDescription('256 Go, Noir');
+        $produit21->setPrix('400');
+        $produit21->setQuantite('5');
+        $produit21->setReference('Reno6');
+        $produit21->setImage('note11pro.png');
+        $produit21->setImageFileProduit();
+        $produit21->setBonPlan('1');
+        $produit21->setBoutique($this->getReference('boutique3'));
+        $manager->persist($produit21);
+
+        $produit22 = new Produits();
+        $produit22->setTitle('Poco F4 GT');
+        $produit22->setDescription('512 Go, 12 Go Ram, Jaune, Charge Ultra Rapide');
+        $produit22->setPrix('800');
+        $produit22->setQuantite('5');
+        $produit22->setReference('F4GT');
+        $produit22->setImage('F4GT.jpg');
+        $produit22->setImageFileProduit();
+        $produit22->setBonPlan('1');
+        $produit22->setBoutique($this->getReference('boutique3'));
+        $manager->persist($produit22);
+
+        $produit23 = new Produits();
+        $produit23->setTitle('PF Serge Blanco');
+        $produit23->setDescription('Noir, Cuir');
+        $produit23->setPrix('70');
+        $produit23->setQuantite('5');
+        $produit23->setReference('SG');
+        $produit23->setImage('SGcuir.jpg');
+        $produit23->setImageFileProduit();
+        $produit23->setBonPlan('1');
+        $produit23->setBoutique($this->getReference('boutique4'));
+        $manager->persist($produit23);
+
+        $produit24 = new Produits();
+        $produit24->setTitle('Portefeuille Lancaster');
+        $produit24->setDescription('Noir, Cuir');
+        $produit24->setPrix('70');
+        $produit24->setQuantite('5');
+        $produit24->setReference('PFLancaster');
+        $produit24->setImage('lancaster-cuir.jpg');
+        $produit24->setImageFileProduit();
+        $produit24->setBonPlan('1');
+        $produit24->setBoutique($this->getReference('boutique4'));
+        $manager->persist($produit24);
+
+        $produit25 = new Produits();
+        $produit25->setTitle('Sac Lancaster');
+        $produit25->setDescription('Noir, Cuir, Cabas');
+        $produit25->setPrix('70');
+        $produit25->setQuantite('5');
+        $produit25->setReference('LancasterCabas');
+        $produit25->setImage('lancaster-sac.jpg');
+        $produit25->setImageFileProduit();
+        $produit25->setBonPlan('1');
+        $produit25->setBoutique($this->getReference('boutique4'));
+        $manager->persist($produit25);
+
+        $produit26 = new Produits();
+        $produit26->setTitle('Sac à main Lacoste');
+        $produit26->setDescription('Rouge, Cuir, Cabas');
+        $produit26->setPrix('85');
+        $produit26->setQuantite('5');
+        $produit26->setReference('LacosteSac');
+        $produit26->setImage('lacoste-sac.jpg');
+        $produit26->setImageFileProduit();
+        $produit26->setBonPlan('1');
+        $produit26->setBoutique($this->getReference('boutique4'));
+        $manager->persist($produit26);
+
         $manager->flush();
 
         $this->addReference('produit', $produit);
@@ -260,6 +344,13 @@ class ProduitFixtures extends Fixture implements DependentFixtureInterface
         $this->addReference('produit17', $produit17);
         $this->addReference('produit18', $produit18);
         $this->addReference('produit19', $produit19);
+        $this->addReference('produit20', $produit20);
+        $this->addReference('produit21', $produit21);
+        $this->addReference('produit22', $produit22);
+        $this->addReference('produit23', $produit23);
+        $this->addReference('produit24', $produit24);
+        $this->addReference('produit25', $produit25);
+        $this->addReference('produit26', $produit26);
     }
 
     public function getDependencies()

@@ -63,6 +63,23 @@ class BoutiqueFixtures extends Fixture implements DependentFixtureInterface
         $boutique3->setUser($this->getReference('commercant2'));
         $manager->persist($boutique3);
 
+        $boutique4 = new Boutique;
+        $boutique4->setTitle('Maroquinerie Mae');
+        $boutique4->setDescription('Vente de petite maroquinerie et bagages');
+        $boutique4->setSIRET('98765432102255');
+        $boutique4->setAdresse('57 rue de la république');
+        $boutique4->setCodePostal('27500');
+        $boutique4->setVille('Pont Audemer');
+        $boutique4->setTel('0232323235');
+        $boutique4->setImage('mae_devanture.jpg');
+        $boutique4->setImageFileBoutique();
+        $boutique4->setLogo('mae_logo.jpg');
+        $boutique4->setImageFileLogo();
+        $boutique4->setIsSiretVerified('1');
+        $boutique4->setIsActive('1');
+        $boutique4->setUser($this->getReference('commercant3'));
+        $manager->persist($boutique4);
+
                
 
         
@@ -70,7 +87,8 @@ class BoutiqueFixtures extends Fixture implements DependentFixtureInterface
 
         $this->addReference('boutique', $boutique);
         $this->addReference('boutique2', $boutique2);
-        $this->addReference('boutique3', $boutique3);         
+        $this->addReference('boutique3', $boutique3);
+        $this->addReference('boutique4', $boutique4);         
     } 
 
     public function getDependencies()
