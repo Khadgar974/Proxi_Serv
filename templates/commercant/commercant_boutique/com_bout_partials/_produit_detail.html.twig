@@ -22,7 +22,7 @@
                                         
                                  
                                 <p>{{ produit.description }}</p>
-                                <p>{{ (produit.prix)/100 }}€</p>
+                                <p>{{ (produit.prix) }}€</p>
                                 <div class="box-button">
                                     <input class="inp-btn" type="submit" value="Ajouter au Panier"></input>
                                 </div>
@@ -39,7 +39,7 @@
         <div class="pagination">
             <ul>
                 <li>
-                    <a href="{{path('app_commercant_produits_index')}}">Retour Boutique</a>
+                    <a href="{{path('app_index_boutiques')}}">Retour Boutique</a>
                 </li>
             </ul>
         </div>
