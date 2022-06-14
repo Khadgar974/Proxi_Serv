@@ -2,10 +2,10 @@
 <section id="commerce">
     <div class="wrap">
         <div class="logo">
-            <img src="{{ vich_uploader_asset(app.user.boutique, 'imageFileLogo') }}" alt="{{ app.user.boutique.title }}" width="200"/>
+            <img src="{{ vich_uploader_asset(boutique, 'imageFileLogo') }}" alt="{{ boutique.title }}" width="200"/>
         </div>
         <div class ="titre">
-            <h1>Boutique {{ app.user.boutique.title }}</h1>
+            <h1>Boutique {{ boutique.title }}</h1>
         </div>
         {# /////zone produit///// #}
         <div class ="shop-container">
@@ -18,12 +18,11 @@
 
                                 <img src="{{vich_uploader_asset(produit, 'imageFileProduit')}}" alt="{{ produit.title }}" width="600">
                                 <h2> {{ produit.title }} </h2>
-                                <div class="prix">
-                                    <div class="dash">
-                                        <p>{{ (produit.prix)/100 }}€</p>
-                                    </div>
-                                </div>
+                                
+                                        
+                                 
                                 <p>{{ produit.description }}</p>
+                                <p>{{ (produit.prix)/100 }}€</p>
                                 <div class="box-button">
                                     <input class="inp-btn" type="submit" value="Ajouter au Panier"></input>
                                 </div>
