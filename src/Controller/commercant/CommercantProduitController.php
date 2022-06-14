@@ -25,17 +25,17 @@ class CommercantProduitController extends AbstractController
         ]);
     }
 
-    #[Route('/produits/single/{id}', name: 'app_single_produit')]
-    public function single($id, ProduitsRepository $produitsRepo, BoutiqueRepository $boutiqueRepo): Response
-    {
-        $produit = $produitsRepo->findOneBy(['id' => $id]);
-        $boutique = $boutiqueRepo->findOneBy(['id' => $produit->getBoutique()]);
+    // #[Route('/produits/single/{id}', name: 'app_single_produit')]
+    // public function single($id, ProduitsRepository $produitsRepo, BoutiqueRepository $boutiqueRepo): Response
+    // {
+    //     $produit = $produitsRepo->findOneBy(['id' => $id]);
+    //     $boutique = $boutiqueRepo->findOneBy(['id' => $produit->getBoutique()]);
         
-        return $this->render('produit/detail_produit.html.twig', [
-            'produit' => $produit, 
-            'boutique' => $boutique
-        ]);
-    }
+    //     return $this->render('produit/detail_produit.html.twig', [
+    //         'produit' => $produit, 
+    //         'boutique' => $boutique
+    //     ]);
+    // }
 
     #[Route('/produits', name: 'app_commercant_produits_index')]
     public function index(ProduitsRepository $produitsRepo): Response
