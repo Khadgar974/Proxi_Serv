@@ -192,6 +192,10 @@ img {
       width: 24%;
       border-radius: 10px;
       margin-bottom: 1rem;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      margin-top: 2rem;
 
       .plan_img {
         img {
@@ -200,6 +204,7 @@ img {
       }
       .plan_text h2 {
         text-align: center;
+        color:rgb(0, 0, 0);
       }
     }
   }
@@ -519,6 +524,8 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
+
 // /////Prix /////////
 .prix {
   display: flex;
