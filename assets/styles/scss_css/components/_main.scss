@@ -178,18 +178,20 @@ html {
 #home_plan {
     width: 100%;
     .lesbonsplans {
-        justify-content: flex-start;
         width: 100%;
+        margin: 0 auto;
+        padding: 2rem;
         .wrap2 {
             display: flex;
             flex-flow: row wrap;
             justify-content: flex-start;
             align-items: flex-start;
-            gap: 2rem;
+            gap: 4%;
         }
         .mini_plan {
             background-color: white;
-            width: 23%;
+            width: 22%;
+            margin-bottom: 3rem;
             border-radius: 10px;
             overflow: hidden;
             display: flex;
