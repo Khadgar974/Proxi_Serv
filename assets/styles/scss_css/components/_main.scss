@@ -438,10 +438,9 @@ footer {
 }
 .inp-btn {
   margin-left: 25%;
-  width: 10rem;
   color: rgb(255, 255, 255);
-  font-size: 1rem;
-  line-height: 1rem;
+  font-size: 1.8rem;
+  line-height: 1.8rem;
   padding: 0.7rem;
   border-radius: 0.9rem;
   background-image: linear-gradient(
@@ -450,8 +449,7 @@ footer {
     rgb(30, 189, 109) 50%,
     rgb(17, 153, 85) 100%
   );
-  box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
-  border: 2px solid black;
+  border: 1px solid black;
   display: inline-block;
   margin: 0.5rem;
   text-align: center;
