@@ -17,7 +17,7 @@ class BoutiqueController extends AbstractController
     #[Route('/', name: 'app_index_boutiques')]
     public function index(BoutiqueRepository $boutiqueRepo): Response
     {   
-        $boutiques = $boutiqueRepo->findAll();     
+        $boutiques = $boutiqueRepo-> findBy(['is_active' => true], ['id' => 'DESC']);     
         return $this->render('boutique/boutiques_index.html.twig', ['boutiques' => $boutiques]);
     }
     // Va renvoyer une seule boutique

@@ -182,29 +182,38 @@ img {
 
 #home_plan {
   .lesbonsplans {
+    justify-content: flex-start;
     .wrap2 {
       display: flex;
       flex-flow: row wrap;
-      justify-content: space-around;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 2rem;
     }
     .mini_plan {
       background-color: white;
-      width: 24%;
+      width: 23%;
       border-radius: 10px;
-      margin-bottom: 1rem;
+      overflow: hidden;
       display: flex;
-      flex-flow: column;
-      justify-content: space-between;
-      margin-top: 2rem;
+      flex-direction: column;
 
       .plan_img {
+        height: 15rem;
+        object-fit: cover;
+        width: 100%;
         img {
           width: 100%;
         }
       }
-      .plan_text h2 {
-        text-align: center;
-        color:rgb(0, 0, 0);
+      .plan_text {
+        background: white;
+        z-index: 100;
+        h2 {
+          text-align: center;
+          color: black;
+          z-index: 100;
+        }
       }
     }
   }
@@ -257,16 +266,14 @@ footer {
 }
 
 .footer-bottom {
-  background: #000;
   width: 100vw;
-  padding: 20px;
-  padding-bottom: 40px;
   text-align: center;
 }
 .footer-bottom p {
   float: left;
   font-size: 14px;
   word-spacing: 2px;
+  padding: 20px;
 }
 .footer-bottom p a {
   color: var(--vertlogo);
@@ -284,7 +291,7 @@ footer {
   display: flex;
 }
 .footer-menu ul li {
-  padding-right: 10px;
+  padding: 20px;
   display: block;
 }
 .footer-menu ul li a {
@@ -396,7 +403,7 @@ footer {
   justify-content: space-around;
   margin: 0 auto;
   flex-flow: row wrap;
-  padding: 0;
+  padding: 2rem;
 }
 
 .shop-container .produits .boxs .bloc_text {
