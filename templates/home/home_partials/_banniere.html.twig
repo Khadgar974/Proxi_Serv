@@ -2,36 +2,11 @@
     <div class="banniere">
         <h2 class="heading-secondary text-center u-margin-top-small u-margin-bottom-medium">Ils nous font confiance</h2>
         <ul class="boxs">
-            <li>
-                <img src="{{asset('images/logo_rislepizza.png')}}" alt="">
-            </li>
-            <li>
-                <img src="{{asset('images/logo_rislepizza.png')}}" alt="">
-            </li>
-            <li>
-                <img src="{{asset('images/logo_laurette.png')}}" alt="">
-            </li>
-            <li>
-                <img src="{{asset('images/logo_laurette.png')}}" alt="">
-            </li>
-            <li>
-                <img src="{{asset('images/logo_proxygen.png')}}" alt="">
-            </li>
-            <li>
-                <img src="{{asset('images/logo_proxygen.png')}}" alt="">
-            </li>
-            <li>
-                <img src="{{asset('images/logo_proxygen.png')}}" alt="">
-            </li>
-            <li>
-                <img src="{{asset('images/Logo-CDC.jpg')}}" alt="">
-            </li>
-            <li>
-                <img src="{{asset('images/Logo-CDC.jpg')}}" alt="">
-            </li>
-            <li>
-                <img src="{{asset('images/Logo-CDC.jpg')}}" alt="">
-            </li>
+            {% for boutique in boutiques %}
+                <li>
+                    <img src="{{ vich_uploader_asset(boutique, 'imageFileLogo') }}" alt="{{ boutique.title }}" alt="">
+                </li>                
+            {% endfor %}           
         </ul>
     </div>    
 </section>
