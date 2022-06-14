@@ -13,7 +13,7 @@ class ProduitFixtures extends Fixture implements DependentFixtureInterface
     {
         $produit = new Produits();
         $produit->setTitle('Calabraise');
-        $produit->setDescription('Une bien bonne pizza au Saumon');
+        $produit->setDescription('Crème moutarde, mozzarella, tomate fraîche, thon, persil');
         $produit->setPrix('10');
         $produit->setQuantite('5');
         $produit->setReference('Cala');
@@ -107,6 +107,102 @@ class ProduitFixtures extends Fixture implements DependentFixtureInterface
         $produit8->setBoutique($this->getReference('boutique2'));
         $manager->persist($produit8);
 
+        $produit9 = new Produits();
+        $produit9->setTitle('Chicken');
+        $produit9->setDescription('Crème, Pomme de terre, mozzarella, poulet tikka, oeuf, sauce barbecue');
+        $produit9->setPrix('10');
+        $produit9->setQuantite('5');
+        $produit9->setReference('Chick');
+        $produit9->setImage('pizza_1.jpg');
+        $produit9->setImageFileProduit();
+        $produit9->setBonPlan('1');
+        $produit9->setBoutique($this->getReference('boutique'));
+        $manager->persist($produit9);
+
+        $produit10 = new Produits();
+        $produit10->setTitle('Tartiflette');
+        $produit10->setDescription('Tomate, mozzarella, pomme de terre, lardons, reblochon, oignon crème');
+        $produit10->setPrix('10');
+        $produit10->setQuantite('5');
+        $produit10->setReference('Tarti');
+        $produit10->setImage('Tartiflette.jpg');
+        $produit10->setImageFileProduit();
+        $produit10->setBonPlan('1');
+        $produit10->setBoutique($this->getReference('boutique'));
+        $manager->persist($produit10);
+
+        $produit11 = new Produits();
+        $produit11->setTitle('Plaque Apéro');
+        $produit11->setDescription('5 variétés');
+        $produit11->setPrix('10');
+        $produit11->setQuantite('5');
+        $produit11->setReference('Apero');
+        $produit11->setImage('apero.jpg');
+        $produit11->setImageFileProduit();
+        $produit11->setBonPlan('1');
+        $produit11->setBoutique($this->getReference('boutique'));
+        $manager->persist($produit11);
+
+        $produit12 = new Produits();
+        $produit12->setTitle('Escargotine');
+        $produit12->setDescription('Tomate, mozzarella, champignons, escargots, beurre d escargot, crème');
+        $produit12->setPrix('10');
+        $produit12->setQuantite('5');
+        $produit12->setReference('Escargotine');
+        $produit12->setImage('Escargotine.jpg');
+        $produit12->setImageFileProduit();
+        $produit12->setBonPlan('1');
+        $produit12->setBoutique($this->getReference('boutique'));
+        $manager->persist($produit12);
+
+        $produit13 = new Produits();
+        $produit13->setTitle('Pizzaiolo');
+        $produit13->setDescription('Tomate, mozzarella, champignons, jambon, lardons, oeuf, bacon');
+        $produit13->setPrix('10');
+        $produit13->setQuantite('5');
+        $produit13->setReference('Pizzaiolo');
+        $produit13->setImage('pizzaiolo.jpg');
+        $produit13->setImageFileProduit();
+        $produit13->setBonPlan('1');
+        $produit13->setBoutique($this->getReference('boutique'));
+        $manager->persist($produit13);
+
+        $produit14 = new Produits();
+        $produit14->setTitle('Calzone');
+        $produit14->setDescription('Tomate, mozzarella, champignons, jambon, lardons, oeuf, bacon');
+        $produit14->setPrix('10');
+        $produit14->setQuantite('5');
+        $produit14->setReference('Calzone');
+        $produit14->setImage('calzone.jpg');
+        $produit14->setImageFileProduit();
+        $produit14->setBonPlan('1');
+        $produit14->setBoutique($this->getReference('boutique'));
+        $manager->persist($produit14);
+
+        $produit15 = new Produits();
+        $produit15->setTitle('Bigout');
+        $produit15->setDescription('Choisissez parmi 2 de nos pizzas pour composer la votre');
+        $produit15->setPrix('10');
+        $produit15->setQuantite('5');
+        $produit15->setReference('Bigout');
+        $produit15->setImage('bigout.jpg');
+        $produit15->setImageFileProduit();
+        $produit15->setBonPlan('1');
+        $produit15->setBoutique($this->getReference('boutique'));
+        $manager->persist($produit15);
+
+        $produit16 = new Produits();
+        $produit16->setTitle('X3 Pro');
+        $produit16->setDescription('Snapdragon 860, 256 Go, 8Go Ram');
+        $produit16->setPrix('10');
+        $produit16->setQuantite('5');
+        $produit16->setReference('X3PRO');
+        $produit16->setImage('x3pro.jpg');
+        $produit16->setImageFileProduit();
+        $produit16->setBonPlan('1');
+        $produit16->setBoutique($this->getReference('boutique3'));
+        $manager->persist($produit16);
+
         $manager->flush();
 
         $this->addReference('produit', $produit);
@@ -116,6 +212,15 @@ class ProduitFixtures extends Fixture implements DependentFixtureInterface
         $this->addReference('produit5', $produit5);
         $this->addReference('produit6', $produit6);
         $this->addReference('produit7', $produit7);
+        $this->addReference('produit8', $produit8);
+        $this->addReference('produit9', $produit9);
+        $this->addReference('produit10', $produit10);
+        $this->addReference('produit11', $produit11);
+        $this->addReference('produit12', $produit12);
+        $this->addReference('produit13', $produit13);
+        $this->addReference('produit14', $produit14);
+        $this->addReference('produit15', $produit15);
+        $this->addReference('produit16', $produit16);
     }
 
     public function getDependencies()

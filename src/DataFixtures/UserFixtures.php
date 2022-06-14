@@ -54,10 +54,20 @@ class UserFixtures extends Fixture
         $user->setTypeUser(0);
         $manager->persist($user);
 
+        $commercant2 = new User();
+        $commercant2->setEmail('orange@orange.fr');
+        $commercant2->setRoles(['ROLE_USER', 'ROLE_ADMIN', 'ROLE_COMMERCANT']);
+        $hashpassword = $this->hasher->hashPassword($commercant2, 'orange');
+        $commercant2->setPassword($hashpassword);
+        $commercant2->setNom('Orange');
+        $commercant2->setTypeUser(1);
+        $manager->persist($commercant2);
+
         $manager->flush();
 
         $this->addReference('admin2', $admin2);
         $this->addReference('admin', $admin);
         $this->addReference('commercant', $commercant);
+        $this->addReference('commercant2', $commercant2);
     }
 }

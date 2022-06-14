@@ -46,13 +46,31 @@ class BoutiqueFixtures extends Fixture implements DependentFixtureInterface
         $boutique2->setUser($this->getReference('admin'));
         $manager->persist($boutique2);
 
+        $boutique3 = new Boutique;
+        $boutique3->setTitle('Orange');
+        $boutique3->setDescription('Boutique orange internet et téléphonie');
+        $boutique3->setSIRET('98765432106589');
+        $boutique3->setAdresse('28 rue de la république');
+        $boutique3->setCodePostal('27500');
+        $boutique3->setVille('Pont Audemer');
+        $boutique3->setTel('0232323234');
+        $boutique3->setImage('orange_devanture.jpg');
+        $boutique3->setImageFileBoutique();
+        $boutique3->setLogo('orange.png');
+        $boutique3->setImageFileLogo();
+        $boutique3->setIsSiretVerified('1');
+        $boutique3->setIsActive('1');
+        $boutique3->setUser($this->getReference('commercant2'));
+        $manager->persist($boutique3);
+
                
 
         
         $manager->flush();
 
         $this->addReference('boutique', $boutique);
-        $this->addReference('boutique2', $boutique2);         
+        $this->addReference('boutique2', $boutique2);
+        $this->addReference('boutique3', $boutique3);         
     } 
 
     public function getDependencies()
