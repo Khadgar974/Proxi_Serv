@@ -30,6 +30,7 @@ class AdminCategorieController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $des = '';
 
             $categorieRepo->add($categorie, true);
 
