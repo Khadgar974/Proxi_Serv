@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Boutique;
 use App\Form\BoutiqueFormType;
 use App\Repository\BoutiqueRepository;
+use App\Repository\CategorieRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,12 +16,20 @@ class BoutiqueController extends AbstractController
 {
     // Va renvoyer toutes les boutiques
     #[Route('/', name: 'app_index_boutiques')]
-    public function index(BoutiqueRepository $boutiqueRepo): Response
-    {   
-        $boutiques = $boutiqueRepo-> findBy(['is_active' => true], ['id' => 'DESC']);     
-        return $this->render('boutique/boutiques_index.html.twig', ['boutiques' => $boutiques]);
+    public function index(BoutiqueRepository $boutiqueRepo, CategorieRepository $categorieRepo): Response
+    {
+        $categories = $categorieRepo->findAll();
+
+        //dd($categories->getBoutique());
+        //$boutiques = $boutiqueRepo->findBy(['is_active' => true], ['id' => 'DESC']);
+
+
+        return $this->render('boutique/boutiques_index.html.twig', [
+            // 'boutiques' => $boutiques, 
+            'categories' => $categories
+        ]);
     }
-    
+
     // Va renvoyer une seule boutique
     #[Route('/single/{id}', name: 'app_single_boutique')]
     public function single($id, BoutiqueRepository $boutiqueRepo): Response
@@ -31,8 +40,7 @@ class BoutiqueController extends AbstractController
         return $this->render('boutique/boutique_detail.html.twig', [
             'boutique' => $boutique,
             'produits' => $produits_boutique,
-            
-            ]);
-    }
 
+        ]);
+    }
 }

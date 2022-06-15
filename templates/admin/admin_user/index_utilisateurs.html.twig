@@ -14,18 +14,16 @@
             <div class="main-content-inner">
                 <div class="admin-user-index">
                     <!-- MAIN CONTENT GOES HERE -->
-                    <h1>Liste des utilisateurs inscrits</h1>                    
+                    <h1>Liste des utilisateurs inscrits</h1>   
                     <ul>
                         <hr>
                         {% for utilisateur in utilisateurs %}
                             <li>
                                 {{ utilisateur.nom }}
-                            </li>
-                            <li>
-                                {{ utilisateur.email }}
-                            </li>
-                            <li>
-                                {{ utilisateur.createdAt|date('d/m/Y') }}
+
+                                - email: {{ utilisateur.email }}
+                            
+                                -créé le: {{ utilisateur.createdAt|date('d/m/Y') }}
                             </li>
                         <hr>                             
                         {% endfor %}
