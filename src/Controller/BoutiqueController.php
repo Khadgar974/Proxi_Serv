@@ -20,12 +20,8 @@ class BoutiqueController extends AbstractController
     {
         $categories = $categorieRepo->findAll();
 
-        //dd($categories->getBoutique());
-        //$boutiques = $boutiqueRepo->findBy(['is_active' => true], ['id' => 'DESC']);
-
-
         return $this->render('boutique/boutiques_index.html.twig', [
-            // 'boutiques' => $boutiques, 
+            
             'categories' => $categories
         ]);
     }
