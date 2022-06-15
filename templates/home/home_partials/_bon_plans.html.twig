@@ -12,7 +12,7 @@
                 
                 <div class="mini_plan">
                     <div class="plan_img">
-                        <img src="{{vich_uploader_asset(prodBonPlan, 'imageFileProduit')}}">
+                        <a href="{{path('app_single_produit', {id: prodBonPlan.id})}}"><img src="{{vich_uploader_asset(prodBonPlan, 'imageFileProduit')}}"></a>
                     </div>
                     <div class="plan_text">
                         <h2>{{ prodBonPlan.title }}</h2>
