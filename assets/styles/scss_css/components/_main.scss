@@ -176,31 +176,8 @@ html {
 }
 
 #home_plan {
-<<<<<<< HEAD
-  .lesbonsplans {
-    justify-content: flex-start;
-    .wrap2 {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: flex-start;
-      align-items: flex-start;
-      gap: 2rem;
-    }
-    .mini_plan {
-      background-color: white;
-      width: 23%;
-      border-radius: 10px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-
-      .plan_img {
-        height: 20rem;
-        object-fit: cover;
-=======
     width: 100%;
     .lesbonsplans {
->>>>>>> 405ff1abf58674017258ffad82903bfee67fe857
         width: 100%;
         margin: 0 auto;
         padding: 2rem;
@@ -471,9 +448,8 @@ footer {
     text-transform: none;
     background-image: linear-gradient(
         to right,
-        rgb(28, 164, 96) 0%,
-        rgb(30, 189, 109) 50%,
-        rgb(17, 153, 85) 100%
+        $color-primary-light,
+        $color-primary-dark
     );
     box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
     border: 2px solid black;
@@ -490,9 +466,8 @@ footer {
     border-radius: 0.9rem;
     background-image: linear-gradient(
         to right,
-        rgb(28, 164, 96) 0%,
-        rgb(30, 189, 109) 50%,
-        rgb(17, 153, 85) 100%
+        $color-primary-light,
+        $color-primary-dark
     );
     border: 1px solid black;
     display: inline-block;
@@ -508,9 +483,8 @@ footer {
     border-radius: 0.9rem;
     background-image: linear-gradient(
         to right,
-        rgb(28, 164, 96) 0%,
-        rgb(30, 189, 109) 50%,
-        rgb(17, 153, 85) 100%
+        $color-primary-light,
+        $color-primary-dark
     );
     border: 1px solid black;
     display: inline-block;
@@ -525,9 +499,8 @@ footer {
     border-radius: 0.9rem;
     background-image: linear-gradient(
         to right,
-        rgb(61, 233, 27) 0%,
-        rgb(32, 218, 41) 50%,
-        rgb(17, 153, 85) 100%
+        $color-primary-light,
+        $color-primary-dark
     );
     box-shadow: 2px 2px 2px lightgrey;
     border: 1px solid black;
