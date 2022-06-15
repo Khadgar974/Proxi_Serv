@@ -10,13 +10,12 @@
         <div class ="shop-container">
             <div class="produits">
                     <div class="boxs">
-                        <div id="home_plan">
-                            <div class ="titre">
-                                <h1>Type de Boutique</h1>
-                            </div>
+                        <div id="home_plan">                            
                             <div class="lesbonsplans">
                             {% for categorie in categories %}
-                                    <div> {{ categorie.title }} </div>
+                                <div class="cat-title">
+                                    <h3 class="heading-tertiary"> {{ categorie.title }} </h3>
+                                </div>                                    
                                 <div class="wrap2">
                                     {% for boutique in categorie.boutiques %}
                                         <div class="mini_plan">
@@ -31,8 +30,11 @@
                                             </div>
                                         </div>                                        
                                     {% endfor %}
+                                    <div  class="cat-title"> 
+                                        <hr class="hr-text">   
+                                    </div>
                                 {% endfor %}
-                                </div>   
+                                </div>
                                 </div>
                             </div>
                         </div>
