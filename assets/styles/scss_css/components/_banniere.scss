@@ -12,7 +12,7 @@
 
     .boxs {
         display: flex;
-        justify-content: space-around;
+        justify-content: flex-start;
         gap: 1rem;
         padding: 2rem;
         flex-flow: row wrap;
