@@ -448,9 +448,8 @@ footer {
     text-transform: none;
     background-image: linear-gradient(
         to right,
-        rgb(28, 164, 96) 0%,
-        rgb(30, 189, 109) 50%,
-        rgb(17, 153, 85) 100%
+        $color-primary-light,
+        $color-primary-dark
     );
     box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
     border: 2px solid black;
@@ -467,9 +466,8 @@ footer {
     border-radius: 0.9rem;
     background-image: linear-gradient(
         to right,
-        rgb(28, 164, 96) 0%,
-        rgb(30, 189, 109) 50%,
-        rgb(17, 153, 85) 100%
+        $color-primary-light,
+        $color-primary-dark
     );
     border: 1px solid black;
     display: inline-block;
@@ -485,9 +483,8 @@ footer {
     border-radius: 0.9rem;
     background-image: linear-gradient(
         to right,
-        rgb(28, 164, 96) 0%,
-        rgb(30, 189, 109) 50%,
-        rgb(17, 153, 85) 100%
+        $color-primary-light,
+        $color-primary-dark
     );
     border: 1px solid black;
     display: inline-block;
@@ -502,9 +499,8 @@ footer {
     border-radius: 0.9rem;
     background-image: linear-gradient(
         to right,
-        rgb(61, 233, 27) 0%,
-        rgb(32, 218, 41) 50%,
-        rgb(17, 153, 85) 100%
+        $color-primary-light,
+        $color-primary-dark
     );
     box-shadow: 2px 2px 2px lightgrey;
     border: 1px solid black;
