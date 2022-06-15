@@ -42,7 +42,7 @@ class ProduitsRepository extends ServiceEntityRepository
 //    /**
 //     * @return Produits[] Returns an array of Produits objects
 //     */
-//    public function findByExampleField($value): array
+//    public function findByproduitIsActive($value): array
 //    {
 //        return $this->createQueryBuilder('p')
 //            ->andWhere('p.exampleField = :val')

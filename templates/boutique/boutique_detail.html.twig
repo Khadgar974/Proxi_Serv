@@ -1,13 +1,13 @@
 {% extends 'layouts/base.html.twig' %}
 
 {% block body %}
-
+    {% if not message == '' %}
+        <div class="attention">{{ message }}</div>
+    {% endif %}
 
     <div class="main-content-inner">
         <!-- MAIN CONTENT GOES HERE -->
         {% include "commercant/commercant_boutique/com_bout_partials/_boutique_detail.html.twig" %}  
-    </div>
-
-    
+    </div>    
     
 {% endblock %}
