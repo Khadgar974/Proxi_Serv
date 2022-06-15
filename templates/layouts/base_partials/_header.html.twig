@@ -22,11 +22,7 @@
 
             {% if app.request.get('_route') != 'app_index_boutiques' %}
                 <li><a class="main-nav-link" href="{{path('app_index_boutiques')}}">Les boutiques</a></li>
-            {% endif %}
-
-            {% if app.request.get('_route') != 'app_produit_bonplans' %}
-                <li><a class="main-nav-link" href="{{path('app_produit_bonplans')}}">Les bon plans</a></li> 
-            {% endif %}            
+            {% endif %}           
         
         </ul>
     </nav>
