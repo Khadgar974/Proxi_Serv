@@ -8,16 +8,21 @@
 
     <div class="lesbonsplans">
         <div class="wrap2">
-        {% for i in 1..4 %}
-            <div class="mini_plan">
-                <div class="plan_img">
-                    <img src="https://picsum.photos/id/23{{i}}/200/300">
+            {% for prodBonPlan in prodBonPlans %}
+                
+                <div class="mini_plan">
+                    <div class="plan_img">
+                        <img src="{{vich_uploader_asset(prodBonPlan, 'imageFileProduit')}}">
+                    </div>
+                    <div class="plan_text">
+                        <h2>{{ prodBonPlan.title }}</h2>
+                    </div>
                 </div>
-                <div class="plan_text">
-                    <h2>Titre {{ i }} super text méga génial</h2>
-                </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
+        <div class="d-flex justify-content-center">
+                {% do prodBonPlans.setPageRange(2) %}
+                {{ knp_pagination_render(prodBonPlans, 'layouts/base_partials/pagination.html.twig') }}
         </div>
     </div>
 
