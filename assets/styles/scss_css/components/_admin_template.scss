@@ -1,14 +1,32 @@
 .commercant {
-    .page-container {
-        .sidebar-menu,
-        .sidebar-header {
-            background-color: $color-adm-commercant-side-bar;
-        }
+  .page-container {
+    .sidebar-menu,
+    .sidebar-header {
+      background-color: $color-adm-commercant-side-bar;
     }
+  }
 }
 
 .admin-icon {
-    font-size: 2rem;
+  font-size: 2rem;
+}
+
+.admin-link {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+
+  a {
+    display: flex;
+    align-items: center;
+  }
+  &--bot {
+    .warn-admin-togle-shop {
+      margin-left: 0.5rem;
+      font-size: 2rem;
+      color: red;
+    }
+  }
 }
 
 // .main-menu {
