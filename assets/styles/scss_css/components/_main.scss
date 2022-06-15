@@ -73,11 +73,38 @@ img {
   gap: 1.5rem;
   padding: 1.5rem;
   color: var(--blanc);
-  font-size: 1.6rem;
-
+  font-size: 1.4rem;
   .wrap1 .introduction {
-    .titre {
-      max-height: 20%;
+    width: 100%;
+    height: 70rem;
+    background-position: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    color: var(--blanc);
+    font-size: 1.4rem;
+    .wrap1 .introduction {
+      // margin-top: 12rem;
+      width: 100%;
+      max-height: 100%;
+      padding: 4rem;
+      .titre {
+        max-height: 20%;
+      }
+
+      .text {
+        margin: 0 auto;
+        max-height: 40%;
+        max-width: 60%;
+
+        p {
+          display: inline;
+          text-align: center;
+          font-size: 2.2rem;
+        }
+      }
     }
 
     .text {
@@ -93,7 +120,6 @@ img {
     }
   }
 }
-
 #intro .wrap1 .inscriptions {
   padding-top: 1rem;
   filter: opacity(0.8);
@@ -109,6 +135,11 @@ img {
   color: var(--vert);
   background-color: var(--bleufonce);
 }
+// #intro .wrap1 .introduction {
+//     background-color: var(--bleulogo);
+//     filter: opacity(0.8);
+//     border-radius: 10px;
+// }
 
 #intro {
   .wrap1 {
@@ -168,7 +199,7 @@ img {
       flex-direction: column;
 
       .plan_img {
-        height: 15rem;
+        height: 18rem;
         object-fit: cover;
         width: 100%;
         img {
