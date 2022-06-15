@@ -39,7 +39,12 @@ class RegistrationController extends AbstractController
             if (empty($choicerole)) {
                
             } else {
-                $user->setRoles([$choicerole]);               
+                if($choicerole === 'ROLE_COMMERCANT') {
+                    $user->setRoles([$choicerole, 'ROLE_USER']);   
+                } else {
+                    $user->setRoles(['ROLE_USER']);   
+                }
+                            
             }
 
             $entityManager->persist($user);

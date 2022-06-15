@@ -91,7 +91,7 @@ class Boutique implements Serializable
     private $is_siret_verified = true;
 
     #[ORM\Column(type: 'boolean')]
-    private $is_active = false;
+    private $is_active = true;
 
     #[ORM\OneToOne(inversedBy: 'boutique', targetEntity: User::class, cascade: ['persist', 'remove'])]
     #[ORM\JoinColumn(nullable: false)]

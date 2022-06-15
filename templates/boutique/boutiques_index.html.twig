@@ -15,8 +15,10 @@
                                 <h1>Type de Boutique</h1>
                             </div>
                             <div class="lesbonsplans">
+                            {% for categorie in categories %}
+                                    <p> {{ categorie.title }} </p>
                                 <div class="wrap2">
-                                {% for boutique in boutiques %}
+                                    {% for boutique in categorie.boutiques %}
                                         <div class="mini_plan">
                                             <div class="plan_img">
                                                 <img src="{{vich_uploader_asset(boutique, 'imageFileBoutique')}}" alt="{{boutique.title}}">
@@ -27,17 +29,20 @@
                                                     <a class="details" href="{{path('app_single_boutique', {id: boutique.id})}}">boutique</a>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>                                        
+                                    {% endfor %}
                                 {% endfor %}
+                                </div>   
                                 </div>
                             </div>
                         </div>
                     </div>                    
             </div>
-                <!-- --------nav bar d'information-------------- -->
+            
+        </div>
+        <!-- --------nav bar d'information-------------- -->
             {% include "nav/nav_partials/_nav.html.twig" %}
             <!-- /////////////////////////////////////////////////// -->
-        </div>
 </section>
 {% endblock %} 
 
