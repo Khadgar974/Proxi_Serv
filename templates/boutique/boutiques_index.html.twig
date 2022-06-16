@@ -18,17 +18,19 @@
                                 </div>                                    
                                 <div class="wrap2">
                                     {% for boutique in categorie.boutiques %}
-                                        <div class="mini_plan">
-                                            <div class="plan_img">
-                                                <img src="{{vich_uploader_asset(boutique, 'imageFileBoutique')}}" alt="{{boutique.title}}">
-                                            </div>
-                                            <div class="plan_text">
-                                                <h2>{{ boutique.title }}</h2>
-                                                <div class="box-button">
-                                                    <a class="details" href="{{path('app_single_boutique', {id: boutique.id})}}">boutique</a>
+                                        {% if boutique.isActive %}
+                                            <div class="mini_plan">
+                                                <div class="plan_img">
+                                                    <img src="{{vich_uploader_asset(boutique, 'imageFileBoutique')}}" alt="{{boutique.title}}">
                                                 </div>
-                                            </div>
-                                        </div>                                        
+                                                <div class="plan_text">
+                                                    <h2>{{ boutique.title }}</h2>
+                                                    <div class="box-button">
+                                                        <a class="details" href="{{path('app_single_boutique', {id: boutique.id})}}">boutique</a>
+                                                    </div>
+                                                </div>
+                                            </div>                                        
+                                        {% endif %}
                                     {% endfor %}
                                     <div  class="cat-title"> 
                                         <hr class="hr-text">   

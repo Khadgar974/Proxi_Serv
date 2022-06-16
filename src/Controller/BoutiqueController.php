@@ -31,12 +31,9 @@ class BoutiqueController extends AbstractController
     public function single($id, BoutiqueRepository $boutiqueRepo): Response
     {
         $boutique = $boutiqueRepo->findOneBy(['id' => $id]);
-        $produits_boutique = $boutique->getProduits();
+        $produits = $boutique->getProduits();
+        $message = "";
 
-        return $this->render('boutique/boutique_detail.html.twig', [
-            'boutique' => $boutique,
-            'produits' => $produits_boutique,
-
-        ]);
+        return $this->render('boutique/boutique_detail.html.twig', compact('boutique', 'produits', 'message'));
     }
 }
