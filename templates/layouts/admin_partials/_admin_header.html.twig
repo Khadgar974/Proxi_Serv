@@ -38,8 +38,10 @@
                             <div class="dropdown-menu">                                
                                 <a class="dropdown-item" href="{{path('app_home')}}">Retour HomePage</a>
                                 {# {% if app.request.get('route') starts with 'app_admin' A voir pour implémenter %}                                                            #}
-                                <a class="dropdown-item" href="{{path('app_commercant_default')}}">Gestion commerçant</a>                            
-                                <a class="dropdown-item" href="{{path('app_admin_default')}}">Gestion admin</a>                                                                 
+                                <a class="dropdown-item" href="{{path('app_commercant_default')}}">Gestion commerçant</a>
+                                {% if is_granted('ROLE_ADMIN') %}                            
+                                    <a class="dropdown-item" href="{{path('app_admin_default')}}">Gestion admin</a>       
+                                {% endif %}                                                          
                                 <a href="{{path('app_logout')}}">Se déconnecter</a>
                             </div>
                         </div>

@@ -21,11 +21,13 @@ class CommercantBoutiqueController extends AbstractController
     {
         $boutique=$this->getUser()->getBoutique();
         $produits=$boutique->getProduits();
+        if(!$boutique->isIsActive()) {
+            $message = 'Votre boutique est désactivée, merci de contacter un administrateur du site.';
+        } else {
+            $message = '';
+        }
 
-        return $this->render('boutique/boutique_detail.html.twig', [
-            'boutique' => $boutique,
-            'produits' => $produits
-        ]);
+        return $this->render('boutique/boutique_detail.html.twig', compact('boutique', 'produits', 'message'));
     }
 
     #[Route('/create_boutique', name: 'app_create_boutique')]

@@ -28,11 +28,19 @@ class HomePageController extends AbstractController
                               Request $request
                               ): Response
     {   
-        $boutiques = $boutiqueRepo-> findBy([], ['id' => 'DESC']);
-        $data = $produitsRepo-> findBy(['bon_plan' => true], ['id' => 'DESC']);
+        $boutiques = $boutiqueRepo-> findBy(['is_active' => true], ['id' => 'DESC']);
         
+        $datass = $produitsRepo-> findBy(['bon_plan' => true], ['id' => 'DESC']);
+
+        foreach ($datass as $data) {
+            if($data->getBoutique()->isIsActive())
+            {
+                $datas[] = $data;
+            }
+        }
+
         $prodBonPlans = $paginator->paginate(
-            $data,
+            $datas,
             $request->query->getInt('page', 1),
             8
         );
