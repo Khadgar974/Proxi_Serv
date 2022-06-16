@@ -30,11 +30,11 @@
                                     <a href="{{ path('app_single_boutique', {'id': commercant.boutique.id }) }}">Voir sa boutique </a>
                                     &mdash; <a href="{{ path('app_admin_enable_disable_shop', {'id': commercant.id }) }}" >
                                     {% if commercant.boutique.isActive %}
-                                        Désactiver la boutique 
+                                        Désactiver la boutique <ion-icon class="warn-admin-togle-shop" name="warning-outline"></ion-icon>
                                     {% else %}
                                         Activer la boutique 
                                     {% endif %}
-                                    <ion-icon class="warn-admin-togle-shop" name="warning-outline"></ion-icon>
+                                    
                                 </a>
                                 </div>
                             {% else %}
